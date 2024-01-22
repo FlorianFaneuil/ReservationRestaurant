@@ -109,4 +109,13 @@
     <servlet-name>ServletTestConnexion</servlet-name>
     <url-pattern>/ServletTestConnexion</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>FilterConnextion</display-name>
+    <filter-name>FilterConnextion</filter-name>
+    <filter-class>filter.FilterConnextion</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>FilterConnextion</filter-name>
+    <url-pattern>/FilterConnextion</url-pattern>
+  </filter-mapping>
 </web-app>

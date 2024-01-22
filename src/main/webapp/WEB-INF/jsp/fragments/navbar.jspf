@@ -1,0 +1,12 @@
+<nav>
+    <ul>
+        <li><a href="//accueil">Accueil</a></li>
+        <li><a href="#">Connexion</a>
+            <ul>
+                <li><a href="#">Inscription</a></li>
+                <li><a href="#">Connecter</a></li>
+                <li><a href="#">Déconnexion</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
