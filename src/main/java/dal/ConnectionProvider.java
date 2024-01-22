@@ -22,9 +22,7 @@ public abstract class ConnectionProvider {
 			DataSource dataSource = (DataSource) context.lookup(c);
 
 			Connection cnx = dataSource.getConnection();
-			if (!cnx.isClosed()) {
-				System.out.println("La connexion est ouverte");
-			}
+			return cnx;
 		} catch (NamingException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
