@@ -1,6 +1,7 @@
 package dal;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,7 +11,7 @@ import java.util.List;
 
 import bo.Reservation;
 
-public class ReservationtDAO {
+public class ReservationDAO {
 	private static final String TABLE_NAME = " reservations ";
 
 	private static final String SELECT = "SELECT * FROM " + TABLE_NAME;
@@ -36,11 +37,12 @@ public class ReservationtDAO {
 			while (rs.next()) {
 				Reservation reservation = new Reservation();
 				reservation.setId(rs.getInt("id"));
-				reservation.setNom(rs.getString("nom"));
-				reservation.setAdresse(rs.getString("adresse"));
-				reservation.setHeureOuverture(rs.getTime("heure_ouverture").toLocalTime());
-				reservation.setHeureFermeture(rs.getTime("heure_fermeture").toLocalTime());
-				reservation.setImageReservationUrl(rs.getString("image_reservation_url"));
+				reservation.setIdRestaurant(rs.getInt("id_restaurant"));
+				reservation.setIdClient(rs.getInt("id_client"));
+				reservation.setIdTable(rs.getInt("id_client"));
+				reservation.setDateResa(rs.getDate("date").toLocalDate());
+				reservation.setHeureResa(rs.getTime("heure").toLocalTime());
+				reservation.setEtat(rs.getString("etat"));
 
 				reservations.add(reservation);
 			}
@@ -54,10 +56,12 @@ public class ReservationtDAO {
 		try {
 			// L'ajout de RETURN_GENERATED_KEYS permet de récupérer l'id généré par la base
 			PreparedStatement ps = cnx.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
-			ps.setString(1, reservation.getNom());
-			ps.setString(2, reservation.getAdresse());
-			ps.setTime(3, Time.valueOf(reservation.getHeureOuverture()));
-			ps.setTime(4, Time.valueOf(reservation.getHeureFermeture()));
+			ps.setInt(1, reservation.getIdRestaurant());
+			ps.setInt(2, reservation.getIdClient());
+			ps.setInt(3, reservation.getIdTable());
+			ps.setDate(4,Date.valueOf(reservation.getDateResa()));
+			ps.setTime(5, Time.valueOf(reservation.getHeureResa()));
+			ps.setString(6, "EN ATTENTE"); // Par défaut lors de la créaton de la réservation elle est en attente
 			ps.executeUpdate();
 
 			// Le bloc suivant permet de faire la récupération de l'id
@@ -80,11 +84,12 @@ public class ReservationtDAO {
 			if (rs.next()) {
 				reservation = new Reservation();
 				reservation.setId(rs.getInt("id"));
-				reservation.setNom(rs.getString("nom"));
-				reservation.setAdresse(rs.getString("adresse"));
-				reservation.setHeureOuverture(rs.getTime("heure_ouverture").toLocalTime());
-				reservation.setHeureFermeture(rs.getTime("heure_fermeture").toLocalTime());
-				reservation.setImageReservationUrl(rs.getString("image_reservation_url"));
+				reservation.setIdRestaurant(rs.getInt("id_restaurant"));
+				reservation.setIdClient(rs.getInt("id_client"));
+				reservation.setIdTable(rs.getInt("id_client"));
+				reservation.setDateResa(rs.getDate("date").toLocalDate());
+				reservation.setHeureResa(rs.getTime("heure").toLocalTime());
+				reservation.setEtat(rs.getString("etat"));
 			}
 			if (reservation == null)
 				throw new DALException("Aucun reservation ne porte cet ID", null);
@@ -97,11 +102,7 @@ public class ReservationtDAO {
 	public void update(Reservation reservation) throws DALException {
 		try {
 			PreparedStatement ps = cnx.prepareStatement(UPDATE);
-			ps.setString(1, reservation.getNom());
-			ps.setString(2, reservation.getAdresse());
-			ps.setTime(3, Time.valueOf(reservation.getHeureOuverture()));
-			ps.setTime(4, Time.valueOf(reservation.getHeureFermeture()));
-			ps.setInt(5, reservation.getId());
+			ps.setString(1, reservation.getEtat());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new DALException("Impossible de mettre a jour les informations pour l'id " + reservation.getId(), e);
