@@ -9,6 +9,7 @@
 <link href="css/styleAccueil.css" rel="stylesheet">
 </head>
 <body>
+<%@ include file="../fragments/navbar.jspf" %>
 	<h1>ACCUEIL</h1>
 
 
