@@ -2,22 +2,48 @@ package controler.restaurant;
 
 import java.io.IOException;
 
+import bll.BLLException;
+import bll.RestaurantBLL;
+import bo.Restaurant;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-
 public class ServletDetailsRestaurant extends HttpServlet {
 	private static final long serialVersionUID = 1L;
- 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	private RestaurantBLL restaurantBll;
 	
+	@Override
+	public void init() throws ServletException {
+		super.init();
+		try {
+			restaurantBll = new RestaurantBLL();
+		} catch (BLLException e) {
+			e.printStackTrace();
+		}
+	}  
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// Etape 1 : recuperer les parametres
+		String idStr = request.getParameter("id");
+		// Etape 2 : passage dans le bon type
+		int id = Integer.parseInt(idStr);
+		// Etape 3 : exploitation des parametres par le bll
+		try {
+			Restaurant restaurant = restaurantBll.selectById(id);
+			// Etape 4 : ajout des attributs a la requete
+			request.setAttribute("restaurant", restaurant);
+		} catch (BLLException e) {
+			e.printStackTrace();
+		}
+		// Etape 5 : redirection vers la jsp
+		request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/detailsRestaurant.jsp").forward(request, response);
 	}
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 	}
-
 }
