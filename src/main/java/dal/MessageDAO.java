@@ -20,9 +20,10 @@ public class MessageDAO {
 	public MessageDAO() throws DALException {
 		cnx = ConnectionProvider.getConnection();
 	}
+
 	public List<Message> selectAll() throws DALException {
-		List<Message> messages = new ArrayList<>(); 
-		
+		List<Message> messages = new ArrayList<>();
+
 		try {
 			PreparedStatement ps = cnx.prepareStatement(SELECT);
 			ResultSet rs = ps.executeQuery();
@@ -37,7 +38,6 @@ public class MessageDAO {
 				client.setId(rs.getInt("id_client"));
 				employe.setId(rs.getInt("id_employe"));
 
-			
 				messages.add(message);
 			}
 		} catch (SQLException e) {
@@ -45,8 +45,7 @@ public class MessageDAO {
 		}
 		return messages;
 	}
-	
-	
+
 	public void insert(Message message) throws DALException {
 		try {
 			PreparedStatement ps = cnx.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);

@@ -4,11 +4,8 @@ import java.io.IOException;
 import java.util.List;
 
 import bll.BLLException;
-import bll.ClientBLL;
 import bll.MessageBLL;
-import bo.Employe;
 import bo.Message;
-import bo.Restaurant;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -18,7 +15,6 @@ public class ServletAfficherMessages extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private MessageBLL messageBLL;
 	private List<Message> messages = null;
-
 
 	@Override
 	public void init() throws ServletException {
@@ -34,7 +30,7 @@ public class ServletAfficherMessages extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			messages = messageBLL.selectAll();
-			
+
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
@@ -44,7 +40,8 @@ public class ServletAfficherMessages extends HttpServlet {
 
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

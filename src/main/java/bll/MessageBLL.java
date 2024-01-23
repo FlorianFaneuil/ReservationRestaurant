@@ -18,9 +18,9 @@ public class MessageBLL {
 			throw new BLLException("Echec de la connexion", e);
 		}
 	}
-	
+
 	public List<Message> selectAll() throws BLLException {
-	
+
 		try {
 			return messageDAO.selectAll();
 		} catch (DALException e) {
@@ -29,7 +29,7 @@ public class MessageBLL {
 	}
 
 	public Message insert(String titre, String contenu, Client id_client, Employe id_employe) throws BLLException {
-		
+
 		Message message = new Message(titre, contenu, id_client, id_employe);
 		try {
 			messageDAO.insert(message);
