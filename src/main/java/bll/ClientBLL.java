@@ -49,5 +49,25 @@ public class ClientBLL {
 		}
 	}
 
-	
+	public Client insert(String nom, String prenom, String email, String password) throws BLLException {
+
+		BLLException blleException = new BLLException();
+
+		if (nom.length() < 2) {
+			blleException.ajouterErreur("Le nom du restaurant doit faire au moins 2 caractères");
+		}
+
+		if (nom.length() > 100) {
+			blleException.ajouterErreur("Le nom doit faire maximum 100 caractères");
+		}
+
+		Client client = new Client(nom, prenom, email, password);
+		try {
+			clientDAO.insert(client);
+		} catch (DALException e) {
+			throw new BLLException("Echec de l'insertion", e);
+		}
+		return client;
+	}
+
 }
