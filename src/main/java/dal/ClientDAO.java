@@ -80,6 +80,7 @@ public class ClientDAO {
 			throw new DALException("Impossible de recuper l'information pour l'email ", e);
 		}
 		return client;
+	}
 
 	public void delete(int id) throws DALException {
 		try {
