@@ -12,9 +12,12 @@ public class ClientDAO {
 	private static final String SELECT_BY_ID = "SELECT * FROM " + TABLE_NAME + " WHERE id = ?";
 	private static final String UPDATE = "UPDATE " + TABLE_NAME
 			+ " SET nom = ?, prenom = ?, email = ? , password = ?  WHERE id = 1";
+	private static final String DELETE = "DELETE FROM" + TABLE_NAME + " WHERE id = ?";
 	private Connection cnx;
+
 	private static final String SELECT_BY_EMAIL_PASSWORD = "SELECT * FROM " + TABLE_NAME
 			+ " WHERE email = ? AND password = ?";
+
 
 	public ClientDAO() throws DALException {
 		cnx = ConnectionProvider.getConnection();
@@ -59,6 +62,7 @@ public class ClientDAO {
 		}
 	}
 
+
 	public Client SelectByEmailPassword(String email, String password) throws DALException {
 		Client client = null;
 		try {
@@ -76,5 +80,18 @@ public class ClientDAO {
 			throw new DALException("Impossible de recuper l'information pour l'email ", e);
 		}
 		return client;
+
+	public void delete(int id) throws DALException {
+		try {
+			PreparedStatement ps = cnx.prepareStatement(DELETE);
+			ps.setInt(1, id);
+			int nbLignesSupprimees = ps.executeUpdate();
+			if (nbLignesSupprimees == 0) {
+				throw new DALException("Echec de suppression du client d'id " + id, null);
+			}
+		} catch (SQLException e) {
+			throw new DALException("Impossible de supprimer le client d'id " + id, e);
+		}
+
 	}
 }

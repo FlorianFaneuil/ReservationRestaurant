@@ -12,12 +12,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-
 public class ServletAccueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RestaurantBLL restaurantBll;
-	private  List<Restaurant> restaurants = null;
-	
+	private List<Restaurant> restaurants = null;
+
 	@Override
 	public void init() throws ServletException {
 		super.init();
@@ -26,11 +25,11 @@ public class ServletAccueil extends HttpServlet {
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
-	}   
+	}
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-				
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
 		try {
 			restaurants = restaurantBll.selectAll();
 		} catch (BLLException e) {
@@ -40,9 +39,9 @@ public class ServletAccueil extends HttpServlet {
 		request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/accueil.jsp").forward(request, response);
 	}
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 	}
 
 }
