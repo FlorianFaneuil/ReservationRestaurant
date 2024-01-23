@@ -142,16 +142,16 @@ public class PlatDAO {
 		}
 	}
 	// Select ByIdCarte
-		public Plat selectByIdCarte(int id_carte) throws DALException {
-			Plat plat = null;
+		public List<Plat> selectByIdCarte(int id_carte) throws DALException {
+			List<Plat> plats = new ArrayList<>();
 
 			PreparedStatement ps;
 			try {
 				ps = cnx.prepareStatement(SELECT_BY_ID_CARTE);
 				ps.setInt(1, id_carte);
 				ResultSet rs = ps.executeQuery();
-				if (rs.next()) {
-					plat = new Plat();
+				while (rs.next()) {
+					Plat plat = new Plat();
 					Carte carte = new Carte();
 					plat.setId(rs.getInt("id"));
 					plat.setNom(rs.getString("nom"));
@@ -161,13 +161,11 @@ public class PlatDAO {
 					plat.setImage_plat_url(rs.getString("image_plat_url"));
 					carte.setId(rs.getInt("id_carte"));
 
+					plats.add(plat);
 				}
-				if (plat == null)
-					throw new DALException("Aucun plat avec l'id" + id_carte, null);
-
 			} catch (SQLException e) {
 				throw new DALException("Impossible de recuperer les informations pour l'id " + id_carte, e);
 			}
-			return plat;
+			return plats;
 		}
 }

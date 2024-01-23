@@ -1,6 +1,7 @@
 package controler.restaurant;
 
 import java.io.IOException;
+import java.util.List;
 
 import bll.BLLException;
 import bll.CarteBLL;
@@ -42,11 +43,11 @@ public class ServletDetailsRestaurant extends HttpServlet {
 		try {
 			Restaurant restaurant = restaurantBll.selectById(id);
 			Carte carte = carteBll.selectByIdRestaurant(id);
-			Plat plat = platBll.selectByIdCarte(carte.getId());
+			List<Plat> plats = platBll.selectByIdCarte(carte.getId());
 			// Etape 4 : ajout des attributs a la requete
 			request.setAttribute("restaurant", restaurant);
 			request.setAttribute("carte", carte);
-			request.setAttribute("plat", plat);
+			request.setAttribute("plats", plats);
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +19,16 @@
 <p> Adresse : ${restaurant.adresse}</p> 
 <p>Heure d'ouverture : ${restaurant.heureOuverture}</p> 
 <p>Heure de fermeture : ${restaurant.heureFermeture}</p> 
-<p>Liste des plats : A FAIRE</p> 
+<p>Liste des plats :</p>
+<c:forEach var="plat" items="${plats}">
+	<div>
+		<p>CATEGORIE : ${plat.categorie}</p>
+		<p>NOM : ${plat.nom}</p>
+		<p>DESCRIPTION : ${plat.description}</p>
+		<p>PRIX : ${plat.prix}€</p>
+	</div>
+	</c:forEach>
+
 </div>
 
 <form action="accueil" method="GET">
