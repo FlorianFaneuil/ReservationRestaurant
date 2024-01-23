@@ -1,10 +1,14 @@
 package controler.message;
 
 import java.io.IOException;
+import java.util.List;
 
 import bll.BLLException;
 import bll.ClientBLL;
 import bll.MessageBLL;
+import bo.Employe;
+import bo.Message;
+import bo.Restaurant;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -13,6 +17,8 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ServletAfficherMessages extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private MessageBLL messageBLL;
+	private List<Message> messages = null;
+
 
 	@Override
 	public void init() throws ServletException {
@@ -26,6 +32,14 @@ public class ServletAfficherMessages extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		try {
+			messages = messageBLL.selectAll();
+			
+		} catch (BLLException e) {
+			e.printStackTrace();
+		}
+		request.setAttribute("messages", messages);
+
 		request.getRequestDispatcher("/WEB-INF/jsp/connecte/afficherMessages.jsp").forward(request, response);
 
 	}

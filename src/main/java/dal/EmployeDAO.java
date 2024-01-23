@@ -26,6 +26,7 @@ public class EmployeDAO {
 			if (rs.next()) {
 				employe = new Employe();
 				Restaurant restaurant = new Restaurant();
+				
 				employe.setId(rs.getInt("id"));
 				restaurant.setId(rs.getInt("id_restaurant"));
 				employe.setNom(rs.getString("nom"));
