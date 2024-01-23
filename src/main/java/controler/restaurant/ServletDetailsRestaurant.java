@@ -3,6 +3,8 @@ package controler.restaurant;
 import java.io.IOException;
 
 import bll.BLLException;
+import bll.CarteBLL;
+import bll.PlatBLL;
 import bll.RestaurantBLL;
 import bo.Restaurant;
 import jakarta.servlet.ServletException;
@@ -13,12 +15,16 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ServletDetailsRestaurant extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RestaurantBLL restaurantBll;
+	private CarteBLL carteBll;
+	private PlatBLL platBll;
 	
 	@Override
 	public void init() throws ServletException {
 		super.init();
 		try {
 			restaurantBll = new RestaurantBLL();
+			carteBll = new CarteBLL();
+			platBll = new PlatBLL();
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
