@@ -18,6 +18,7 @@ public class CarteDAO {
 	private static final String SELECT_BY_ID = "SELECT * FROM " + TABLE_NAME + " WHERE id = ? ";
 	private static final String INSERT = "INSERT INTO " + TABLE_NAME + "(nom ,id_restaurant) VALUES (?,?)";
 	private static final String UPDATE = "UPDATE " + TABLE_NAME + " SET nom = ?,  id_restaurant = ?  WHERE id = ?";
+	private static final String SELECT_BY_ID_RESTAURANT = "SELECT * FROM " + TABLE_NAME + " WHERE id_restaurant = ?";
 
 	private Connection cnx;
 
@@ -103,4 +104,26 @@ public class CarteDAO {
 		}
 	}
 
+	// Select by id_restaurant
+		public Carte selectByIdRestaurant(int id_restaurant) throws DALException {
+			Carte carte = null;
+			try {
+				PreparedStatement ps = cnx.prepareStatement(SELECT_BY_ID_RESTAURANT);
+				ps.setInt(1, id_restaurant); // Remplace le '?' numero 1 par la valeur de l'id
+				ResultSet rs = ps.executeQuery();
+				if (rs.next()) {
+					carte = new Carte();
+					Restaurant restaurant = new Restaurant();
+
+					carte.setId(rs.getInt("id"));
+					carte.setNom(rs.getString("nom"));
+					restaurant.setId(rs.getInt("id_restaurant"));
+				}
+				if (carte == null)
+					throw new DALException("Aucun carte ne porte cet ID", null);
+			} catch (SQLException e) {
+				throw new DALException("Impossible de recuperer les informations pour l'id " + id_restaurant, e);
+			}
+			return carte;
+		}
 }
