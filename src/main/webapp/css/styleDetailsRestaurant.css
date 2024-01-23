@@ -13,14 +13,3 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-
-a {
- background-color: #199319; /* Changez cette valeur en fonction de votre préférence */
- color: white; /* Changez cette valeur en fonction de votre préférence */
- padding: 5px 20px; /* Ajustez ces valeurs en fonction de votre préférence */
- text-decoration: none;
-}
-
-a:hover {
- background-color: #223094; /* Changez cette valeur en fonction de votre préférence */
-}
