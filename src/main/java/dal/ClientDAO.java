@@ -13,11 +13,13 @@ public class ClientDAO {
 	private static final String UPDATE = "UPDATE " + TABLE_NAME
 			+ " SET nom = ?, prenom = ?, email = ? , password = ?  WHERE id = 1";
 	private Connection cnx;
-	
+	private static final String SELECT_BY_EMAIL_PASSWORD = "SELECT * FROM " + TABLE_NAME
+			+ " WHERE email = ? AND password = ?";
+
 	public ClientDAO() throws DALException {
 		cnx = ConnectionProvider.getConnection();
 	}
-	
+
 	public Client selectById(int id) throws DALException {
 		Client client = null;
 		try {
@@ -40,7 +42,7 @@ public class ClientDAO {
 		}
 		return client;
 	}
-	
+
 	public void update(Client client) throws DALException {
 		try {
 			PreparedStatement ps = cnx.prepareStatement(UPDATE);
@@ -48,12 +50,31 @@ public class ClientDAO {
 			ps.setString(2, client.getPrenom());
 			ps.setString(3, client.getEmail());
 			ps.setString(4, client.getPassword());
-		
-			//ps.setInt(5, client.getId());
+
+			// ps.setInt(5, client.getId());
 
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new DALException("Impossible de mettre a jour les informations pour l'id " + client.getId(), e);
 		}
+	}
+
+	public Client SelectByEmailPassword(String email, String password) throws DALException {
+		Client client = null;
+		try {
+			PreparedStatement ps = cnx.prepareStatement(SELECT_BY_EMAIL_PASSWORD);
+			ps.setString(1, email);
+			ps.setString(2, password);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				client = new Client();
+				client.setEmail(rs.getString("email"));
+				client.setPassword(rs.getString("password"));
+			}
+		} catch (SQLException e) {
+			// e.printStackTrace();
+			throw new DALException("Impossible de recuper l'information pour l'email ", e);
+		}
+		return client;
 	}
 }
