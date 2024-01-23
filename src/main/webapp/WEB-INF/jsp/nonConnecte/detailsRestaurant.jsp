@@ -23,11 +23,19 @@
 
 <form action="accueil" method="GET">
 	<input type="submit" value="Retour à la liste des restaurants" />
+</form>
 	
-	<a href="private/reservationTable">Réserver une table</a>
+
+	<form action="private/reservationTable" method="GET">
+		<input type="hidden" value="${restaurant.id}" name="restaurant.id"/>
+		<input type="hidden" value="${restaurant.heureOuverture}" name="heureOuverture"/>
+		<input type="hidden" value="${restaurant.heureFermeture}" name="heureFermeture"/>
+		<input type="submit" value="Reserver une table" />
+	</form>
+	
 	
 	<a href="private/envoyerMessage">Envoyer un message</a>
 	
-</form>
+
 </body>
 </html>

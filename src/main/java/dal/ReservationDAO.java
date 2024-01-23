@@ -16,7 +16,7 @@ public class ReservationDAO {
 
 	private static final String SELECT = "SELECT * FROM " + TABLE_NAME;
 	private static final String INSERT = "INSERT INTO " + TABLE_NAME
-			+ " (id_restaurant, id_client, id_table, date, heure, etat) VALUES (?,?,?,?,?,?)";
+			+ " (id_restaurant, id_client, date, heure, etat) VALUES (?,?,?,?,?)";
 	private static final String SELECT_BY_ID = "SELECT * FROM " + TABLE_NAME + " WHERE id = ?";
 	private static final String UPDATE = "UPDATE " + TABLE_NAME + " SET etat = ? WHERE id = ?";
 	private static final String DELETE = "DELETE FROM" + TABLE_NAME + " WHERE id = ?";
@@ -58,10 +58,9 @@ public class ReservationDAO {
 			PreparedStatement ps = cnx.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 			ps.setInt(1, reservation.getIdRestaurant());
 			ps.setInt(2, reservation.getIdClient());
-			ps.setInt(3, reservation.getIdTable());
-			ps.setDate(4,Date.valueOf(reservation.getDateResa()));
-			ps.setTime(5, Time.valueOf(reservation.getHeureResa()));
-			ps.setString(6, "EN ATTENTE"); // Par défaut lors de la créaton de la réservation elle est en attente
+			ps.setDate(3,Date.valueOf(reservation.getDateResa()));
+			ps.setTime(4, Time.valueOf(reservation.getHeureResa()));
+			ps.setString(5, reservation.getEtat()); // Par défaut lors de la créaton de la réservation elle est en attente
 			ps.executeUpdate();
 
 			// Le bloc suivant permet de faire la récupération de l'id

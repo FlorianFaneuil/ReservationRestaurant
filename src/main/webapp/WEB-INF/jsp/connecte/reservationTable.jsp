@@ -7,24 +7,34 @@
 <title>Reserver une table</title>
 </head>
 <body>
-
+<%@ include file="../fragments/navbar.jspf" %>
 <h1>Réserver une table</h1>
 
-IL FAUDRAIT AFFICHER LA LISTE DES TABLES LIBRES EN FONCTION DE LA DATE ET DE L'HEURE CHOISIE
-DEMANDER DE CHOISIR UN NOMBRE DE PLACES DANS UN INTERVAL COMPRIS ENTRE 1 ET LE NOMBRE DE PLACE MAXIMAL DE/DES PLUS GRANDES TABLES.
 
-<form action="private/reservationTable" method="POST">
+<form action="reservationTable" method="POST">
+<input type="hidden" value="${restaurantId}" name="restaurant.id"/>
+<input type="hidden" value="EN ATTENTE" name="etat"/>
 		<div>
 			<input type="date" name="date" />
-			<span>${erreur.erreurDate }</span>
+			<span>${erreur.erreurDate}</span>
 		</div>
 		<div>
+			<p>Heure d'ouverture :  ${heureOuverture}</p>
+			<span>${erreur.erreurHeureAnterieure}</span>
 			<input type="time" name="heure" />
-			<span>${erreur.erreurDate }</span>
+			<span>${erreur.erreurHeurePosterieure}</span>
+			<p>Heure de fermeture :  ${heureFermeture}</p>
+		</div>
+		<div>
+			<input type="number" placeholder="Nombre de places" name="nombrePlaces" />
 		</div>
 		<div>
 			<input type="submit" value="Faire une demande de réservation" />
 		</div>
+	</form>
+
+	<form action="../accueil" method="GET">
+		<input type="submit" value="Retour à la liste des restaurants" />
 	</form>
 
 </body>
