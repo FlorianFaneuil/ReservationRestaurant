@@ -10,8 +10,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-
-
 public class ServletProfil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ClientBLL clientBLL;
@@ -28,10 +26,10 @@ public class ServletProfil extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//		// 1. Récupération des paramètres
+		// 1. Récupération des paramètres
 //		String idStr = request.getParameter("id");
-//
-//		// 2. Passage des paramètres dans le type voulu
+
+		// 2. Passage des paramètres dans le type voulu
 //		int id = Integer.parseInt(idStr);
 
 		// 3. Exploitation des paramètres par le bll
@@ -46,7 +44,7 @@ public class ServletProfil extends HttpServlet {
 		request.setAttribute("client", client);
 
 		// 5. Redirection vers la JSP choisie
-		request.getRequestDispatcher("/WEB-INF/jsp/contact/profil.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/connecte/profil.jsp").forward(request, response);
 	} // GererContactPro/src/main/webapp/WEB-INF/jsp/contact
 
 }
