@@ -19,10 +19,20 @@
 
 
 		<form action="modifierProfil" method="GET">
+			// ID ENVOYE
+			<%--  <input type="hidden" name="id" value="${client.id }" /> --%>
 			<input type="submit" value="Modifier">
 		</form>
 
-		<button>Supprimer</button>
+		<form action="supprimerProfil" method="POST">
+			// ID ENVOYE
+			<%-- 			<input type="hidden" name="id" value="${client.1 }" />
+ --%>
+			<input type="submit" value="Supprimer" />
+		</form>
+
+
+
 	</div>
 
 </body>
