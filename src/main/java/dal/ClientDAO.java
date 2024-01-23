@@ -15,6 +15,10 @@ public class ClientDAO {
 	private static final String DELETE = "DELETE FROM" + TABLE_NAME + " WHERE id = ?";
 	private Connection cnx;
 
+	private static final String SELECT_BY_EMAIL_PASSWORD = "SELECT * FROM " + TABLE_NAME
+			+ " WHERE email = ? AND password = ?";
+
+
 	public ClientDAO() throws DALException {
 		cnx = ConnectionProvider.getConnection();
 	}
@@ -58,6 +62,25 @@ public class ClientDAO {
 		}
 	}
 
+
+	public Client SelectByEmailPassword(String email, String password) throws DALException {
+		Client client = null;
+		try {
+			PreparedStatement ps = cnx.prepareStatement(SELECT_BY_EMAIL_PASSWORD);
+			ps.setString(1, email);
+			ps.setString(2, password);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				client = new Client();
+				client.setEmail(rs.getString("email"));
+				client.setPassword(rs.getString("password"));
+			}
+		} catch (SQLException e) {
+			// e.printStackTrace();
+			throw new DALException("Impossible de recuper l'information pour l'email ", e);
+		}
+		return client;
+
 	public void delete(int id) throws DALException {
 		try {
 			PreparedStatement ps = cnx.prepareStatement(DELETE);
@@ -69,5 +92,6 @@ public class ClientDAO {
 		} catch (SQLException e) {
 			throw new DALException("Impossible de supprimer le client d'id " + id, e);
 		}
+
 	}
 }

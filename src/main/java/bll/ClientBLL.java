@@ -33,11 +33,19 @@ public class ClientBLL {
 		return client;
 	}
 
+
+	public Client SelectByEmailPassword(String email, String password) throws BLLException {
+		try {
+			return clientDAO.SelectByEmailPassword(email, password);
+		} catch (DALException e) {
+			throw new BLLException("Eche de l'autentification ", e);
+
 	public void delete(int id) throws BLLException {
 		try {
 			clientDAO.delete(id);
 		} catch (DALException e) {
 			throw new BLLException("Echec de la suppression du client d'id" + id, e);
+
 		}
 	}
 }

@@ -2,7 +2,6 @@ package bo;
 
 public class Client {
 
-	
 	private int id;
 	private String nom;
 	private String prenom;
@@ -10,6 +9,11 @@ public class Client {
 	private String password;
 
 	public Client() {
+	}
+
+	public Client(String email, String password) {
+		this.email = email;
+		this.password = password;
 	}
 
 	public Client(String nom, String prenom, String email, String password) {
