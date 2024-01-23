@@ -15,6 +15,15 @@ public class Reservation {
 	public Reservation() {
 	}
 	
+	public Reservation(int idRestaurant, int idClient, LocalDate dateResa, LocalTime heureResa,
+			String etat) {
+		this.idRestaurant = idRestaurant;
+		this.idClient = idClient;
+		this.dateResa = dateResa;
+		this.heureResa = heureResa;
+		this.etat = etat;
+	}
+
 	
 	public Reservation(int idRestaurant, int idClient, int idTable, LocalDate dateResa, LocalTime heureResa,
 			String etat) {

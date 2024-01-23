@@ -6,7 +6,6 @@ import java.util.List;
 
 import bo.Reservation;
 import bo.Restaurant;
-import bo.Table;
 import dal.DALException;
 import dal.ReservationDAO;
 
@@ -30,7 +29,7 @@ public class ReservationBLL {
 		}
 	}
 
-	public Reservation insert(Restaurant restaurant, int idClient, Table table, LocalDate dateResa, LocalTime heureResa, String etat)
+	public Reservation insert(Restaurant restaurant, int idClient, LocalDate dateResa, LocalTime heureResa, String etat)
 			throws BLLException {
 
 		BLLException blleException = new BLLException();
@@ -51,7 +50,7 @@ public class ReservationBLL {
 			throw blleException;
 		}
 
-		Reservation reservation = new Reservation(restaurant.getId(), idClient, table.getId(), dateResa, heureResa, etat);
+		Reservation reservation = new Reservation(restaurant.getId(), idClient, dateResa, heureResa, etat);
 		try {
 			dao.insert(reservation);
 		} catch (DALException e) {
@@ -94,3 +93,4 @@ public class ReservationBLL {
 		}
 	}
 }
+
