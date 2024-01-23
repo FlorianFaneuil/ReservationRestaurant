@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bo.Carte;
-import bo.Plat;
 import bo.Restaurant;
 
 public class CarteDAO {
