@@ -6,13 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import bo.Client;
-import bo.Restaurant;
-import dal.ConnectionProvider;
-import dal.DALException;
 
 public class ClientDAO {
 	private static final String TABLE_NAME = " clients ";
 	private static final String SELECT_BY_ID = "SELECT * FROM " + TABLE_NAME + " WHERE id = ?";
+	private static final String UPDATE = "UPDATE " + TABLE_NAME
+			+ " SET nom = ?, prenom = ?, email = ? , password = ?  WHERE id = 1";
 	private Connection cnx;
 	
 	public ClientDAO() throws DALException {
@@ -40,5 +39,21 @@ public class ClientDAO {
 			throw new DALException("Impossible de recuperer les informations pour l'id " + id, e);
 		}
 		return client;
+	}
+	
+	public void update(Client client) throws DALException {
+		try {
+			PreparedStatement ps = cnx.prepareStatement(UPDATE);
+			ps.setString(1, client.getNom());
+			ps.setString(2, client.getPrenom());
+			ps.setString(3, client.getEmail());
+			ps.setString(4, client.getPassword());
+		
+			//ps.setInt(5, client.getId());
+
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			throw new DALException("Impossible de mettre a jour les informations pour l'id " + client.getId(), e);
+		}
 	}
 }

@@ -23,11 +23,11 @@
 
 <form action="accueil" method="GET">
 	<input type="submit" value="Retour à la liste des restaurants" />
+	
+	<a href="private/reservationTable">Réserver une table</a>
+	
+	<a href="private/envoyerMessage">Envoyer un message</a>
+	
 </form>
-
-
-
-
-
 </body>
 </html>
