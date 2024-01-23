@@ -34,9 +34,10 @@ public class ServletConnexion extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		Boolean estConnecte = null;
 
 		System.out.println(email);
 		System.out.println(password);
@@ -45,9 +46,15 @@ public class ServletConnexion extends HttpServlet {
 
 			Client client = clientBLL.SelectByEmailPassword(email, password);
 			if (client != null) {
+				estConnecte = true;
+				System.out.println(estConnecte);
 				response.getWriter().println("Login successful!");
+			
 			} else {
-				response.getWriter().println("Login failed. ");
+				estConnecte = false;
+				request.setAttribute("estConnecte", estConnecte );
+				request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/connexion.jsp").forward(request, response);
+				
 			}
 
 		} catch (BLLException e) {
