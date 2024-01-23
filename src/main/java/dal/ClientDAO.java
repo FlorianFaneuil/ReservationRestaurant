@@ -6,19 +6,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import bo.Client;
 
-
 public class ClientDAO {
 	private static final String TABLE_NAME = " clients ";
 	private static final String SELECT_BY_ID = "SELECT * FROM " + TABLE_NAME + " WHERE id = ?";
 	private static final String UPDATE = "UPDATE " + TABLE_NAME
 			+ " SET nom = ?, prenom = ?, email = ? , password = ?  WHERE id = 1";
 	private static final String DELETE = "DELETE FROM" + TABLE_NAME + " WHERE id = ?";
-	private static final String  INSERT ="INSERT INTO " + TABLE_NAME
+	private static final String INSERT = "INSERT INTO " + TABLE_NAME
 			+ " (nom, prenom, email, password) VALUES (?,?,?,?)";
 
 	private static final String SELECT_BY_EMAIL_PASSWORD = "SELECT * FROM " + TABLE_NAME
 			+ " WHERE email = ? AND password = ?";
-	
+
 	private Connection cnx;
 
 	public ClientDAO() throws DALException {
@@ -73,6 +72,9 @@ public class ClientDAO {
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				client = new Client();
+				client.setId(rs.getInt("id"));
+				client.setNom(rs.getString("nom"));
+				client.setPrenom(rs.getString("prenom"));
 				client.setEmail(rs.getString("email"));
 				client.setPassword(rs.getString("password"));
 			}
@@ -95,7 +97,7 @@ public class ClientDAO {
 		}
 
 	}
-	
+
 	public void insert(Client client) throws DALException {
 		try {
 			// L'ajout de RETURN_GENERATED_KEYS permet de récupérer l'id généré par la base
@@ -104,7 +106,7 @@ public class ClientDAO {
 			ps.setString(2, client.getPrenom());
 			ps.setString(3, client.getEmail());
 			ps.setString(4, client.getPassword());
-			
+
 			ps.executeUpdate();
 
 			// Le bloc suivant permet de faire la récupération de l'id
