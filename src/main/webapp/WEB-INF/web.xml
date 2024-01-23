@@ -109,6 +109,7 @@
     <servlet-name>ServletTestConnexion</servlet-name>
     <url-pattern>/ServletTestConnexion</url-pattern>
   </servlet-mapping>
+
   <filter>
     <display-name>FilterConnextion</display-name>
     <filter-name>FilterConnextion</filter-name>
@@ -118,4 +119,16 @@
     <filter-name>FilterConnextion</filter-name>
     <url-pattern>/FilterConnextion</url-pattern>
   </filter-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>TestProfil</display-name>
+    <servlet-name>TestProfil</servlet-name>
+    <servlet-class>controler.profil.TestProfil</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestProfil</servlet-name>
+    <url-pattern>/TestProfil</url-pattern>
+  </servlet-mapping>
+
 </web-app>

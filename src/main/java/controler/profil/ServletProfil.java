@@ -2,39 +2,51 @@ package controler.profil;
 
 import java.io.IOException;
 
+import bll.BLLException;
+import bll.ClientBLL;
+import bo.Client;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class ServletProfil
- */
+
+
 public class ServletProfil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ServletProfil() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	private ClientBLL clientBLL;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	@Override
+	public void init() throws ServletException {
+		super.init();
+		try {
+			clientBLL = new ClientBLL();
+		} catch (BLLException e) {
+			e.printStackTrace();
+		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+//		// 1. Récupération des paramètres
+//		String idStr = request.getParameter("id");
+//
+//		// 2. Passage des paramètres dans le type voulu
+//		int id = Integer.parseInt(idStr);
+
+		// 3. Exploitation des paramètres par le bll
+		Client client = null;
+		try {
+			client = clientBLL.selectById(1);
+		} catch (BLLException e) {
+			e.printStackTrace();
+		}
+
+		// 4. Ajout des attributs éventuels à ma request
+		request.setAttribute("client", client);
+
+		// 5. Redirection vers la JSP choisie
+		request.getRequestDispatcher("/WEB-INF/jsp/contact/profil.jsp").forward(request, response);
+	} // GererContactPro/src/main/webapp/WEB-INF/jsp/contact
 
 }

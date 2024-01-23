@@ -7,6 +7,7 @@
 <title>Connexion ou Inscription</title>
 </head>
 <body>
+
 	<h1>Connexion</h1>
 
 	<h1>Inscription</h1>
@@ -17,6 +18,11 @@
 		<input type="password" name="password" placeholder="password" >
 		<input type="submit" value="connextion">
 	</form>
+
+<h1>Connexion</h1>
+
+<h1>Inscription</h1>
+
 
 </body>
 </html>
