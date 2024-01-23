@@ -37,7 +37,7 @@ public class ClientBLL {
 		try {
 			return clientDAO.SelectByEmailPassword(email, password);
 		} catch (DALException e) {
-			throw new BLLException("Echec de la recuperation du client d'id ", e);
+			throw new BLLException("Eche de l'autentification ", e);
 		}
 	}
 }

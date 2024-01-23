@@ -34,41 +34,30 @@ public class ServletConnexion extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		Boolean estConnecte = null;
-
-		System.out.println(email);
-		System.out.println(password);
 
 		try {
 
 			Client client = clientBLL.SelectByEmailPassword(email, password);
 			if (client != null) {
 				estConnecte = true;
-				System.out.println(estConnecte);
-				response.getWriter().println("Login successful!");
-			
+				request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/accueil.jsp").forward(request, response);
+
 			} else {
 				estConnecte = false;
-				request.setAttribute("estConnecte", estConnecte );
+				request.setAttribute("estConnecte", estConnecte);
 				request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/connexion.jsp").forward(request, response);
-				
+
 			}
 
 		} catch (BLLException e) {
-			// Gérez les exceptions de la logique d'affaires
-			e.printStackTrace(); // À des fins de débogage
-			System.out.println("erreur de connextion");
+
+			e.getMessage();
+
 		}
 
-//		if ("user@example.com".equals(email) && "password123".equals(password)) {
-//			// Successful login
-//			response.getWriter().println("Login successful!");
-//		} else {
-//			// Failed login
-//			response.getWriter().println("Login failed. ");
-//		}
 	}
 }

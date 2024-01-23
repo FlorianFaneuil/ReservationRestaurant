@@ -29,7 +29,7 @@
 		<input type="submit" value="connexion">
 	</form>
 
-   <div><a>si vous n'avez pas encore de compte utilisateur</a></div>
+   <div><a href="u">si vous n'avez pas encore de compte utilisateur</a></div>
 
 	
 
