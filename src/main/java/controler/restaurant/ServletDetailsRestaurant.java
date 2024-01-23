@@ -6,6 +6,8 @@ import bll.BLLException;
 import bll.CarteBLL;
 import bll.PlatBLL;
 import bll.RestaurantBLL;
+import bo.Carte;
+import bo.Plat;
 import bo.Restaurant;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -39,8 +41,12 @@ public class ServletDetailsRestaurant extends HttpServlet {
 		// Etape 3 : exploitation des parametres par le bll
 		try {
 			Restaurant restaurant = restaurantBll.selectById(id);
+			Carte carte = carteBll.selectByIdRestaurant(id);
+			Plat plat = platBll.selectByIdCarte(carte.getId());
 			// Etape 4 : ajout des attributs a la requete
 			request.setAttribute("restaurant", restaurant);
+			request.setAttribute("carte", carte);
+			request.setAttribute("plat", plat);
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
