@@ -16,17 +16,17 @@
 <input type="hidden" value="EN ATTENTE" name="etat"/>
 		<div>
 			<input type="date" name="date" />
-			<span>${erreur}</span>
+			<span>${erreur.erreurDate}</span>
 		</div>
 		<div>
 			<p>Heure d'ouverture :  ${heureOuverture}</p>
+			<span>${erreur.erreurHeureAnterieure}</span>
 			<input type="time" name="heure" />
-			<span>${erreur}</span>
+			<span>${erreur.erreurHeurePosterieure}</span>
 			<p>Heure de fermeture :  ${heureFermeture}</p>
 		</div>
 		<div>
 			<input type="number" placeholder="Nombre de places" name="nombrePlaces" />
-			<span>${erreur }</span>
 		</div>
 		<div>
 			<input type="submit" value="Faire une demande de réservation" />

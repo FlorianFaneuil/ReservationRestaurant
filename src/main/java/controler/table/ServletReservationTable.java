@@ -56,32 +56,28 @@ public class ServletReservationTable extends HttpServlet {
 		int restaurantId = Integer.parseInt(restaurantIdStr);
 		int nombrePlaces = Integer.parseInt(nombrePlacesStr);
 		
-		System.out.println("ID Restaurant : "+ restaurantId);
-		System.out.println(etatStr);
-		System.out.println(dateStr);
-		System.out.println(heureStr);
-		System.out.println("Nombre de places : " + nombrePlaces);
-		
 		LocalDate dateResa = LocalDate.parse(dateStr);
 		LocalTime heureResa = LocalTime.parse(heureStr);
 		
-
 		try {
 			//HttpSession session = request.getSession();
 			//idClient = (int) session.getAttribute("userId");
 			idClient = 1;
 			Restaurant restaurant = restaurantBll.selectById(restaurantId);
 			request.setAttribute("restaurant", restaurant);
-			System.out.println(idClient);
+			
 			Reservation reservation = reservationBll.insert(restaurant, idClient, dateResa, heureResa, etatStr);
 			// Etape 4 : ajout des attributs a la requete
+			request.setAttribute("restaurant", restaurant);
 			request.setAttribute("reservation", reservation);
+			request.setAttribute("nombrePlaces", nombrePlaces);
 			request.getRequestDispatcher("/WEB-INF/jsp/connecte/confirmationDemandeReservation.jsp").forward(request, response);
 		} catch (BLLException e) {
-		e.printStackTrace();
+			request.setAttribute("erreur", e);
+//		e.printStackTrace();
+		
 		request.getRequestDispatcher("/WEB-INF/jsp/connecte/reservationTable.jsp").forward(request, response);
 		}	
 	}
 }
-
 

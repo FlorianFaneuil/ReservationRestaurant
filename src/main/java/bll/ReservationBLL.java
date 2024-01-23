@@ -33,20 +33,20 @@ public class ReservationBLL {
 			throws BLLException {
 
 		BLLException blleException = new BLLException();
-
+		
 		if (dateResa.isBefore(LocalDate.now())) {
-			blleException.ajouterErreur("La date de la reservation ne peut pas être anterieure a la date du jour");
+			blleException.setErreurDate("La date de la reservation ne peut pas être anterieure a la date du jour");
 		}
 
 		if (heureResa.isBefore(restaurant.getHeureOuverture())) {
-			blleException.ajouterErreur("L'heure de reservation ne peut pas etre anterieure a l'heure d'ouverture du restaurant");
+			blleException.setErreurHeureAnterieure("L'heure de reservation ne peut pas etre anterieure a l'heure d'ouverture du restaurant");
 		}
 		
 		if (heureResa.isAfter(restaurant.getHeureFermeture())) {
-			blleException.ajouterErreur("L'heure de reservation ne peut pas etre posterieure a l'heure de fermeture du restaurant");
+			blleException.setErreurHeurePosterieure("L'heure de reservation ne peut pas etre posterieure a l'heure de fermeture du restaurant");
 		}
 		
-		if (blleException.getErreurs().size() > 0) {
+		if (blleException.getNbErreurs() > 0) {
 			throw blleException;
 		}
 
