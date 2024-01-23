@@ -32,4 +32,12 @@ public class ClientBLL {
 		}
 		return client;
 	}
+
+	public void delete(int id) throws BLLException {
+		try {
+			clientDAO.delete(id);
+		} catch (DALException e) {
+			throw new BLLException("Echec de la suppression du client d'id" + id, e);
+		}
+	}
 }
