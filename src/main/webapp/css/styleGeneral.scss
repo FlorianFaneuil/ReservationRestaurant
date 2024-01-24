@@ -1,14 +1,16 @@
 @charset "UTF-8";
 
-.inputBoutton{
-		border: 1px black;
-		border-radius: 5%;
-		padding:15px;
-		background-color: #9DBC98;
-		color:#fff;
-        font-family: 'Slabo 27px', serif;
-        font-size:20px;
-		&:hover{
+.inputBoutton {
+	border: 1px black;
+	border-radius: 5%;
+	padding: 15px;
+	background-color: #9DBC98;
+	color: #fff;
+	text-decoration: none;
+	font-family: 'Slabo 27px', serif;
+	font-size: 20px;
+
+	&:hover {
 		background-color: #638889;
-		}
 	}
+}

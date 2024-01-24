@@ -30,6 +30,9 @@
 				</c:forEach>
 				
 				</div>
-				
+				</fieldset>
+				<div class="containerBouton">
+			    <a  class=inputBoutton href="../accueil">Retour à l'accueil</a>
+				</div>
 </body>
 </html>
