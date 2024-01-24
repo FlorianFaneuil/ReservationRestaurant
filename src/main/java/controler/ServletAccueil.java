@@ -5,7 +5,6 @@ import java.util.List;
 
 import bll.BLLException;
 import bll.RestaurantBLL;
-
 import bo.Restaurant;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;

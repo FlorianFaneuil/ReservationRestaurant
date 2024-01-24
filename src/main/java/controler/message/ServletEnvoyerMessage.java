@@ -41,14 +41,15 @@ public class ServletEnvoyerMessage extends HttpServlet {
 		String titreStr = request.getParameter("titre");
 		String contenuStr = request.getParameter("contenu");
 		String id_clientStr = request.getParameter("id_client");
-		String id_employeStr = request.getParameter("id_employe");
+
+		String id_employeNom = request.getParameter("id_employe");
 
 		// Etape 1 bis : vous pouvez vous assurer que vous recuperez bien les infos
 
 		System.out.println(titreStr);
 		System.out.println(contenuStr);
 		System.out.println(id_clientStr);
-		System.out.println(id_employeStr);
+		System.out.println(id_employeNom);
 
 		// Etape 2 : Passer les infos dans les types appropries
 		int id_clientParse = 0;
@@ -56,7 +57,7 @@ public class ServletEnvoyerMessage extends HttpServlet {
 //		LocalDate ddn = LocalDate.parse(ddnStr);
 		try {
 			id_clientParse = Integer.parseInt(id_clientStr);
-			id_employeParse = Integer.parseInt(id_employeStr);
+			id_employeParse = Integer.parseInt(id_employeNom);
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
 
@@ -68,7 +69,8 @@ public class ServletEnvoyerMessage extends HttpServlet {
 			Client id_client = clientBLL.selectById(id_clientParse);
 
 			EmployeBLL employeBLL = new EmployeBLL();
-			Employe id_employe = employeBLL.selectById(id_employeParse);
+//			Employe id_employe = employeBLL.selectById(id_employeParse);
+			Employe id_employe = employeBLL.selectByPrenom(id_employeNom);
 
 			messageCree = messageBLL.insert(titreStr, contenuStr, id_client, id_employe);
 			request.getRequestDispatcher("/WEB-INF/jsp/connecte/popUpMessageEnvoye.jsp").forward(request, response);
