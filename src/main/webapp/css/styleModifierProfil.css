@@ -1,0 +1,76 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Oswald|Roboto|Slabo+27px);
+@import 'bourbon';
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+    
+    }
+
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+main {
+	height: 80vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+		gap:100px;
+
+}
+
+
+.titreProfil {
+	background-color:#638889;
+				color: #EBD9B4;
+
+		height: 10vh;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+}
+
+.inputInfo{
+	height: 28px;
+	border-radius: 5px;
+}
+legend{
+	color :#638889;
+	
+}
+fieldset{
+	padding:30px;
+	padding-top: 50px;
+}
+.formulaireProfil{
+	display: flex;
+	bordr
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	gap:25px;
+	margin-bottom: 80px;
+}
+.gaucheForm{
+	display: flex;
+	flex-direction: column;
+	gap:25px;
+	color:#638889;
+}
+.droiteForm{
+	display: flex;
+	flex-direction: column;
+	gap:25px;
+}
+
+.containerBoutonValider{
+	text-align: center;
+}
+
