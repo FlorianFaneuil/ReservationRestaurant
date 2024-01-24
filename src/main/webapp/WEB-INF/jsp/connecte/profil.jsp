@@ -47,7 +47,7 @@ bleu 638889 -->
 						<h2>${client.password}</h2>
 					</div>
 				</div>
-
+</fieldset>
 <div class="containerBouton">
 				<form action="modifierProfil" method="GET">
 					<%--  <input type="hidden" name="id" value="${client.id }" /> --%>

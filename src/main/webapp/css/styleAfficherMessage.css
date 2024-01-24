@@ -16,7 +16,7 @@ html {
 }
 
 main {
-	height: 80vh;
+	height: 70vh;
 	width: 100vw;
 	display: flex;
 	align-items: center;
@@ -43,8 +43,8 @@ legend {
 }
 
 fieldset {
-	padding: 30px;
-	padding-top: 50px;
+	    padding:30px;
+
 }
 
 
@@ -54,7 +54,7 @@ fieldset {
 	align-items: start;
 	justify-content: center;
 	flex-direction: column;
-	margin-bottom: 80px;
+	margin-bottom: 10px;
 	gap:25px
 }
 
@@ -67,6 +67,10 @@ fieldset {
 }
 .styleTitre{
 	color : #638889;
+}
+
+.styleMessage{
+	color:rgb(192, 192, 192);
 }
 
 

@@ -39,13 +39,16 @@
 						value="${contact.email }"> <input class ="inputInfo type="text"
 						name="password" 
 						value="${contact.password }">
+						
 				</div>
 			</div>
+			 </fieldset>
+			
 			<div class="containerBoutonValider">
 
 				<input class="inputBoutton" type="submit" value="Valider">
 			</div>
-  </fieldset>
+ 
 
 		</form>
 
