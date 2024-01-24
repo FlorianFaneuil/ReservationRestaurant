@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Accueil / Index</title>
-<link href="css/styleAccueil.scss" rel="stylesheet">
+<link href="css/styleTest.scss" rel="stylesheet">
 </head>
 <body>
 <%@ include file="../fragments/navbar.jspf"%>
@@ -41,3 +41,5 @@
 </c:forEach>
 </body>
 </html>
+
+
