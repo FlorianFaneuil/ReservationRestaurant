@@ -47,6 +47,9 @@ public class ServletInscription extends HttpServlet {
 		try {
 			clientCree = clientBLL.insert(nom, prenom, email, password);
 			estConnecte = true;
+//			request.getServletContext().setAttribute("idClient", client.getId());
+//			request.getServletContext().setAttribute("nomClient", client.getNom());
+//			request.getServletContext().setAttribute("prenomClient", client.getPrenom());
 
 			response.sendRedirect("accueil");
 		} catch (BLLException e) {
