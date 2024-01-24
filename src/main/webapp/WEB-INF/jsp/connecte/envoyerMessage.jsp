@@ -20,11 +20,10 @@
 			<input type="number" placeholder="id_client" name="id_client" min="0" />
 		</div>
 		<div>
-			<select name ="id_employe">
-				<option  value="Sacha">Sacha</option>
-				<option   value ="Poire">Poire</option>
-			</select> 
-			<input type="submit" value="Envoyer le message" />
+			<select name="id_employe">
+				<option value="Sacha">Sacha</option>
+				<option value="Poire">Poire</option>
+			</select> <input type="submit" value="Envoyer le message" />
 		</div>
 	</form>
 
