@@ -1,12 +1,13 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Oswald|Roboto|Slabo+27px);
 @import 'bourbon';
+
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-    
-    }
+
+}
 
 
 html {
@@ -21,59 +22,63 @@ main {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-		gap:100px;
+	gap: 100px;
 
 }
-
 
 .titreProfil {
+	background-color: #638889;
+	color: #EBD9B4;
+
+	height: 10vh;
+	width: 100%;
 	display: flex;
-	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+legend {
+	color: #638889;
+
+}
+
+fieldset {
+	padding: 30px;
+	padding-top: 50px;
+}
+
+
+
+.formulaireProfil {
+	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 20px;
-	padding: 10px;
-	color:#638889;
+	flex-direction: row;
+	gap: 25px;
+	margin-bottom: 80px;
 }
-.titreInforPerso{
-		background-color:#638889;
-				color: #EBD9B4;
 
-		height: 20%;
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 
-}
-.carteInforProfil {
-		background-color:beige;
 
-	
-			color:#638889;
-
+.gaucheForm {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: start;
-	gap: 60px;
-	margin: 30px;
-	height: 450px;
-	width: 400px;
-	border-radius: 10px;
-	border: 4px solid #638889;
-	}
+	gap: 25px;
+	color: #638889;
+}
 
-.formulaireProfil{
+.droiteForm {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+		color:darkgray;
+
+}
+.containerBouton{
+	text-align: center;
 	display: flex;
 	flex-direction: row;
-	gap:25px;
+	justify-content: space-between;
+	gap:10px;
 }
 
-.infoProfil{
-	display: flex;
-	align-items: center;
-	flex-direction:column;
-	justify-content: space-between;
-	gap: 50px;
-}

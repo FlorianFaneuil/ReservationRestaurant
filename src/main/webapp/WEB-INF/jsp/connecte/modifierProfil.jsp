@@ -31,7 +31,6 @@
 					<h2>Email</h2>
 					<h2>Mot de passe</h2>
 				</div>
-
 				<div class="droiteForm">
 					<input  class ="inputInfo" type="text" name="nom" 
 						value="${contact.nom }"> <input  class ="inputInfo type="text" name="prenom"
