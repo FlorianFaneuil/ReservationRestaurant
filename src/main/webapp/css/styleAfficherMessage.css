@@ -49,36 +49,33 @@ fieldset {
 
 
 
-.formulaireProfil {
+.containerMessage {
 	display: flex;
-	align-items: center;
+	align-items: start;
 	justify-content: center;
-	flex-direction: row;
-	gap: 25px;
+	flex-direction: column;
 	margin-bottom: 80px;
+	gap:25px
 }
 
-
-
-.gaucheForm {
+.affichage1message{
 	display: flex;
+	align-items: start;
+	justify-content: start;
 	flex-direction: column;
-	gap: 25px;
-	color: #638889;
+	gap:5px;
+}
+.styleTitre{
+	color : #638889;
 }
 
-.droiteForm {
-	display: flex;
-	flex-direction: column;
-	gap: 25px;
-		color:darkgray;
 
-}
+/*
 .containerBouton{
 	text-align: center;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	gap:10px;
-}
+}*/
 
