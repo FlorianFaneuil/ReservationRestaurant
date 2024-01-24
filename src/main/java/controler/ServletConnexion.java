@@ -44,7 +44,7 @@ public class ServletConnexion extends HttpServlet {
 			Client client = clientBLL.SelectByEmailPassword(email, password);
 			if (client != null) {
 				estConnecte = true;
-				request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/accueil.jsp").forward(request, response);
+				response.sendRedirect("accueil");
 
 			} else {
 				estConnecte = false;

@@ -16,10 +16,10 @@
 
 	<form method="post" action="connexion">
 		<div>
-			<input type="email" name="email" placeholder="email">
+			<input type="email" name="email" placeholder="email" required>
 		</div>
 		<div>
-			<input type="password" name="password" placeholder="password">
+			<input type="password" name="password" placeholder="password" required>
 		</div>
 		<c:if test="${estConnecte ==false}">
 			<p>L’adresse e-mail ou le mot de passe que vous avez entré n’est

@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import bo.Client;
 
 public class ClientDAO {
@@ -13,11 +12,13 @@ public class ClientDAO {
 	private static final String UPDATE = "UPDATE " + TABLE_NAME
 			+ " SET nom = ?, prenom = ?, email = ? , password = ?  WHERE id = 1";
 	private static final String DELETE = "DELETE FROM" + TABLE_NAME + " WHERE id = ?";
-	private Connection cnx;
+	private static final String INSERT = "INSERT INTO " + TABLE_NAME
+			+ " (nom, prenom, email, password) VALUES (?,?,?,?)";
 
 	private static final String SELECT_BY_EMAIL_PASSWORD = "SELECT * FROM " + TABLE_NAME
 			+ " WHERE email = ? AND password = ?";
 
+	private Connection cnx;
 
 	public ClientDAO() throws DALException {
 		cnx = ConnectionProvider.getConnection();
@@ -62,7 +63,6 @@ public class ClientDAO {
 		}
 	}
 
-
 	public Client SelectByEmailPassword(String email, String password) throws DALException {
 		Client client = null;
 		try {
@@ -72,11 +72,13 @@ public class ClientDAO {
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
 				client = new Client();
+				client.setId(rs.getInt("id"));
+				client.setNom(rs.getString("nom"));
+				client.setPrenom(rs.getString("prenom"));
 				client.setEmail(rs.getString("email"));
 				client.setPassword(rs.getString("password"));
 			}
 		} catch (SQLException e) {
-			// e.printStackTrace();
 			throw new DALException("Impossible de recuper l'information pour l'email ", e);
 		}
 		return client;
@@ -94,5 +96,27 @@ public class ClientDAO {
 			throw new DALException("Impossible de supprimer le client d'id " + id, e);
 		}
 
+	}
+
+	public void insert(Client client) throws DALException {
+		try {
+			// L'ajout de RETURN_GENERATED_KEYS permet de récupérer l'id généré par la base
+			PreparedStatement ps = cnx.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
+			ps.setString(1, client.getNom());
+			ps.setString(2, client.getPrenom());
+			ps.setString(3, client.getEmail());
+			ps.setString(4, client.getPassword());
+
+			ps.executeUpdate();
+
+			// Le bloc suivant permet de faire la récupération de l'id
+			ResultSet rs = ps.getGeneratedKeys();
+			if (rs.next()) { // Va chercher dans le resultat, la première ligne
+				int id = rs.getInt(1); // plus précisément, le int à la première colonne
+				client.setId(id);
+			}
+		} catch (SQLException e) {
+			throw new DALException("Impossible d'inserer les donnees.", e);
+		}
 	}
 }

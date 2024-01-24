@@ -1,5 +1,7 @@
 package bll;
 
+import java.util.List;
+
 import bo.Client;
 import bo.Employe;
 import bo.Message;
@@ -17,10 +19,17 @@ public class MessageBLL {
 		}
 	}
 
+	public List<Message> selectAll() throws BLLException {
+
+		try {
+			return messageDAO.selectAll();
+		} catch (DALException e) {
+			throw new BLLException("Echec de la récupération des messages", e);
+		}
+	}
+
 	public Message insert(String titre, String contenu, Client id_client, Employe id_employe) throws BLLException {
-		/*
-		 * Plein de contr�les certainement tres pertinents sur les donnees
-		 */
+
 		Message message = new Message(titre, contenu, id_client, id_employe);
 		try {
 			messageDAO.insert(message);
