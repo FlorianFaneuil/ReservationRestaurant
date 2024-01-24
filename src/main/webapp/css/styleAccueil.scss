@@ -40,7 +40,7 @@ h1{
       background:#CB6074;
       img{
         @include transition(.3s);
-        max-height:180px;
+        height:180px;
         width:100%;
         border-bottom:4px solid #CB6074;
       }
@@ -106,4 +106,13 @@ h1{
 		color:#fff;
         font-family: 'Slabo 27px', serif;
         font-size:20px;
+	}
+	
+	.container{
+		display: flex;	
+	}
+	
+	p {
+		font-family: 'Roboto', sans-serif;
+      	color:#3C3C3C;
 	}
