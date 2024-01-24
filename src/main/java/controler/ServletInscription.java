@@ -42,14 +42,14 @@ public class ServletInscription extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
-		Client clientCree = null;
+		Client clientCreer = null;
 
 		try {
-			clientCree = clientBLL.insert(nom, prenom, email, password);
+			clientCreer = clientBLL.insert(nom, prenom, email, password);
 			estConnecte = true;
-//			request.getServletContext().setAttribute("idClient", client.getId());
-//			request.getServletContext().setAttribute("nomClient", client.getNom());
-//			request.getServletContext().setAttribute("prenomClient", client.getPrenom());
+			request.getServletContext().setAttribute("idClient", clientCreer.getId());
+			request.getServletContext().setAttribute("nomClient", clientCreer.getNom());
+			request.getServletContext().setAttribute("prenomClient", clientCreer.getPrenom());
 
 			response.sendRedirect("accueil");
 		} catch (BLLException e) {
