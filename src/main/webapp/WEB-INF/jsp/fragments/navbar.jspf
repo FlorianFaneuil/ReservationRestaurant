@@ -6,6 +6,11 @@
                 <li><a href="#">Inscription</a></li>
                 <li><a href="#">Connecter</a></li>
                 <li><a href="#">Déconnexion</a></li>
+                <li>${info}</li>
+                <li>${idClient}</li>
+                <li>${nomClient}</li>
+                <li>${prenomClient}</li>
+                
             </ul>
         </li>
     </ul>

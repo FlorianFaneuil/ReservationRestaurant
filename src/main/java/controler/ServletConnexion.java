@@ -44,7 +44,9 @@ public class ServletConnexion extends HttpServlet {
 			Client client = clientBLL.SelectByEmailPassword(email, password);
 			if (client != null) {
 				estConnecte = true;
+
 				response.sendRedirect("accueil");
+
 
 			} else {
 				estConnecte = false;
