@@ -110,5 +110,12 @@ public class PlatBLL {
 			throw new BLLException("Echec de la suppression du plat", e);
 		}
 	}
-
+	// SELECT BY ID_CARTE
+		public List<Plat> selectByIdCarte(int id_carte) throws BLLException {
+			try {
+				return dao.selectByIdCarte(id_carte);
+			} catch (DALException e) {
+				throw new BLLException("Echec de la recuperation du composant d'id " + id_carte, e);
+			}
+		}
 }

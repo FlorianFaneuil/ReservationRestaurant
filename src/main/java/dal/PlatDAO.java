@@ -19,6 +19,7 @@ public class PlatDAO {
 	private static final String UPDATE = "UPDATE " + TABLE_NAME
 			+ " SET nom = ?, prix = ?, description = ?, categorie = ?, image_plat_url = ?, id_carte = ?  WHERE id = ?";
 	private static final String DELETE = "DELETE FROM " + TABLE_NAME + " WHERE id = ?";
+	private static final String SELECT_BY_ID_CARTE = "SELECT * FROM " + TABLE_NAME + " WHERE id_carte = ?";
 
 	private Connection cnx;
 
@@ -140,4 +141,31 @@ public class PlatDAO {
 			throw new DALException("Impossible de supprimer le composant d'id " + id, e);
 		}
 	}
+	// Select ByIdCarte
+		public List<Plat> selectByIdCarte(int id_carte) throws DALException {
+			List<Plat> plats = new ArrayList<>();
+
+			PreparedStatement ps;
+			try {
+				ps = cnx.prepareStatement(SELECT_BY_ID_CARTE);
+				ps.setInt(1, id_carte);
+				ResultSet rs = ps.executeQuery();
+				while (rs.next()) {
+					Plat plat = new Plat();
+					Carte carte = new Carte();
+					plat.setId(rs.getInt("id"));
+					plat.setNom(rs.getString("nom"));
+					plat.setPrix(rs.getString("prix"));
+					plat.setDescription(rs.getString("description"));
+					plat.setCategorie(rs.getString("categorie"));
+					plat.setImage_plat_url(rs.getString("image_plat_url"));
+					carte.setId(rs.getInt("id_carte"));
+
+					plats.add(plat);
+				}
+			} catch (SQLException e) {
+				throw new DALException("Impossible de recuperer les informations pour l'id " + id_carte, e);
+			}
+			return plats;
+		}
 }

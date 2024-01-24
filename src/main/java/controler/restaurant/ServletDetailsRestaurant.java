@@ -1,9 +1,14 @@
 package controler.restaurant;
 
 import java.io.IOException;
+import java.util.List;
 
 import bll.BLLException;
+import bll.CarteBLL;
+import bll.PlatBLL;
 import bll.RestaurantBLL;
+import bo.Carte;
+import bo.Plat;
 import bo.Restaurant;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -13,12 +18,16 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ServletDetailsRestaurant extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RestaurantBLL restaurantBll;
+	private CarteBLL carteBll;
+	private PlatBLL platBll;
 	
 	@Override
 	public void init() throws ServletException {
 		super.init();
 		try {
 			restaurantBll = new RestaurantBLL();
+			carteBll = new CarteBLL();
+			platBll = new PlatBLL();
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
@@ -33,8 +42,12 @@ public class ServletDetailsRestaurant extends HttpServlet {
 		// Etape 3 : exploitation des parametres par le bll
 		try {
 			Restaurant restaurant = restaurantBll.selectById(id);
+			Carte carte = carteBll.selectByIdRestaurant(id);
+			List<Plat> plats = platBll.selectByIdCarte(carte.getId());
 			// Etape 4 : ajout des attributs a la requete
 			request.setAttribute("restaurant", restaurant);
+			request.setAttribute("carte", carte);
+			request.setAttribute("plats", plats);
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
