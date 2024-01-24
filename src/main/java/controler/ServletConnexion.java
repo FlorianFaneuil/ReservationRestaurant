@@ -44,15 +44,14 @@ public class ServletConnexion extends HttpServlet {
 			Client client = clientBLL.SelectByEmailPassword(email, password);
 			if (client != null) {
 				estConnecte = true;
-				request.getServletContext().setAttribute("idClient", client.getId());
-				request.getServletContext().setAttribute("nomClient", client.getNom());
-				request.getServletContext().setAttribute("prenomClient", client.getPrenom());
-				request.getServletContext().setAttribute("estConnecte", estConnecte);
-			//	request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/accueil.jsp").forward(request, response);
+				request.getSession().setAttribute("idClient", client.getId());
+				request.getSession().setAttribute("nomClient", client.getNom());
+				request.getSession().setAttribute("prenomClient", client.getPrenom());
+				request.getSession().setAttribute("estConnecte", estConnecte);
 				response.sendRedirect("accueil");
 
 			} else {
-				
+
 				request.setAttribute("estConnecte", estConnecte);
 				request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/connexion.jsp").forward(request, response);
 
