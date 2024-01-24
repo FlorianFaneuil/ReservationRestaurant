@@ -63,11 +63,10 @@ public class ClientBLL {
 
 		Client client = new Client(nom, prenom, email, password);
 		try {
-			clientDAO.insert(client);
+			 return clientDAO.insert(client);
 		} catch (DALException e) {
 			throw new BLLException("Echec de l'insertion", e);
 		}
-		return client;
 	}
 
 }

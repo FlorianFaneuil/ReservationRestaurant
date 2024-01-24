@@ -98,7 +98,7 @@ public class ClientDAO {
 
 	}
 
-	public void insert(Client client) throws DALException {
+	public Client insert(Client client) throws DALException {
 		try {
 			// L'ajout de RETURN_GENERATED_KEYS permet de récupérer l'id généré par la base
 			PreparedStatement ps = cnx.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
@@ -118,5 +118,6 @@ public class ClientDAO {
 		} catch (SQLException e) {
 			throw new DALException("Impossible d'inserer les donnees.", e);
 		}
+		return client;
 	}
 }
