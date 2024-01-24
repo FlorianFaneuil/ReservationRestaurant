@@ -25,11 +25,14 @@
 				<c:forEach  var="messages" items="${messages}">
 				<div class="affichage1message">
 					<h2 class="styleTitre">${messages.titre}</h2>
-					<h2 class="styleMessage">${messages.contenu}</h2>
+					<h3 class="styleMessage">${messages.contenu}</h3>
 					</div>
 				</c:forEach>
 				
 				</div>
-				
+				</fieldset>
+				<div class="containerBouton">
+			    <a  class=inputBoutton href="../accueil">Retour à l'accueil</a>
+				</div>
 </body>
 </html>

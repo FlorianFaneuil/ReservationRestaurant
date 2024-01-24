@@ -15,13 +15,14 @@ html {
 }
 
 main {
-	height: 80vh;
+	height: 70vh;
 	width: 100vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-		gap:100px;
+/*		    gap:300px;
+*/
 
 }
 
@@ -46,8 +47,7 @@ legend{
 	
 }
 fieldset{
-	padding:30px;
-	padding-top: 50px;
+    padding:30px;
 }
 .formulaireProfil{
 	display: flex;
@@ -56,7 +56,7 @@ fieldset{
 	justify-content: center;
 	flex-direction: row;
 	gap:25px;
-	margin-bottom: 80px;
+	margin-bottom: 10px;
 }
 .gaucheForm{
 	display: flex;
@@ -71,6 +71,10 @@ fieldset{
 }
 
 .containerBoutonValider{
+	padding-top:40px;
 	text-align: center;
-}
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	}
 

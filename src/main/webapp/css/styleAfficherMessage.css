@@ -16,13 +16,12 @@ html {
 }
 
 main {
-	height: 80vh;
+	height: 70vh;
 	width: 100vw;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	gap: 100px;
 
 }
 
@@ -43,8 +42,8 @@ legend {
 }
 
 fieldset {
-	padding: 30px;
-	padding-top: 50px;
+	    padding:30px;
+
 }
 
 
@@ -54,7 +53,7 @@ fieldset {
 	align-items: start;
 	justify-content: center;
 	flex-direction: column;
-	margin-bottom: 80px;
+	margin-bottom: 10px;
 	gap:25px
 }
 
@@ -69,13 +68,17 @@ fieldset {
 	color : #638889;
 }
 
+.styleMessage{
+	color:rgb(192, 192, 192);
+}
 
-/*
+
+
 .containerBouton{
 	text-align: center;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	gap:10px;
-}*/
+	padding-top:30px;
+}
 
