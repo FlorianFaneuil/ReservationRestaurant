@@ -30,8 +30,8 @@
 			</c:choose>
 			<div class="card-details"><p>Horaires</p></div>
 		    <div class="card-details"><span><i class="fa fa-calendar"></i>${restaurant.heureOuverture}</span><span><i class="fa fa-heart"></i>${restaurant.heureFermeture}</span></div>
-		    <div class="card-text"><p class="card-details">Venez savourer un excellent repas au ${restaurant.adresse}</p></div>
-		    <div class="read-more">
+		    <div class="card-text"><p>Venez savourer un excellent repas au ${restaurant.adresse}</p></div>
+		    <div>
 		    	<form action="detailsRestaurant" method="GET">
 					<input type="hidden" name="id" value="${restaurant.id}" /> <input
 					type="submit" value="Voir ce restaurant" />

@@ -3,7 +3,7 @@
 @import 'bourbon';
 
 body{
-  background:#ececec;
+  background:#FBFCFA ;
 }
 
 h1{
@@ -23,7 +23,7 @@ h1{
     max-width:300px;
     margin:15px;
     background:#fff;
-    border:1px solid #CB6074;
+    border:1px solid #638889;
     text-align:center;
     cursor:pointer;
     &:hover{
@@ -37,12 +37,12 @@ h1{
     .card-img{
       position:relative;
       text-align:center;
-      background:#CB6074;
+      background:#638889;
       img{
         @include transition(.3s);
         height:180px;
         width:100%;
-        border-bottom:4px solid #CB6074;
+        border-bottom:4px solid #638889;
       }
       &:before{
         content:'';
@@ -52,7 +52,7 @@ h1{
         margin-left: -10px;
         width: 0;
         height: 0;
-        border-top: solid 10px #CB6074;
+        border-top: solid 10px #638889;
         border-left: solid 10px transparent;
         border-right: solid 10px transparent;
       }
@@ -89,23 +89,29 @@ h1{
       width:auto;
       text-align:center;
       text-transform:uppercase;
-      background:#CB6074;
+      background:#9DBC98;
       color:#fff;
       padding:15px;
       margin-bottom:30px;
       font-family: 'Oswald', sans-serif;
       &:hover{
-        background: darken(#CB6074,20%);
+        background: darken(#638889,20%);
       }
     }
   }
 }
 	input{
-		border: none;
-		background-color: #CB6074;
+		border: 1px black;
+		border-radius: 5%;
+		padding:15px;
+        margin-bottom:30px;
+		background-color: #9DBC98;
 		color:#fff;
         font-family: 'Slabo 27px', serif;
         font-size:20px;
+		&:hover{
+		background-color: #638889;
+		}
 	}
 	
 	.container{
