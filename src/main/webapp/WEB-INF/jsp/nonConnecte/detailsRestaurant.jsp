@@ -9,10 +9,9 @@
 <link href="css/styleDetailsRestaurant.css" rel="stylesheet">
 </head>
 <body>
-	<%@ include file="../fragments/navbar.jspf"%>
-	<h1>Détails du Restaurant</h1>
-
-
+<%@ include file="../fragments/navbar.jspf"%>
+	
+<div class="container">	
 	<c:choose>
 		<c:when test="${empty restaurant.imageRestaurantUrl}">
 			<div class="card-category"
@@ -40,7 +39,7 @@
 		</div>
 	</c:forEach>
 
-	</div>
+
 
 	<form action="accueil" method="GET">
 		<input type="submit" value="Retour à la liste des restaurants" />
@@ -58,6 +57,6 @@
 	<form action="private/envoyerMessage" method="GET">
 		<input type="submit" value="Envoyer un message" />
 	</form>
-
+</div>
 </body>
 </html>
