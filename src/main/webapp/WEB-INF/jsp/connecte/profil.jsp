@@ -5,38 +5,47 @@
 <head>
 <meta charset="UTF-8">
 <title>Mon profil</title>
+<link href="../css/styleProfil.css" rel="stylesheet">
 </head>
 <body>
-	<div>
-		<h1>Votre profil</h1>
-		<h1>Detail du contact ${client.id}</h1>
-		<p>Nom : ${client.nom}</p>
-		<p>Prénom : ${client.prenom}</p>
-		<p>Email: ${contact.email}</p>
 
+
+	<%@ include file="../fragments/navbar.jspf"%>
+
+	<div class="titreProfil">
+	<h1>PROFIL</h1>
 	</div>
-	<div>
 
-
+	
+	<main>
+	<div class="carteInforProfil">
+	<h2>Vos Informations personnelles</h2>
+	<br>
+		<h3>Nom : ${client.nom}</h3>
+		<h3>Prénom : ${client.prenom}</h3>
+		<h3>Email: ${client.email}</p>
+		<h3>Id : ${client.id}</p>
+	</div>
+	
+	
+	<div class="formulaireProfil">
 		<form action="modifierProfil" method="GET">
 			<%--  <input type="hidden" name="id" value="${client.id }" /> --%>
-			<input type="submit" value="Modifier">
+			<input class="bouttonCRUDProfil" type="submit" value="Modifier">
 		</form>
 
 		<form action="supprimerProfil" method="POST">
 			<%-- 			<input type="hidden" name="id" value="${client.1 }" />
  --%>
-			<input type="submit" value="Supprimer" />
+			<input class="bouttonCRUDProfil" type="submit" value="Supprimer" />
 		</form>
-		
+
 		<form action="afficherMessages" method="POST">
-		<input type="submit" value="Messages" />
+			<input class="bouttonCRUDProfil" type="submit" value="Messages" />
 		</form>
-		
-
-
 
 	</div>
+	</main>
 
 </body>
 </html>
