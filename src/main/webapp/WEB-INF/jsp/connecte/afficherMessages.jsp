@@ -7,16 +7,29 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Affichage des messages</title>
+<link href="../css/styleAfficherMessage.css" rel="stylesheet">
+<link href="../css/styleGeneral.scss" rel="stylesheet">
 </head>
 <body>
-	<h1>Affichage des messages</h1>
-
-
-	<c:forEach var="messages" items="${messages}">
-		<h2>${messages.titre}</h2>
-		<h2>${messages.contenu}</h2>
-
-
-	</c:forEach>
+	<%@ include file="../fragments/navbar.jspf"%>
+	<div class="titreProfil">
+		<h2>Messages envoyés</h2>
+	</div>
+	<main>
+		<fieldset>
+			<legend>
+				<h3>Vos messages envoyés</h3>
+			</legend>
+			<div class="containerMessage">
+			
+				<c:forEach  var="messages" items="${messages}">
+				<div class="affichage1message">
+					<h2 class="styleTitre">${messages.titre}</h2>
+					<h2 class="styleMessage">${messages.contenu}</h2>
+					</div>
+				</c:forEach>
+				
+				</div>
+				
 </body>
 </html>

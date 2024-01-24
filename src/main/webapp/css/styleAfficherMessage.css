@@ -1,0 +1,81 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Oswald|Roboto|Slabo+27px);
+@import 'bourbon';
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+
+}
+
+
+html {
+	height: 100%;
+	width: 100%;
+}
+
+main {
+	height: 80vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	gap: 100px;
+
+}
+
+.titreProfil {
+	background-color: #638889;
+	color: #EBD9B4;
+
+	height: 10vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+legend {
+	color: #638889;
+
+}
+
+fieldset {
+	padding: 30px;
+	padding-top: 50px;
+}
+
+
+
+.containerMessage {
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	flex-direction: column;
+	margin-bottom: 80px;
+	gap:25px
+}
+
+.affichage1message{
+	display: flex;
+	align-items: start;
+	justify-content: start;
+	flex-direction: column;
+	gap:5px;
+}
+.styleTitre{
+	color : #638889;
+}
+
+
+/*
+.containerBouton{
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap:10px;
+}*/
+
