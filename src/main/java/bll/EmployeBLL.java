@@ -18,4 +18,12 @@ public class EmployeBLL {
 			throw new BLLException("Echec de la recuperation de l'employe d'id " + id, e);
 		}
 	}
+
+	public Employe selectByPrenom(String nom) throws BLLException {
+		try {
+			return employeDAO.selectByPrenom(nom);
+		} catch (DALException e) {
+			throw new BLLException("Echec de la recuperation de l'employe de nom  " + nom, e);
+		}
+	}
 }
