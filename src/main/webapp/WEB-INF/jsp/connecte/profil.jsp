@@ -40,24 +40,27 @@ bleu 638889 -->
 				</div>
 
 				<div class="droiteForm">
+					<!-- 				Informations qui viennent de connexion
+ -->
 
-					<h2>${client.nom}</h2>
-					<h2>${client.prenom}</h2>
-					<h2>${client.email}</h2>
-					<h2>${client.password}</h2>
+
+					<h2>${idClient}</h2>
+					<h2>${nomClient}</h2>
+					<h2>${prenomClient}</h2>
+					<h2>${emailClient}</h2>
+					<h2>${passwordClient}</h2>
 				</div>
 			</div>
 		</fieldset>
 		<div class="containerBouton">
 			<form action="modifierProfil" method="GET">
-				<%--  <input type="hidden" name="id" value="${client.id }" /> --%>
-				<input class="inputBoutton" type="submit" value="Modifier">
+				<input type="hidden" name="id" value="${idClient }" /> <input
+					class="inputBoutton" type="submit" value="Modifier">
 			</form>
 
 			<form action="supprimerProfil" method="POST">
-				<%-- 			<input type="hidden" name="id" value="${client.1 }" />
- --%>
-				<input class="inputBoutton" type="submit" value="Supprimer" />
+				<input type="hidden" name="id" value="${idClient }" /> <input
+					class="inputBoutton" type="submit" value="Supprimer" />
 			</form>
 
 			<form action="afficherMessages" method="POST">

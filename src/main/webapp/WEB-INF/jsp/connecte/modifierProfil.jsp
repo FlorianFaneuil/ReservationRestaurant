@@ -33,12 +33,12 @@
 				</div>
 				<div class="droiteForm">
 					<input  class ="inputInfo" type="text" name="nom" 
-						value="${client.nom }"> <input  class ="inputInfo type="text" name="prenom"
-						 value="${client.prenom }"> <input class ="inputInfo
+						value="${nomClient}"> <input  class ="inputInfo type="text" name="prenom"
+						 value="${prenomClient}"> <input class ="inputInfo
 						type="text" name="email" 
-						value="${client.email }"> <input class ="inputInfo type="text"
+						value="${emailClient}"> <input class ="inputInfo type="text"
 						name="password" 
-						value="${client.password }">
+						value="${passwordClient}">
 						
 				</div>
 			</div>
