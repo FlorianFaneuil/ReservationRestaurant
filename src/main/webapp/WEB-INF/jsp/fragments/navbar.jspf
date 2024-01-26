@@ -5,7 +5,7 @@
 			<ul>
 				<li><a href="inscription">Inscription</a></li>
 				<li><a href="connexion">Connecter</a></li>
-				<li><a href="#">D�connexion</a></li>
+				<li><a href="deconnexion">D�connexion</a></li>
 				<li> est connecte ${estConnecte}</li>
 				<li>id ${idClient}</li>
 				<li>nom ${nomClient}</li>
