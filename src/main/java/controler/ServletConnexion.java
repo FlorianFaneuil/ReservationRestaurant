@@ -47,6 +47,8 @@ public class ServletConnexion extends HttpServlet {
 				request.getSession().setAttribute("idClient", client.getId());
 				request.getSession().setAttribute("nomClient", client.getNom());
 				request.getSession().setAttribute("prenomClient", client.getPrenom());
+				request.getSession().setAttribute("emailClient", client.getEmail());
+				request.getSession().setAttribute("passwordClient", client.getPassword());		
 				request.getSession().setAttribute("estConnecte", estConnecte);
 				response.sendRedirect("accueil");
 
