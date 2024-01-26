@@ -5,11 +5,14 @@
 			<ul>
 				<li><a href="inscription">Inscription</a></li>
 				<li><a href="connexion">Connecter</a></li>
-				<li><a href="#">Déconnexion</a></li>
+				<li><a href="#">Dï¿½connexion</a></li>
 				<li> est connecte ${estConnecte}</li>
 				<li>id ${idClient}</li>
 				<li>nom ${nomClient}</li>
 				<li>prenom ${prenomClient}</li>
+				<li>email     : ${emailClient}</li>
+				<li> mot pass     : ${passwordClient}</li>
+				div
 
 			</ul></li>
 	</ul>
