@@ -10,6 +10,7 @@
 				<li>id ${idClient}</li>
 				<li>nom ${nomClient}</li>
 				<li>prenom ${prenomClient}</li>
+				
 
 			</ul></li>
 	</ul>
