@@ -32,39 +32,39 @@ bleu 638889 -->
 			<div class="formulaireProfil">
 
 
-					<div class="gaucheForm">
-						<h2>Nom</h2>
-						<h2>Prenom</h2>
-						<h2>Email</h2>
-						<h2>Mot de passe</h2>
-					</div>
-
-					<div class="droiteForm">
-
-						<h2>${client.nom}</h2>
-						<h2>${client.prenom}</h2>
-						<h2>${client.email}</h2>
-						<h2>${client.password}</h2>
-					</div>
+				<div class="gaucheForm">
+					<h2>Nom</h2>
+					<h2>Prenom</h2>
+					<h2>Email</h2>
+					<h2>Mot de passe</h2>
 				</div>
-</fieldset>
-<div class="containerBouton">
-				<form action="modifierProfil" method="GET">
-					<%--  <input type="hidden" name="id" value="${client.id }" /> --%>
-					<input class="inputBoutton" type="submit" value="Modifier">
-				</form>
 
-				<form action="supprimerProfil" method="POST">
-					<%-- 			<input type="hidden" name="id" value="${client.1 }" />
+				<div class="droiteForm">
+
+					<h2>${client.nom}</h2>
+					<h2>${client.prenom}</h2>
+					<h2>${client.email}</h2>
+					<h2>${client.password}</h2>
+				</div>
+			</div>
+		</fieldset>
+		<div class="containerBouton">
+			<form action="modifierProfil" method="GET">
+				<%--  <input type="hidden" name="id" value="${client.id }" /> --%>
+				<input class="inputBoutton" type="submit" value="Modifier">
+			</form>
+
+			<form action="supprimerProfil" method="POST">
+				<%-- 			<input type="hidden" name="id" value="${client.1 }" />
  --%>
-					<input class="inputBoutton" type="submit" value="Supprimer" />
-				</form>
+				<input class="inputBoutton" type="submit" value="Supprimer" />
+			</form>
 
-				<form action="afficherMessages" method="POST">
-					<input class="inputBoutton" type="submit" value="Messages" />
-				</form>
-</div>
-		
+			<form action="afficherMessages" method="POST">
+				<input class="inputBoutton" type="submit" value="Messages" />
+			</form>
+		</div>
+
 	</main>
 
 </body>

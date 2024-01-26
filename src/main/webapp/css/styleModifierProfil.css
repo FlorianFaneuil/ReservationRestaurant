@@ -1,12 +1,13 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Oswald|Roboto|Slabo+27px);
 @import 'bourbon';
+
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
-    
-    }
+
+}
 
 
 html {
@@ -21,60 +22,73 @@ main {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-/*		    gap:300px;
+	/*		    gap:300px;
 */
 
 }
 
 
 .titreProfil {
-	background-color:#638889;
-				color: #EBD9B4;
+	background-color: #638889;
+	color: #EBD9B4;
 
-		height: 10vh;
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-}
-
-.inputInfo{
-	height: 28px;
-	border-radius: 5px;
-}
-legend{
-	color :#638889;
-	
-}
-fieldset{
-    padding:30px;
-}
-.formulaireProfil{
+	height: 10vh;
+	width: 100%;
 	display: flex;
-	
+	justify-content: center;
+	align-items: center;
+}
+
+.inputInfo {
+	height: 35px;
+	border-radius: 5px;
+	font-size: 18px;
+	width: 200px;
+	color: darkgray;
+}
+
+legend {
+	color: #638889;
+
+}
+
+fieldset {
+	padding: 30px;
+}
+
+.formulaireProfil {
+	display: flex;
+
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
-	gap:25px;
+	gap: 25px;
 	margin-bottom: 10px;
 }
-.gaucheForm{
+
+.gaucheForm {
 	display: flex;
 	flex-direction: column;
-	gap:25px;
-	color:#638889;
-}
-.droiteForm{
-	display: flex;
-	flex-direction: column;
-	gap:25px;
+	gap: 25px;
+	color: #638889;
 }
 
-.containerBoutonValider{
-	padding-top:40px;
+.droiteForm {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+
+form {
+	margin-top: 30px;
+
+}
+
+.containerBoutonValider {
+	padding-top: 40px;
 	text-align: center;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	}
-
+}

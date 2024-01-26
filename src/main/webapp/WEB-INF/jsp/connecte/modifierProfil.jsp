@@ -26,19 +26,19 @@
 				<input type="hidden" name="id" value="${contact.id }" />
 
 				<div class="gaucheForm">
-					<h2>Nom</h2>
+					<h2>Nom</h2>						
 					<h2>Prenom</h2>
 					<h2>Email</h2>
 					<h2>Mot de passe</h2>
 				</div>
 				<div class="droiteForm">
 					<input  class ="inputInfo" type="text" name="nom" 
-						value="${contact.nom }"> <input  class ="inputInfo type="text" name="prenom"
-						 value="${contact.prenom }"> <input class ="inputInfo
+						value="${client.nom }"> <input  class ="inputInfo type="text" name="prenom"
+						 value="${client.prenom }"> <input class ="inputInfo
 						type="text" name="email" 
-						value="${contact.email }"> <input class ="inputInfo type="text"
+						value="${client.email }"> <input class ="inputInfo type="text"
 						name="password" 
-						value="${contact.password }">
+						value="${client.password }">
 						
 				</div>
 			</div>
