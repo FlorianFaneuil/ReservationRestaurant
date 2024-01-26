@@ -10,10 +10,8 @@
 				<li>id ${idClient}</li>
 				<li>nom ${nomClient}</li>
 				<li>prenom ${prenomClient}</li>
-				<li>email     : ${emailClient}</li>
-				<li> mot pass     : ${passwordClient}</li>
-				div
-
+				<li>email : ${emailClient}</li>
+				<li> mot pass  : ${passwordClient}</li>
 			</ul></li>
 	</ul>
 </nav>

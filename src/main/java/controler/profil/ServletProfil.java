@@ -27,7 +27,8 @@ public class ServletProfil extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// 1. Récupération des paramètres
-//		String idStr = request.getParameter("id");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
 
 		// 2. Passage des paramètres dans le type voulu
 //		int id = Integer.parseInt(idStr);
@@ -35,7 +36,7 @@ public class ServletProfil extends HttpServlet {
 		// 3. Exploitation des paramètres par le bll
 		Client client = null;
 		try {
-			client = clientBLL.selectById(1);
+			client = clientBLL.SelectByEmailPassword(email, password);
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
