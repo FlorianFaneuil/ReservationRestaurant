@@ -64,4 +64,4 @@
 
     <div class="menu-user"><div>MP</div></div>
 
-    <script src="main.js"></script>
+    <script src="javascript/navbar.js"></script>
