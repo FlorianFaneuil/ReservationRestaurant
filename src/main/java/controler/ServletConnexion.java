@@ -38,6 +38,7 @@ public class ServletConnexion extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		Boolean estConnecte = false;
+		
 
 		try {
 
@@ -46,7 +47,9 @@ public class ServletConnexion extends HttpServlet {
 				estConnecte = true;
 				request.getSession().setAttribute("idClient", client.getId());
 				request.getSession().setAttribute("nomClient", client.getNom());
+				request.getSession().setAttribute("premiereLettrenomClient", client.getNom().substring(0, 1).toUpperCase());			
 				request.getSession().setAttribute("prenomClient", client.getPrenom());
+				request.getSession().setAttribute("premiereLetttreprenomClient", client.getPrenom().substring(0, 1).toUpperCase());
 				request.getSession().setAttribute("emailClient", client.getEmail());
 				request.getSession().setAttribute("passwordClient", client.getPassword());		
 				request.getSession().setAttribute("estConnecte", estConnecte);

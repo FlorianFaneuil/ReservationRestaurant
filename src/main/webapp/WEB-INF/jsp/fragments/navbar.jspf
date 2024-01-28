@@ -4,38 +4,13 @@
 
 </head>
 
-<body>
-
-<body>
-
-
-<nav>
-	<ul>
-		<li><a href="accueil">Accueil</a></li>
-		<li><a href="#">Connexion</a>
-			<ul>
-				<li><a href="inscription">Inscription</a></li>
-				<li><a href="connexion">Connecter</a></li>
-				<li><a href="deconnexion">D�connexion</a></li>
-				<li> est connecte ${estConnecte}</li>
-				<li>id ${idClient}</li>
-				<li>nom ${nomClient}</li>
-				<li>prenom ${prenomClient}</li>
-				<li>email : ${emailClient}</li>
-				<li> mot pass  : ${passwordClient}</li>
-			</ul></li>
-	</ul>
-</nav>
-
- 
-
  <header>
         <div class="logo">
             <img src="votre_logo.png" alt="Logo">
         </div>
         <nav>
             <ul>
-                <li><a href="#">Accueil</a></li>
+                <li><a href="accueil">Accueil</a></li>
                 <li><a href="#">A propos</a></li>
                
             </ul>
@@ -51,17 +26,17 @@
 
     </header>
     <div class="menub" id="menub">
-        <div ><li><a href="#">Connexion</a></li>
-            <li style="border-bottom: 2px white;"><a href="#">S'inscrire</a></li>
+        <div ><li><a href="connexion">Connexion</a></li>
+            <li ><a href="inscription">S'inscrire</a></li>
         </div>
 
         <div>
-            <li><a href="#">Deconnexion</a></li>
+            <li><a href="deconnexion">Deconnexion</a></li>
             <li><a href="#">Mon compte</a></li>
         </div>
               
     </div>
 
-    <div class="menu-user"><div>MP</div></div>
+    <div class="menu-user"><div>${premiereLetttreprenomClient}${premiereLettrenomClient}</div></div>
 
     <script src="javascript/navbar.js"></script>
