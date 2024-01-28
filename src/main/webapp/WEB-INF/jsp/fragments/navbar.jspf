@@ -1,3 +1,14 @@
+
+<head>
+<link rel="stylesheet" href="css/styleNavbar.css">
+
+</head>
+
+<body>
+
+<body>
+
+
 <nav>
 	<ul>
 		<li><a href="accueil">Accueil</a></li>
@@ -15,3 +26,42 @@
 			</ul></li>
 	</ul>
 </nav>
+
+ 
+
+ <header>
+        <div class="logo">
+            <img src="votre_logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">A propos</a></li>
+               
+            </ul>
+        </nav>
+         
+        <div v class="burger-menu" onclick="toggleMenu()">
+            <div><img src="img/burger-menu.svg" alt="" class="burger-img"></div>
+           <div><img src="img/compte.png" alt=""></div>
+  
+        </div>
+
+
+
+    </header>
+    <div class="menub" id="menub">
+        <div ><li><a href="#">Connexion</a></li>
+            <li style="border-bottom: 2px white;"><a href="#">S'inscrire</a></li>
+        </div>
+
+        <div>
+            <li><a href="#">Deconnexion</a></li>
+            <li><a href="#">Mon compte</a></li>
+        </div>
+              
+    </div>
+
+    <div class="menu-user"><div>MP</div></div>
+
+    <script src="main.js"></script>
