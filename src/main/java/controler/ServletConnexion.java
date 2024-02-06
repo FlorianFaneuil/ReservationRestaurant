@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ServletConnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ClientBLL clientBLL;
+	Boolean estConnecte;
 
 	@Override
 	public void init() throws ServletException {
@@ -30,6 +31,11 @@ public class ServletConnexion extends HttpServlet {
 			throws ServletException, IOException {
 
 		request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/connexion.jsp").forward(request, response);
+		  estConnecte = false;
+		  
+		  request.getSession().setAttribute("estConnecte", estConnecte);
+		    
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -37,7 +43,7 @@ public class ServletConnexion extends HttpServlet {
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		Boolean estConnecte = false;
+		 estConnecte = false;
 		
 
 		try {

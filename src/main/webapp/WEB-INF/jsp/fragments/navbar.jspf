@@ -1,42 +1,65 @@
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
-<head>
 <link rel="stylesheet" href="css/styleNavbar.css">
 
-</head>
 
- <header>
-        <div class="logo">
-            <img src="votre_logo.png" alt="Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="accueil">Accueil</a></li>
-                <li><a href="#">A propos</a></li>
-               
-            </ul>
-        </nav>
-         
-        <div v class="burger-menu" onclick="toggleMenu()">
-            <div><img src="img/burger-menu.svg" alt="" class="burger-img"></div>
-           <div><img src="img/compte.png" alt=""></div>
-  
-        </div>
+<header>
+	<div class="logo">
+		<img src="votre_logo.png" alt="Logo">
+	</div>
+	<nav>
+		<ul>
+			<li><a href="accueil">Accueil</a></li>
+			<li><a href="#">A propos</a></li>
+
+		</ul>
+	</nav>
+
+	<div v class="burger-menu" onclick="toggleMenu()">
+		<div>
+			<img src="img/burger-menu.svg" alt="" class="burger-img">
+		</div>
+
+		<c:if test="${estConnecte != true}">
+			<div>
+				<img src="img/compte.png" alt="">
+			</div>
+		</c:if>
+
+		<c:if test="${estConnecte == true}">
+			<div class="menu-user">
+				<div>${premiereLetttreprenomClient}${premiereLettrenomClient}</div>
+			</div>
+		</c:if>
+
+	</div>
 
 
 
-    </header>
-    <div class="menub" id="menub">
-        <div ><li><a href="connexion">Connexion</a></li>
-            <li ><a href="inscription">S'inscrire</a></li>
-        </div>
+</header>
+<div class="menub" id="menub">
 
-        <div>
-            <li><a href="deconnexion">Deconnexion</a></li>
-            <li><a href="#">Mon compte</a></li>
-        </div>
-              
-    </div>
 
-    <div class="menu-user"><div>${premiereLetttreprenomClient}${premiereLettrenomClient}</div></div>
 
-    <script src="javascript/navbar.js"></script>
+	<c:if test="${estConnecte != true}">
+		<div>
+			<li><a href="inscription">S'inscrire</a></li>
+			<li><a href="connexion">Connexion</a></li>
+		</div>
+	</c:if>
+
+	<c:if test="${estConnecte == true}">
+		<div>
+			<li><a href="private/profil">Mon compte</a></li>
+			<li><a href="deconnexion">Deconnexion</a></li>
+		</div>
+	</c:if>
+
+
+
+
+
+</div>
+
+
+<script src="javascript/navbar.js"></script>

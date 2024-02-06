@@ -55,9 +55,6 @@ public class ServletInscription extends HttpServlet {
 			request.getSession().setAttribute("emailClient", clientCreer.getEmail());
 			request.getSession().setAttribute("passwordClient", clientCreer.getPassword());
 			request.getSession().setAttribute("estConnecte", estConnecte);
-			
-
-
 			response.sendRedirect("accueil");
 		} catch (BLLException e) {
 
