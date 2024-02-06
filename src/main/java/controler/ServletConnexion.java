@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ServletConnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private ClientBLL clientBLL;
+	Boolean estConnecte;
 
 	@Override
 	public void init() throws ServletException {
@@ -30,6 +31,11 @@ public class ServletConnexion extends HttpServlet {
 			throws ServletException, IOException {
 
 		request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/connexion.jsp").forward(request, response);
+		  estConnecte = false;
+		  
+		  request.getSession().setAttribute("estConnecte", estConnecte);
+		    
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -37,7 +43,8 @@ public class ServletConnexion extends HttpServlet {
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		Boolean estConnecte = false;
+		 estConnecte = false;
+		
 
 		try {
 
@@ -46,7 +53,9 @@ public class ServletConnexion extends HttpServlet {
 				estConnecte = true;
 				request.getSession().setAttribute("idClient", client.getId());
 				request.getSession().setAttribute("nomClient", client.getNom());
+				request.getSession().setAttribute("premiereLettrenomClient", client.getNom().substring(0, 1).toUpperCase());			
 				request.getSession().setAttribute("prenomClient", client.getPrenom());
+				request.getSession().setAttribute("premiereLetttreprenomClient", client.getPrenom().substring(0, 1).toUpperCase());
 				request.getSession().setAttribute("emailClient", client.getEmail());
 				request.getSession().setAttribute("passwordClient", client.getPassword());		
 				request.getSession().setAttribute("estConnecte", estConnecte);

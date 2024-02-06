@@ -7,8 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Inscription</h1>
+	
 	<%@ include file="../fragments/navbar.jspf"%>
+	<h1>Inscription</h1>
 	<form action="inscription" method="post">
 		<div>
 			<input type="text" id="nom" name="nom" placeholder="nom" required>

@@ -9,9 +9,9 @@
 </head>
 <body>
 
-	<h1>Connexion</h1>
+<%@ include file="../fragments/navbar.jspf"%>
 
-	<%@ include file="../fragments/navbar.jspf"%>
+	<h1>Connexion</h1>
 
 	<form method="post" action="connexion">
 		<div>
@@ -24,7 +24,6 @@
 			<p>L’adresse e-mail ou le mot de passe que vous avez entré n’est
 				pas valide. Veuillez réessayer.</p>
 		</c:if>
-
 		<input type="submit" value="connexion">
 	</form>
 

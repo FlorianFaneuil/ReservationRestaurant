@@ -49,13 +49,12 @@ public class ServletInscription extends HttpServlet {
 			estConnecte = true;
 			request.getSession().setAttribute("idClient", clientCreer.getId());
 			request.getSession().setAttribute("nomClient", clientCreer.getNom());
+			request.getSession().setAttribute("premiereLettrenomClient", clientCreer.getNom().substring(0, 1).toUpperCase());
 			request.getSession().setAttribute("prenomClient", clientCreer.getPrenom());
+			request.getSession().setAttribute("premiereLetttreprenomClient", clientCreer.getPrenom().substring(0, 1).toUpperCase());
 			request.getSession().setAttribute("emailClient", clientCreer.getEmail());
 			request.getSession().setAttribute("passwordClient", clientCreer.getPassword());
 			request.getSession().setAttribute("estConnecte", estConnecte);
-			
-
-
 			response.sendRedirect("accueil");
 		} catch (BLLException e) {
 
