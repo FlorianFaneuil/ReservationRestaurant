@@ -73,12 +73,45 @@
 				 <img src="${pageContext.request.contextPath}/images/entree01.jpg" alt="Une photographies de diverses entrées">
 			</div>
 			<div class="top-right-text">
-				B
+				<div class="presentation">
+				<h1> ${restaurant.nom} sera heureux de vous acueillir au <br> ${restaurant.adresse} de ${restaurant.heureOuverture} à ${restaurant.heureFermeture}</h1>
+				</div>
+				<div class="entrees">
+					<h1>Nos entrées</h1>
+					<c:forEach var="plat" items="${plats}">
+						<c:if test="${plat.categorie == 'ENTREE'}">
+							<p>${plat.nom} ${plat.description} ${plat.prix}€</p>
+						</c:if>
+					</c:forEach>
+				</div>
+				<div class="plats">
+					<h1>Nos plats</h1>
+					<c:forEach var="plat" items="${plats}">
+						<c:if test="${plat.categorie == 'PLAT'}">
+							<p>${plat.nom} ${plat.description} ${plat.prix}€</p>
+						</c:if>
+					</c:forEach>		
+				</div>
 			</div>
 		</div>
 		<div class="bottom">
 			<div class="bottom-left-text">
-				C
+				<div class="desserts">
+					<h1>Nos desserts</h1>
+					<c:forEach var="plat" items="${plats}">
+						<c:if test="${plat.categorie == 'DESSERT'}">
+							<p>${plat.nom} ${plat.description} ${plat.prix}€</p>
+						</c:if>
+					</c:forEach>
+				</div>
+				<div class="boissons">
+					<h1>Nos boissons</h1>
+					<c:forEach var="plat" items="${plats}">
+						<c:if test="${plat.categorie == 'BOISSON'}">
+							<p>${plat.nom} ${plat.description} ${plat.prix}€</p>
+						</c:if>
+					</c:forEach>
+				</div>
 			</div>
 			<div class="bottom-right-image">
 				 <img src="${pageContext.request.contextPath}/images/boissons01.jpg" alt="Une photographies de diverses boissons">

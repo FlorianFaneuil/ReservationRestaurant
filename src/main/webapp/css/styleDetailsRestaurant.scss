@@ -19,29 +19,6 @@ body{
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-/*.container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}*/
-
-.flex-item {
-	margin :10px; 
-	margin:5px;
-	align-items: center;
-	justify-content: center;
-	
-}
-
-.entete {
-	margin-top: 30px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
 .flex-item-buttons {
 	//margin:5px;
 	display: flex;
@@ -100,7 +77,38 @@ input{
 /* Style spécifique pour le texte */
 .top-right-text, .bottom-left-text {
   display: flex;
-  justify-content: center;
+/*  justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: center;*/
+  flex-direction: column;
+}
+
+.presentation{
+	padding: 0px;
+	margin-bottom: 30px;
+}
+
+.entrees{
+	background-color: red;
+	align-self: self-start;
+}
+
+.plats {
+	background-color: blue;
+	align-self: self-end;
+}
+
+.desserts {
+	background-color: yellow;
+	align-self: self-end;
+}
+
+.boissons{
+	background-color: greenyellow;
+	align-self: self-start;
+}
+
+h1{
+  font-size:32px;
+  font-family: 'Oswald', sans-serif; 
 }
