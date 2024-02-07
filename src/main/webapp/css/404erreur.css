@@ -1,0 +1,33 @@
+@charset "ISO-8859-1";
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.error-container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+
+p {
+    font-size: 20px;
+    color: #666;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color:#9DBC98  ;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color:  #638889; 
+}
