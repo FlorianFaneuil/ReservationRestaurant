@@ -51,19 +51,28 @@ public class ClientBLL {
 
 	public Client insert(String nom, String prenom, String email, String password) throws BLLException {
 
-		BLLException blleException = new BLLException();
+		BLLException bllException = new BLLException();
 
-		if (nom.length() < 2) {
-			blleException.ajouterErreur("Le nom du restaurant doit faire au moins 2 caractères");
+		if (nom.length() < 2 || nom.length() > 100) {
+			bllException.ajouterErreur("Le nom doit faire entre 2 et 100 caractères");
 		}
 
-		if (nom.length() > 100) {
-			blleException.ajouterErreur("Le nom doit faire maximum 100 caractères");
+		if (prenom.length() < 2 || prenom.length() > 100) {
+			bllException.ajouterErreur("Le prénom doit faire entre 2 et 100 caractères");
+		}
+
+		try {
+			if (clientDAO.emailExists(email)) {
+				bllException.ajouterErreur("L'email existe déjà dans la base de données");
+				throw bllException;
+			}
+		} catch (DALException e) {
+			throw new BLLException("Erreur lors de la vérification de l'existence de l'email", e);
 		}
 
 		Client client = new Client(nom, prenom, email, password);
 		try {
-			 return clientDAO.insert(client);
+			return clientDAO.insert(client);
 		} catch (DALException e) {
 			throw new BLLException("Echec de l'insertion", e);
 		}
