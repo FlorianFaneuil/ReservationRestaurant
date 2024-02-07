@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
-<link rel="stylesheet" href="css/styleNavbar.css">
+<link rel="stylesheet" href="/ReservationRestaurant/css/StyleNavbar.css">
 
 
 <header>
