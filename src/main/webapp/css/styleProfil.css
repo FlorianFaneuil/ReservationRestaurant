@@ -2,51 +2,41 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald|Roboto|Slabo+27px);
 @import 'bourbon';
 
-* {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
 
+
+
+
+h1{
+  font-size:32px;
+  margin-top:30px;
+  font-family: 'Oswald', sans-serif;  
+  text-align:center;
+}
+.container1 {
+    font-family: Arial, sans-serif;
+    background-color: #9DBC98;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+    gap:5%;
 }
 
-
-html {
-	height: 100%;
-	width: 100%;
+h1,h3 {
+    text-align: center;
+    color: #638889;
 }
 
-main {
-	height: 70vh;
-	width: 100vw;
+form {
 	display: flex;
-	align-items: center;
-	justify-content: center;
 	flex-direction: column;
+    margin-top: 20px;
+    gap:10px;
+    margin-bottom: 20px;
 }
-
-.titreProfil {
-	background-color: #638889;
-	color: #EBD9B4;
-
-	height: 10vh;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-legend {
-	color: #638889;
-
-}
-
-fieldset {
-	padding: 30px;
-
-}
-
-
-
 .formulaireProfil {
 	display: flex;
 	align-items: center;
@@ -68,7 +58,7 @@ fieldset {
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
-		color:darkgray;
+		color: #EBD9B4;
 
 }
 .containerBouton{
@@ -80,3 +70,21 @@ fieldset {
 	gap:10px;
 }
 
+
+input[type="text"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #638889;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    background-color: #638889;
+    color: white;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #547572;
+}

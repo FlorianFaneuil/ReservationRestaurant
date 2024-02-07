@@ -22,7 +22,7 @@
 			<input type="number" placeholder="id_client" name="id_client" min="0" />
 		</div>
 		<div class="basForm">
-		<h3>A quel employé voulez-vous envoyer ce message ?</h1>
+		<h3>A quel employé voulez-vous envoyer ce message ?</h3>
 			<select name="id_employe">
 				<option value="Sacha">Sacha</option>
 				<option value="Poire">Poire</option>

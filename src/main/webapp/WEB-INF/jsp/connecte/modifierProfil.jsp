@@ -10,49 +10,47 @@
 <link href="../css/styleGeneral.scss" rel="stylesheet">
 <body>
 	<%@ include file="../fragments/navbar.jspf"%>
+		<h1>Modifier le Profil</h1>
+	<div class="container1">
 
-	<div class="titreProfil">
-		<h2>Modifier le Profil</h2>
-	</div>
-
-	<main>
-
-
+<div>
+		   <h3>Modification de vos informations </h3>
+		</div><div>
 		<form action="modifierProfil" method="POST">
-		  <fieldset>
-		    <legend><h3>Modification de vos informations </h3></legend>
+		 
 		
 			<div class="formulaireProfil">
 				<input type="hidden" name="id" value="${contact.id }" />
 
 				<div class="gaucheForm">
-					<h2>Nom</h2>						
-					<h2>Prenom</h2>
-					<h2>Email</h2>
-					<h2>Mot de passe</h2>
+					<p>Nom</p>						
+					<p>Prenom</p>
+					<p>Email</p>
+					<p>Mot de passe</p>
 				</div>
 				<div class="droiteForm">
 					<input  class ="inputInfo" type="text" name="nom" 
 						value="${nomClient}"> <input  class ="inputInfo type="text" name="prenom"
 						 value="${prenomClient}"> <input class ="inputInfo
 						type="text" name="email" 
-						value="${emailClient}"> <input class ="inputInfo type="text"
+						value="${emailClient}">
+						 <input class ="inputInfo type="password"
 						name="password" 
 						value="${passwordClient}">
 						
 				</div>
 			</div>
-			 </fieldset>
-			
+			</div>
 			<div class="containerBoutonValider">
 
 				<input class="inputBoutton" type="submit" value="Valider">
+
+
+
+			</form>
+		</div>
 			</div>
- 
-
-		</form>
 
 
-	</main>
 </body>
 </html>
