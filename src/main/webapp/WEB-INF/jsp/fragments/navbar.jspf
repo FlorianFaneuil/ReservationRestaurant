@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
-<link rel="stylesheet" href="css/StyleNavbar.css">
+
+<link rel="stylesheet" href="/ReservationRestaurant/css/StyleNavbar.css">
 
 
 <header>
@@ -17,7 +18,7 @@
 
 	<div v class="burger-menu" onclick="toggleMenu()">
 		<div>
-			<img src="img/burger-menu.svg" alt="" class="burger-img">
+			<img src="/ReservationRestaurant/img/burger-menu.svg" alt="" class="burger-img">
 		</div>
 
 		<c:if test="${estConnecte != true}">
