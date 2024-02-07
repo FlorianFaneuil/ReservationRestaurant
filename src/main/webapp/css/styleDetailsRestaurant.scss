@@ -1,4 +1,9 @@
 @charset "UTF-8";
+
+body{
+  background:#FBFCFA ;
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -14,19 +19,27 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.container {
+/*.container {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-}
+}*/
 
 .flex-item {
 	margin :10px; 
 	margin:5px;
 	align-items: center;
-	background-color: skyblue;
+	justify-content: center;
 	
+}
+
+.entete {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .flex-item-buttons {
@@ -54,3 +67,40 @@ input{
 		background-color: #638889;
 		}
 	}
+	
+	
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  height:  100vh; /* Pour que le conteneur prenne toute la hauteur de la fenêtre */
+}
+
+.top, .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  width:  100%; /* Pour que chaque ligne prenne toute la largeur de la fenêtre */
+}
+
+.top-left-image, .top-right-text, .bottom-left-text, .bottom-right-image {
+  flex:  1; /* Chaque div prendra une partie égale de l'espace disponible */
+  padding:  1em; /* Ajoutez un peu de marge interne pour améliorer la lisibilité */
+}
+
+/* Style spécifique pour les images */
+.top-left-image img, .bottom-right-image img {
+  width:  100%; /* L'image prendra toute la largeur de son conteneur */
+  height:  100%; /* L'image prendra toute la hauteur de son conteneur */
+  object-fit: cover; /* La couverture de l'image assure que l'image couvre entièrement son conteneur sans déformation */
+}
+
+/* Style spécifique pour le texte */
+.top-right-text, .bottom-left-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

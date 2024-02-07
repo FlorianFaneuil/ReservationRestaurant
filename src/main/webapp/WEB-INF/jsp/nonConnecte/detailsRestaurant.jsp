@@ -14,7 +14,7 @@
 	<c:choose>
 		<c:when test="${empty restaurant.imageRestaurantUrl}">
 			<div class="card-category"
-				style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://images.france.fr/zeaejvyq9bhj/HhJZAq3Xe1JOXgeMfeEIu/66e8502f65dfaa1da542d8b785f22167/_X1A5062__s.jpg?w=1120&h=490&q=70&fl=progressive&fit=fill)">
+				style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),<img src="${pageContext.request.contextPath}/images/defautimagerestaurant.jpg"">
 				${restaurant.nom}
 			</div>
 		</c:when>
@@ -25,13 +25,15 @@
 			</div>
 		</c:otherwise>
 	</c:choose>
-<div class="container">
-    <div class="flex-item">
-      <p>${restaurant.adresse}</p>
-    </div>
-    <div class="flex-item">
-      <p>Ouverture : ${restaurant.heureOuverture} / Fermeture : ${restaurant.heureFermeture}</p>
-    </div>
+<%-- <div class="container">
+	<div class = entete>
+	    <div class="flex-item">
+	      <p>${restaurant.adresse}</p>
+	    </div>
+	    <div class="flex-item">
+	      <p>Ouverture : ${restaurant.heureOuverture} / Fermeture : ${restaurant.heureFermeture}</p>
+	    </div>
+	 </div>
 	<div class="flex-item">
 		<p>Carte :</p>
 		<c:forEach var="plat" items="${plats}">
@@ -63,6 +65,26 @@
     </form>
   </div>
 
-</div>
+</div> --%>
+
+	<div class="container">
+		<div class="top">
+			<div class="top-left-image">
+				 <img src="${pageContext.request.contextPath}/images/entree01.jpg" alt="Une photographies de diverses entrées">
+			</div>
+			<div class="top-right-text">
+				B
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="bottom-left-text">
+				C
+			</div>
+			<div class="bottom-right-image">
+				 <img src="${pageContext.request.contextPath}/images/boissons01.jpg" alt="Une photographies de diverses boissons">
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>

@@ -10,7 +10,7 @@
 </head>
 <body>
 <%@ include file="../fragments/navbar.jspf"%>
-<h1>Acceuil</h1>
+<h1>BIENVENU</h1>
 
 <div class="container">
 	<c:forEach var="restaurant" items="${restaurants}">
