@@ -74,7 +74,7 @@
 			</div>
 			<div class="top-right-text">
 				<div class="presentation">
-				<h1> ${restaurant.nom} sera heureux de vous acueillir au <br> ${restaurant.adresse} de ${restaurant.heureOuverture} à ${restaurant.heureFermeture}</h1>
+				<h1> ${restaurant.nom} sera heureux de vous acueillir au <br> ${restaurant.adresse} de ${restaurant.heureOuverture} à ${restaurant.heureFermeture} ${pageContext.request.contextPath}</h1>
 				</div>
 				<div class="entrees">
 					<h1>Nos entrées</h1>
@@ -117,6 +117,25 @@
 				 <img src="${pageContext.request.contextPath}/images/boissons01.jpg" alt="Une photographies de diverses boissons">
 			</div>
 		</div>
+		<div class="flex-item-buttons">
+	    <form action="accueil" method="GET">
+	      <input type="submit" value="Retour à la liste des restaurants" />
+	    </form>
+	
+	
+	    <form action="private/reservationTable" method="GET">
+	      <input type="hidden" value="${restaurant.id}" name="restaurant.id" />
+	      <input type="hidden" value="${restaurant.heureOuverture}"
+	
+	        name="heureOuverture" /> <input type="hidden"
+	        value="${restaurant.heureFermeture}" name="heureFermeture" /> <input
+	        type="submit" value="Reserver une table" />
+	    </form>
+	
+	    <form action="private/envoyerMessage" method="GET">
+	      <input type="submit" value="Envoyer un message" />
+	    </form>
+	  </div>
 	</div>
 
 </body>

@@ -7,7 +7,7 @@ body{
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,28 +84,55 @@ input{
 }
 
 .presentation{
-	padding: 0px;
 	margin-bottom: 30px;
 }
 
 .entrees{
-	background-color: red;
-	align-self: self-start;
+	/*background-color: red;*/
+	/*align-self: self-start;*/
+	width:  100%;
+	padding-left: 5px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+ 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+ 	background-color: #FBFCFA;
 }
 
 .plats {
-	background-color: blue;
-	align-self: self-end;
+/*	background-color: blue;*/
+
+	/*align-self: self-end;*/
+	text-align: end;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width:  100%;
+	border-radius: 5px;
+ 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+ 	/*padding-right: 45px;*/
 }
 
 .desserts {
-	background-color: yellow;
-	align-self: self-end;
+/*	background-color: yellow;*/
+/*	align-self: self-end;*/
+	width:  100%;
+	padding: 5px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+ 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .boissons{
-	background-color: greenyellow;
-	align-self: self-start;
+/*	background-color: greenyellow;*/
+/*	align-self: self-start;*/
+	text-align: end;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width:  100%;
+	padding: 5px;
+	border-radius: 5px;
+ 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 h1{
