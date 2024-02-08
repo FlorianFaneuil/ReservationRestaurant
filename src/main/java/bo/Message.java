@@ -65,4 +65,10 @@ public class Message {
 		this.employe = employe;
 	}
 
+	@Override
+	public String toString() {
+		return "Message [id=" + id + ", titre=" + titre + ", contenu=" + contenu + ", client=" + client + ", employe="
+				+ employe + "]";
+	}
+
 }

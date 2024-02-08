@@ -13,11 +13,11 @@
 	<%@ include file="../fragments/navbar.jspf"%>
 	<h1 class="titre">Profil</h1>
 	<div class="container1">
-<div>
+		<div>
 			<h3>Bienvenue dans votre Profil</h3>
 		</div>
 
-
+<div class="fomEtbouton">
 		<div class="formulaireProfil">
 
 			<div class="gaucheForm">
@@ -35,23 +35,36 @@
 
 
 		<div class="containerBouton">
-			<form action="modifierProfil" method="GET">
-				<input type="hidden" name="id" value="${idClient }" /> <input
-					class="inputBoutton" type="submit" value="Modifier">
-			</form>
+			
+				<form action="modifierProfil" method="GET">
+					<input type="hidden" name="id" value="${idClient }" /> <input
+						class="inputBoutton" type="submit" value="Modifier">
+				</form>
 
-			<form action="supprimerProfil" method="POST">
-				<input type="hidden" name="id" value="${idClient }" /> <input
-					class="inputBoutton" type="submit" value="Supprimer" />
-			</form>
-
-			<form action="afficherMessages" method="POST">
-				<input class="inputBoutton" type="submit" value="Messages" />
-			</form>
+				<form action="supprimerProfil" method="POST">
+					<input type="hidden" name="id" value="${idClient }" /> <input
+						class="inputBoutton" type="submit" value="Supprimer" />
+				</form>
+			
+			<div>
+				
 		</div>
 
 	</div>
 	</div>
+	
+	<div>
+					<h3>Vous desirez consulter vos messages envoyés ? </h3>
+				</div>
+				<form action="afficherMessages" method="POST">
+					<input class="inputBoutton" type="submit" value="Mes messages" />
+				</form>
+			</div>
+			
+				<div class="containerResa">
+		
+		</div>
+
 
 </body>
 </html>

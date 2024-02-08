@@ -12,7 +12,12 @@ import bo.Employe;
 import bo.Message;
 
 public class MessageDAO {
-	private static final String SELECT = "SELECT * FROM messages";
+	private static final String SELECT = "SELECT messages.*, clients.*, employes.id as employe_id, employes.prenom as employe_prenom  " +
+            "FROM messages " +
+            "JOIN clients ON messages.id_client = clients.id " +
+            "JOIN employes ON messages.id_employe = employes.id";
+
+
 	private static final String INSERT = "INSERT INTO messages ( titre, contenu, id_client, id_employe) VALUES (?,?,?,?)";
 
 	private Connection cnx;
@@ -35,8 +40,17 @@ public class MessageDAO {
 				message.setId(rs.getInt("id"));
 				message.setTitre(rs.getString("titre"));
 				message.setContenu(rs.getString("contenu"));
-				client.setId(rs.getInt("id_client"));
-				employe.setId(rs.getInt("id_employe"));
+				
+				// Client
+                client.setId(rs.getInt("id_client"));
+
+                // Employe
+                employe.setId(rs.getInt("id_employe"));
+             
+                employe.setPrenom(rs.getString("employe_prenom"));
+                
+                message.setClient(client);
+                message.setEmploye(employe);
 
 				messages.add(message);
 			}
