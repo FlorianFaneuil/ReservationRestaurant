@@ -75,6 +75,7 @@ public class ServletModifierProfil extends HttpServlet {
 				clientAModifier.setPassword(passwordStr);
 
 				// J'enregistre ces modifications aupres de la base de donnees
+				//R
 				clientBLL.update(clientAModifier);
 				request.getSession().setAttribute("idClient", clientAModifier.getId());
 				request.getSession().setAttribute("nomClient", clientAModifier.getNom());
