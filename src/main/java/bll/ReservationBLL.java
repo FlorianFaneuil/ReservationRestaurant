@@ -29,7 +29,7 @@ public class ReservationBLL {
 		}
 	}
 
-	public Reservation insert(Restaurant restaurant, int idClient, LocalDate dateResa, LocalTime heureResa, String etat)
+	public Reservation insert(Restaurant restaurant, int idClient, LocalDate dateResa, LocalTime heureResa, String etat, int nombrePlaces)
 			throws BLLException {
 
 		BLLException blleException = new BLLException();
@@ -46,11 +46,15 @@ public class ReservationBLL {
 			blleException.setErreurHeurePosterieure("L'heure de reservation ne peut pas etre posterieure a l'heure de fermeture du restaurant");
 		}
 		
+		if (nombrePlaces <= 0) {
+			blleException.setErreurNombrePlaces("Le nombre de place doit être positif");
+		}
+		
 		if (blleException.getNbErreurs() > 0) {
 			throw blleException;
 		}
 
-		Reservation reservation = new Reservation(restaurant.getId(), idClient, dateResa, heureResa, etat);
+		Reservation reservation = new Reservation(restaurant.getId(), idClient, dateResa, heureResa, etat, nombrePlaces);
 		try {
 			dao.insert(reservation);
 		} catch (DALException e) {
