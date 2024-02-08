@@ -64,10 +64,6 @@ public class ClientBLL {
 			bllException.ajouterErreur("Le prénom doit faire entre 2 et 100 caractères");
 		}
 		
-		 if (!validatePassword(password)) {
-		        bllException.ajouterErreur("Le mot de passe doit contenir au moins 8 caractères avec au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial.");
-		    }
-
 		try {
 			if (clientDAO.emailExists(email)) {
 				bllException.ajouterErreur("L'email existe déjà dans la base de données");
@@ -75,6 +71,12 @@ public class ClientBLL {
 		} catch (DALException e) {
 			throw new BLLException("Erreur lors de la vérification de l'existence de l'email", e);
 		}
+		
+		 if (!validatePassword(password)) {
+		        bllException.ajouterErreur("Le mot de passe doit contenir au moins 8 caractères avec au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial.");
+		    }
+
+		
 		
 		if(bllException.getErreurs().size() > 0) {
 			throw bllException;

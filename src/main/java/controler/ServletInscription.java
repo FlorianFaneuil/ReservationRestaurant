@@ -32,10 +32,8 @@ public class ServletInscription extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		
-		
-request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/inscription.jsp").forward(request, response);
+
+		request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/inscription.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -45,7 +43,6 @@ request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/inscription.jsp").forward
 		String prenom = request.getParameter("prenom");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		
 
 		Client clientCreer = null;
 
@@ -54,20 +51,16 @@ request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/inscription.jsp").forward
 			estConnecte = true;
 			request.getSession().setAttribute("idClient", clientCreer.getId());
 			request.getSession().setAttribute("nomClient", clientCreer.getNom());
-			request.getSession().setAttribute("premiereLettrenomClient", clientCreer.getNom().substring(0, 1).toUpperCase());
+			request.getSession().setAttribute("premiereLettrenomClient",
+					clientCreer.getNom().substring(0, 1).toUpperCase());
 			request.getSession().setAttribute("prenomClient", clientCreer.getPrenom());
-			request.getSession().setAttribute("premiereLetttreprenomClient", clientCreer.getPrenom().substring(0, 1).toUpperCase());
+			request.getSession().setAttribute("premiereLetttreprenomClient",
+					clientCreer.getPrenom().substring(0, 1).toUpperCase());
 			request.getSession().setAttribute("emailClient", clientCreer.getEmail());
 			request.getSession().setAttribute("passwordClient", clientCreer.getPassword());
 			request.getSession().setAttribute("estConnecte", estConnecte);
 			response.sendRedirect("accueil");
 		} catch (BLLException e) {
-			
-//			List<String> maListe = new ArrayList<>();
-//			maListe.add("élément 1");
-//			maListe.add("élément 2");
-//			request.setAttribute("maListe", maListe);
-			//List<String> erreurs = e.getErreurs();
 			request.setAttribute("errors", e.getErreurs());
 			request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/inscription.jsp").forward(request, response);
 		}

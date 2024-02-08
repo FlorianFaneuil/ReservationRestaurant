@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="jakarta.tags.core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="/ReservationRestaurant/css/inscription.css">
 </head>
 <body>
-
 	<%@ include file="../fragments/navbar.jspf"%>
 	<div class="container1">
 
@@ -33,21 +32,17 @@
 				</div>
 
 				<div class="error-message">
-					
+
+					<c:forEach var="erreur" items="${errors}">
+				 <div>
+                            <div><img src="/ReservationRestaurant/img/icons8-erreur.svg" alt=""></div>
+                            <div>${erreur}</div>
+                        </div>
+
+				</c:forEach>
+
+				</div>
 				
-				
-					
-					
-					</div>
-					
-					
-					
-					<c:forEach var="plat" items="${errors}">
-				
-				<p>${plat}</p>
-				
-		</c:forEach>
-					
 				<input type="submit" value="Inscription">
 			</form>
 			<div>
