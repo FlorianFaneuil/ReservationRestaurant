@@ -1,9 +1,13 @@
 package controler.table;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.Date;
 
 import bll.BLLException;
 import bll.ReservationBLL;
@@ -22,6 +26,8 @@ public class ServletReservationTable extends HttpServlet {
 	private ReservationBLL reservationBll;
 	private RestaurantBLL restaurantBll;
 	private int idClient = 0;
+	private SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH'h'mm");
 	
        
 	@Override
@@ -77,16 +83,27 @@ public class ServletReservationTable extends HttpServlet {
 			
 			Reservation reservation = reservationBll.insert(restaurant, idClient, dateResa, heureResa, etatStr, nombrePlaces);
 			// Etape 4 : ajout des attributs a la requete
+			
+			//Passage de la LocalDate en Date puis passage en string dans le bon format jj/mm/aaaa via SimpleDateFormat
+			Date LocalDatetoDateDateResa = Date.from(dateResa.atStartOfDay(ZoneId.of("Europe/Paris")).toInstant());
+			String convertDateResa = dateFormat.format(LocalDatetoDateDateResa);
+			
+			//Passage de l'heure LocalTime en string via DateTimeFormatter
+			String convertHeureResa = heureResa.format(formatter);
+			
+			request.setAttribute("convertDateResa", convertDateResa);
+			request.setAttribute("convertHeureResa", convertHeureResa);
 			request.setAttribute("restaurant", restaurant);
 			request.setAttribute("reservation", reservation);
 			request.setAttribute("nombrePlaces", nombrePlaces);
+			
 			request.getRequestDispatcher("/WEB-INF/jsp/connecte/confirmationDemandeReservation.jsp").forward(request, response);
 		} catch (DateTimeParseException e) {
 			request.setAttribute("dateTimeErreur", "La date et/ou l'heure doivent être renseignées");
 			request.getRequestDispatcher("/WEB-INF/jsp/connecte/reservationTable.jsp").forward(request, response);
 		} catch (BLLException e) {
 			request.setAttribute("erreur", e);
-//		e.printStackTrace();
+
 		
 			request.getRequestDispatcher("/WEB-INF/jsp/connecte/reservationTable.jsp").forward(request, response);
 		}	
