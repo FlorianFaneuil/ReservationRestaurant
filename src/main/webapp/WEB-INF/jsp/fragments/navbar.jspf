@@ -17,7 +17,7 @@
 		</ul>
 	</nav>
 
-	<div v class="burger-menu" onclick="toggleMenu()">
+	<div  class="burger-menu" onclick="toggleMenu()">
 		<div>
 			<img src="/ReservationRestaurant/img/burger-menu.svg" alt="" class="burger-img">
 		</div>
