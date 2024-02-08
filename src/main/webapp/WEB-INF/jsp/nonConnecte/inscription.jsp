@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,6 @@
 <link rel="stylesheet" href="/ReservationRestaurant/css/inscription.css">
 </head>
 <body>
-
 	<%@ include file="../fragments/navbar.jspf"%>
 	<div class="container1">
 
@@ -31,9 +31,18 @@
 						id="password" required>
 				</div>
 
-				<p class="error-message">L’adresse e-mail ou le mot de passe que
-					vous avez entré n’est pas valide. Veuillez réessayer.</p>
+				<div class="error-message">
 
+					<c:forEach var="erreur" items="${errors}">
+				 <div>
+                            <div><img src="/ReservationRestaurant/img/icons8-erreur.svg" alt=""></div>
+                            <div>${erreur}</div>
+                        </div>
+
+				</c:forEach>
+
+				</div>
+				
 				<input type="submit" value="Inscription">
 			</form>
 			<div>

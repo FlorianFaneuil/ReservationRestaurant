@@ -1,6 +1,8 @@
 package controler;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import bll.BLLException;
 import bll.ClientBLL;
@@ -30,8 +32,8 @@ public class ServletInscription extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/inscription.jsp").forward(request, response);
 
+		request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/inscription.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -49,16 +51,17 @@ public class ServletInscription extends HttpServlet {
 			estConnecte = true;
 			request.getSession().setAttribute("idClient", clientCreer.getId());
 			request.getSession().setAttribute("nomClient", clientCreer.getNom());
-			request.getSession().setAttribute("premiereLettrenomClient", clientCreer.getNom().substring(0, 1).toUpperCase());
+			request.getSession().setAttribute("premiereLettrenomClient",
+					clientCreer.getNom().substring(0, 1).toUpperCase());
 			request.getSession().setAttribute("prenomClient", clientCreer.getPrenom());
-			request.getSession().setAttribute("premiereLetttreprenomClient", clientCreer.getPrenom().substring(0, 1).toUpperCase());
+			request.getSession().setAttribute("premiereLetttreprenomClient",
+					clientCreer.getPrenom().substring(0, 1).toUpperCase());
 			request.getSession().setAttribute("emailClient", clientCreer.getEmail());
 			request.getSession().setAttribute("passwordClient", clientCreer.getPassword());
 			request.getSession().setAttribute("estConnecte", estConnecte);
 			response.sendRedirect("accueil");
 		} catch (BLLException e) {
-
-			request.setAttribute("error", e.getMessage());
+			request.setAttribute("errors", e.getErreurs());
 			request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/inscription.jsp").forward(request, response);
 		}
 	}
