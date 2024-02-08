@@ -6,20 +6,23 @@
 <meta charset="UTF-8">
 <title>Envoyer un message</title>
 </head>
+<link href="../css/styleEnvoyerMessage.css" rel="stylesheet">
 <body>
-
+	<%@ include file="../fragments/navbar.jspf"%>
+<div class="container1">
 	<h1>Envoyer un message</h1>
 	<form action="envoyerMessage" method="POST">
 		<div>
 			<input type="text" placeholder="titre" name="titre" />
 		</div>
 		<div>
-			<input type="text" placeholder="contenu" name="contenu" />
+			<textarea type="textarea" placeholder="contenu" name="contenu" ></textarea>
 		</div>
 		<div>
 			<input type="number" placeholder="id_client" name="id_client" min="0" />
 		</div>
-		<div>
+		<div class="basForm">
+		<h3>A quel employé voulez-vous envoyer ce message ?</h3>
 			<select name="id_employe">
 				<option value="Sacha">Sacha</option>
 				<option value="Poire">Poire</option>
@@ -28,5 +31,6 @@
 	</form>
 
 	<a href="../accueil">Retour à l'accueil</a>
+	</div>
 </body>
 </html>
