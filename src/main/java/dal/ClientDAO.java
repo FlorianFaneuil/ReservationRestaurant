@@ -17,6 +17,8 @@ public class ClientDAO {
 
 	private static final String SELECT_BY_EMAIL_PASSWORD = "SELECT * FROM " + TABLE_NAME
 			+ " WHERE email = ? AND password = ?";
+	
+	private static final String FIND_EMAIL = " SELECT COUNT(*) AS count FROM " + TABLE_NAME + " WHERE email = ?";
 
 	private Connection cnx;
 
@@ -120,4 +122,50 @@ public class ClientDAO {
 		}
 		return client;
 	}
+	
+//	public Boolean emailExists(String email) throws DALException {
+//		 boolean exists = false;
+//		try {
+//			
+//			PreparedStatement ps = cnx.prepareStatement( FIND_EMAIL);
+//			ResultSet rs = ps.executeQuery();
+//			ps.setString(1, email);
+//			
+//			if (rs.next()) {
+//                int count = rs.getInt("count");
+//                exists = count > 0;
+//            }
+//			
+//		} catch (SQLException e) {
+//            throw new DALException("Erreur lors de la vérification de l'existence de l'email", e);
+//        
+//        }
+//        
+//        return exists;
+//
+//		}
+	
+	public Boolean emailExists(String email) throws DALException {
+	    boolean exists = false;
+	    try (PreparedStatement ps = cnx.prepareStatement(FIND_EMAIL)) {
+	        ps.setString(1, email);
+	        try (ResultSet rs = ps.executeQuery()) {
+	            if (rs.next() && rs.getInt(1) > 0) {
+	                exists = true;
+	            }
+	        }
+	    } catch (SQLException e) {
+	        throw new DALException("Erreur lors de la vérification de l'existence de l'email", e);
+	    }
+	    return exists;
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
 }

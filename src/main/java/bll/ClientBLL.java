@@ -1,5 +1,8 @@
 package bll;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import bo.Client;
 import dal.ClientDAO;
 import dal.DALException;
@@ -51,22 +54,48 @@ public class ClientBLL {
 
 	public Client insert(String nom, String prenom, String email, String password) throws BLLException {
 
-		BLLException blleException = new BLLException();
+		BLLException bllException = new BLLException();
 
-		if (nom.length() < 2) {
-			blleException.ajouterErreur("Le nom du restaurant doit faire au moins 2 caractères");
+		if (nom.length() < 2 || nom.length() > 100) {
+			bllException.ajouterErreur("Le nom doit faire entre 2 et 100 caractères");
 		}
 
-		if (nom.length() > 100) {
-			blleException.ajouterErreur("Le nom doit faire maximum 100 caractères");
+		if (prenom.length() < 2 || prenom.length() > 100) {
+			bllException.ajouterErreur("Le prénom doit faire entre 2 et 100 caractères");
 		}
+		
+		try {
+			if (clientDAO.emailExists(email)) {
+				bllException.ajouterErreur("L'email existe déjà dans la base de données");
+			}
+		} catch (DALException e) {
+			throw new BLLException("Erreur lors de la vérification de l'existence de l'email", e);
+		}
+		
+		 if (!validatePassword(password)) {
+		        bllException.ajouterErreur("Le mot de passe doit contenir au moins 8 caractères avec au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial.");
+		    }
+
+		
+		
+		if(bllException.getErreurs().size() > 0) {
+			throw bllException;
+		}
+		
 
 		Client client = new Client(nom, prenom, email, password);
 		try {
-			 return clientDAO.insert(client);
+			return clientDAO.insert(client);
 		} catch (DALException e) {
 			throw new BLLException("Echec de l'insertion", e);
 		}
+	}
+	
+	private boolean validatePassword(String password) {
+	    String PASSWORD_PATTERN = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
+	    Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+	    Matcher matcher = pattern.matcher(password);
+	    return matcher.matches();
 	}
 
 }
