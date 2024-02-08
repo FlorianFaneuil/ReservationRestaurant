@@ -26,15 +26,19 @@
 		
 			<div class="containerMessage">
 			
-			if ()
+			
 				<c:forEach  var="message" items="${messages}">
+			    <c:if test="${message.client.id eq idClient}">
+			  
 				<div class="affichage1message">
 					<h2 class="styleTitre">${message.titre}</h2>
 					<h3 class="styleMessage">${message.contenu}</h3>
 					<h3 class="styleMessage">${message.employe.prenom}</h3>
 					 
 					</div>
+					  </c:if>
 				</c:forEach>
+				
 				</div>
 				</div>
 				
