@@ -1,5 +1,8 @@
 package bll;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import bo.Client;
 import dal.ClientDAO;
 import dal.DALException;
@@ -60,15 +63,23 @@ public class ClientBLL {
 		if (prenom.length() < 2 || prenom.length() > 100) {
 			bllException.ajouterErreur("Le prénom doit faire entre 2 et 100 caractères");
 		}
+		
+		 if (!validatePassword(password)) {
+		        bllException.ajouterErreur("Le mot de passe doit contenir au moins 8 caractères avec au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial.");
+		    }
 
 		try {
 			if (clientDAO.emailExists(email)) {
 				bllException.ajouterErreur("L'email existe déjà dans la base de données");
-				throw bllException;
 			}
 		} catch (DALException e) {
 			throw new BLLException("Erreur lors de la vérification de l'existence de l'email", e);
 		}
+		
+		if(bllException.getErreurs().size() > 0) {
+			throw bllException;
+		}
+		
 
 		Client client = new Client(nom, prenom, email, password);
 		try {
@@ -76,6 +87,13 @@ public class ClientBLL {
 		} catch (DALException e) {
 			throw new BLLException("Echec de l'insertion", e);
 		}
+	}
+	
+	private boolean validatePassword(String password) {
+	    String PASSWORD_PATTERN = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
+	    Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+	    Matcher matcher = pattern.matcher(password);
+	    return matcher.matches();
 	}
 
 }

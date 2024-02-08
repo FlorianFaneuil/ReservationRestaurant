@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,9 +32,22 @@
 						id="password" required>
 				</div>
 
-				<p class="error-message">L’adresse e-mail ou le mot de passe que
-					vous avez entré n’est pas valide. Veuillez réessayer.</p>
-
+				<div class="error-message">
+					
+				
+				
+					
+					
+					</div>
+					
+					
+					
+					<c:forEach var="plat" items="${errors}">
+				
+				<p>${plat}</p>
+				
+		</c:forEach>
+					
 				<input type="submit" value="Inscription">
 			</form>
 			<div>

@@ -1,6 +1,8 @@
 package controler;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import bll.BLLException;
 import bll.ClientBLL;
@@ -30,8 +32,10 @@ public class ServletInscription extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/inscription.jsp").forward(request, response);
-
+		
+		
+		
+request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/inscription.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -41,6 +45,7 @@ public class ServletInscription extends HttpServlet {
 		String prenom = request.getParameter("prenom");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
+		
 
 		Client clientCreer = null;
 
@@ -57,8 +62,13 @@ public class ServletInscription extends HttpServlet {
 			request.getSession().setAttribute("estConnecte", estConnecte);
 			response.sendRedirect("accueil");
 		} catch (BLLException e) {
-
-			request.setAttribute("error", e.getMessage());
+			
+//			List<String> maListe = new ArrayList<>();
+//			maListe.add("élément 1");
+//			maListe.add("élément 2");
+//			request.setAttribute("maListe", maListe);
+			//List<String> erreurs = e.getErreurs();
+			request.setAttribute("errors", e.getErreurs());
 			request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/inscription.jsp").forward(request, response);
 		}
 	}

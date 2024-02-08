@@ -52,8 +52,9 @@ a:hover {
 }
 
 .error-message {
+	height: 80px;
     color: red;
-    font-size: 14px;
+    font-size: 11px;
     margin-top: -10px;
     margin-bottom: 10px;
 }
