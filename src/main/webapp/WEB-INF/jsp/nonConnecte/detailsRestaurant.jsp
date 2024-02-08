@@ -33,7 +33,7 @@
 			</div>
 			<div class="top-right-text">
 				<div class="presentation">
-				<h1> ${restaurant.nom} sera heureux de vous acueillir au <br> ${restaurant.adresse} de ${restaurant.heureOuverture} à ${restaurant.heureFermeture} ${pageContext.request.contextPath}</h1>
+				<p id="texte-presentation"> ${restaurant.nom} sera heureux de vous acueillir au <br> ${restaurant.adresse} de ${restaurant.heureOuverture} à ${restaurant.heureFermeture}</p>
 				</div>
 				<div class="entrees">
 					<h1>Entrées</h1>
