@@ -45,7 +45,6 @@ public class ServletConnexion extends HttpServlet {
 		String password = request.getParameter("password");
 		 estConnecte = false;
 		 
-
 		
 
 		try {
@@ -63,17 +62,11 @@ public class ServletConnexion extends HttpServlet {
 				request.getSession().setAttribute("estConnecte", estConnecte);
 				response.sendRedirect("accueil");
 
-			} else {
-
-				request.setAttribute("estConnecte", estConnecte);
-				request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/connexion.jsp").forward(request, response);
-
 			}
-
 		} catch (BLLException e) {
-
-			e.getMessage();
-
+			request.setAttribute("errors", e.getErreurs());
+			request.getRequestDispatcher("/WEB-INF/jsp/nonConnecte/connexion.jsp").forward(request, response);
+			
 		}
 
 	}

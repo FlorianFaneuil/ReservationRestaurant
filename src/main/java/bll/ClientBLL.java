@@ -37,8 +37,16 @@ public class ClientBLL {
 	}
 
 	public Client SelectByEmailPassword(String email, String password) throws BLLException {
+		BLLException bllException = new BLLException();
 		try {
-			return clientDAO.SelectByEmailPassword(email, password);
+			Client client = clientDAO.SelectByEmailPassword(email, password);
+			if (client == null) {
+				if (client == null) {
+					bllException.ajouterErreur("L'email ou  le mot de passe ne correspond pas.");
+					throw  bllException;
+				}
+			}
+			return client;
 		} catch (DALException e) {
 			throw new BLLException("Eche de l'autentification ", e);
 		}
@@ -63,7 +71,7 @@ public class ClientBLL {
 		if (prenom.length() < 2 || prenom.length() > 100) {
 			bllException.ajouterErreur("Le prénom doit faire entre 2 et 100 caractères");
 		}
-		
+
 		try {
 			if (clientDAO.emailExists(email)) {
 				bllException.ajouterErreur("L'email existe déjà dans la base de données");
@@ -71,17 +79,15 @@ public class ClientBLL {
 		} catch (DALException e) {
 			throw new BLLException("Erreur lors de la vérification de l'existence de l'email", e);
 		}
-		
-		 if (!validatePassword(password)) {
-		        bllException.ajouterErreur("Le mot de passe doit contenir au moins 8 caractères avec au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial.");
-		    }
 
-		
-		
-		if(bllException.getErreurs().size() > 0) {
+		if (!validatePassword(password)) {
+			bllException.ajouterErreur(
+					"Le mot de passe doit contenir au moins 8 caractères avec au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial.");
+		}
+
+		if (bllException.getErreurs().size() > 0) {
 			throw bllException;
 		}
-		
 
 		Client client = new Client(nom, prenom, email, password);
 		try {
@@ -90,12 +96,12 @@ public class ClientBLL {
 			throw new BLLException("Echec de l'insertion", e);
 		}
 	}
-	
+
 	private boolean validatePassword(String password) {
-	    String PASSWORD_PATTERN = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
-	    Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
-	    Matcher matcher = pattern.matcher(password);
-	    return matcher.matches();
+		String PASSWORD_PATTERN = "^(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
+		Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+		Matcher matcher = pattern.matcher(password);
+		return matcher.matches();
 	}
 
 }
