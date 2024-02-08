@@ -20,14 +20,19 @@ body{
 }
 
 .flex-item-buttons {
-	//margin:5px;
 	display: flex;
-	//align-items: center;
-	justify-content: space-between;
+	justify-content: center;
+	width: 100%;
+}
+
+#bouton-reserver{
+	margin-left: 15%;
+	margin-right: 15%;
 }
 
 form {
-	 margin: 15px;
+	 margin-bottom: 1%;
+	 margin-top:1%;
 	
 }
 
@@ -35,7 +40,6 @@ input{
 		border: 1px black;
 		border-radius: 5%;
 		padding:15px;
-        margin-bottom:30px;
 		background-color: #9DBC98;
 		color:#fff;
         font-family: 'Slabo 27px', serif;
@@ -70,7 +74,7 @@ input{
 /* Style spécifique pour les images */
 .top-left-image img, .bottom-right-image img {
   width:  100%; /* L'image prendra toute la largeur de son conteneur */
-  height:  100%; /* L'image prendra toute la hauteur de son conteneur */
+  height:  fit-content; /* L'image prendra toute la hauteur de son conteneur */
   object-fit: cover; /* La couverture de l'image assure que l'image couvre entièrement son conteneur sans déformation */
 }
 
@@ -81,6 +85,7 @@ input{
   align-items: center;
   text-align: center;*/
   flex-direction: column;
+  justify-content: space-around;
 }
 
 .presentation{
@@ -90,49 +95,38 @@ input{
 .entrees{
 	/*background-color: red;*/
 	/*align-self: self-start;*/
-	width:  100%;
-	padding-left: 5px;
+	width:  fit-content;
 	margin-bottom: 10px;
-	border-radius: 5px;
- 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
- 	background-color: #FBFCFA;
+	padding-left: 10%;
+ 	
 }
 
 .plats {
 /*	background-color: blue;*/
 
 	/*align-self: self-end;*/
-	text-align: end;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	width:  100%;
-	border-radius: 5px;
- 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
- 	/*padding-right: 45px;*/
+	width:  fit-content;
+ 	margin-left: 45%;
 }
 
 .desserts {
 /*	background-color: yellow;*/
 /*	align-self: self-end;*/
-	width:  100%;
-	padding: 5px;
-	margin-bottom: 10px;
-	border-radius: 5px;
- 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	width:  fit-content;
+	margin-left: 60%;
 }
 
 .boissons{
 /*	background-color: greenyellow;*/
 /*	align-self: self-start;*/
-	text-align: end;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	width:  100%;
-	padding: 5px;
-	border-radius: 5px;
- 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	width:  fit-content;
+	margin-left: 15%;
 }
 
 h1{
