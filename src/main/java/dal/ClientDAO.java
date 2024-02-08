@@ -10,7 +10,7 @@ public class ClientDAO {
 	private static final String TABLE_NAME = " clients ";
 	private static final String SELECT_BY_ID = "SELECT * FROM " + TABLE_NAME + " WHERE id = ?";
 	private static final String UPDATE = "UPDATE " + TABLE_NAME
-			+ " SET nom = ?, prenom = ?, email = ? , password = ?  WHERE id = 1";
+			+ " SET nom = ?, prenom = ?, email = ? , password = ?  WHERE id = ?";
 	private static final String DELETE = "DELETE FROM" + TABLE_NAME + " WHERE id = ?";
 	private static final String INSERT = "INSERT INTO " + TABLE_NAME
 			+ " (nom, prenom, email, password) VALUES (?,?,?,?)";
@@ -55,7 +55,7 @@ public class ClientDAO {
 			ps.setString(3, client.getEmail());
 			ps.setString(4, client.getPassword());
 
-			// ps.setInt(5, client.getId());
+			 ps.setInt(5, client.getId());
 
 			ps.executeUpdate();
 		} catch (SQLException e) {

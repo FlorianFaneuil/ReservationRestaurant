@@ -26,24 +26,7 @@ public class ServletProfil extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// 1. Récupération des paramètres
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-
-		// 2. Passage des paramètres dans le type voulu
-//		int id = Integer.parseInt(idStr);
-
-		// 3. Exploitation des paramètres par le bll
-		Client client = null;
-		try {
-			client = clientBLL.SelectByEmailPassword(email, password);
-		} catch (BLLException e) {
-			e.printStackTrace();
-		}
-
-		// 4. Ajout des attributs éventuels à ma request
-		request.setAttribute("client", client);
-
+		
 		// 5. Redirection vers la JSP choisie
 		request.getRequestDispatcher("/WEB-INF/jsp/connecte/profil.jsp").forward(request, response);
 	} // GererContactPro/src/main/webapp/WEB-INF/jsp/contact

@@ -25,7 +25,6 @@
 			</div>
 
 			<div class="droiteForm">
-
 				<p>${nomClient}</p>
 				<p>${prenomClient}</p>
 				<p>${emailClient}</p>

@@ -21,7 +21,6 @@
 
 
 				<div class="formulaireProfil">
-					<input type="hidden" name="id" value="${contact.id }" />
 
 					<div class="gaucheForm">
 						<p>Nom</p>
@@ -30,6 +29,8 @@
 						<p>Mot de passe</p>
 					</div>
 					<div class="droiteForm">
+					<input type="hidden" name="id" value="${idClient}" />
+
 						<input class="inputInfo" type="text" name="nom"
 							value="${nomClient}"> <input class="inputInfo"
 							type="text" name="prenom" value="${prenomClient}"> <input
@@ -38,35 +39,47 @@
 						<input class="inputInfo" type="password" name="password"
 							value="${passwordClient}">
 
-						
+
 
 					</div>
 					<div class="dernierDivForm">
-						
-						<div><button class="buttonOeil" type="button" onclick="afficherMotDePasse()">
-							<img src="${pageContext.request.contextPath}/img/oeil(1).png"
-								alt="Icône de l'œil" height=20px>
-						</button></div>
 
+						<div>
+							<button class="buttonOeil" type="button"
+								onclick="afficherMotDePasse()">
+								<img src="${pageContext.request.contextPath}/img/oeilFerme.png"
+									alt="Icône de l'œil" id="eyeIcon" height=20px>
+							</button>
+						</div>
 					</div>
+				</div>
+				<div class="containerBoutonValider">
+
+					<input class="inputBoutton" type="submit" value="Valider">
 
 				</div>
-		</div>
-		<div class="containerBoutonValider">
-
-			<input class="inputBoutton" type="submit" value="Valider">
-
+			</form>
 		</div>
 
-		</form>
+
+
+
 	</div>
 	</div>
 	<script>
 		function afficherMotDePasse() {
 			const inputPassType = document
 					.querySelector("input[name='password']");
-			inputPassType.type = inputPassType.type == "password" ? "text"
-					: "password";
+			const eyeIcon = document.getElementById("eyeIcon");
+
+			if (inputPassType.type === "password") {
+				inputPassType.type = "text";
+				eyeIcon.src = "${pageContext.request.contextPath}/img/oeil(1).png";
+			} else {
+				inputPassType.type = "password";
+				eyeIcon.src = "${pageContext.request.contextPath}/img/oeilFerme.png";
+
+			}
 
 		}
 	</script>

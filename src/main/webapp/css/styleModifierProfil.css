@@ -2,15 +2,26 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald|Roboto|Slabo+27px);
 @import 'bourbon';
 
+/*POT*/
 
+/*POT*/
 
-
+/*POT*/
 
 h1{
   font-size:32px;
   margin-top:30px;
   font-family: 'Oswald', sans-serif;  
   text-align:center;
+}
+
+.formulaireProfil{
+	  background-color: #EBD9B4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+	
 }
 .container1 {
     font-family: Arial, sans-serif;
