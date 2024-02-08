@@ -19,6 +19,7 @@ h1{
   justify-content:center;
   flex-wrap:wrap;
   .blog-card{
+	border-radius: 5px;
     @include transition(.3s);
     max-width:300px;
     margin:15px;
@@ -37,22 +38,21 @@ h1{
     .card-img{
       position:relative;
       text-align:center;
-      background:#638889;
+      background:#9DBC98;
       img{
         @include transition(.3s);
         height:180px;
         width:100%;
-        border-bottom:4px solid #638889;
+        border-bottom:4px solid #9DBC98;
       }
       &:before{
-        content:'';
         position: absolute;
         bottom: -8px;
         left: 50%;
         margin-left: -10px;
         width: 0;
         height: 0;
-        border-top: solid 10px #638889;
+        border-top: solid 10px #9DBC98;
         border-left: solid 10px transparent;
         border-right: solid 10px transparent;
       }

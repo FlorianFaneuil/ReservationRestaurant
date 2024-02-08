@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+body{
+  background:#FBFCFA ;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.flex-item-buttons {
+	//margin:5px;
+	display: flex;
+	//align-items: center;
+	justify-content: space-between;
+}
+
+form {
+	 margin: 15px;
+	
+}
+
+input{
+		border: 1px black;
+		border-radius: 5%;
+		padding:15px;
+        margin-bottom:30px;
+		background-color: #9DBC98;
+		color:#fff;
+        font-family: 'Slabo 27px', serif;
+        font-size:20px;
+		&:hover{
+		background-color: #638889;
+		}
+	}
+	
+	
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  height:  100vh; /* Pour que le conteneur prenne toute la hauteur de la fenêtre */
+}
+
+.top, .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  width:  100%; /* Pour que chaque ligne prenne toute la largeur de la fenêtre */
+}
+
+.top-left-image, .top-right-text, .bottom-left-text, .bottom-right-image {
+  flex:  1; /* Chaque div prendra une partie égale de l'espace disponible */
+  padding:  1em; /* Ajoutez un peu de marge interne pour améliorer la lisibilité */
+}
+
+/* Style spécifique pour les images */
+.top-left-image img, .bottom-right-image img {
+  width:  100%; /* L'image prendra toute la largeur de son conteneur */
+  height:  100%; /* L'image prendra toute la hauteur de son conteneur */
+  object-fit: cover; /* La couverture de l'image assure que l'image couvre entièrement son conteneur sans déformation */
+}
+
+/* Style spécifique pour le texte */
+.top-right-text, .bottom-left-text {
+  display: flex;
+/*  justify-content: center;
+  align-items: center;
+  text-align: center;*/
+  flex-direction: column;
+}
+
+.presentation{
+	margin-bottom: 30px;
+}
+
+.entrees{
+	/*background-color: red;*/
+	/*align-self: self-start;*/
+	width:  100%;
+	padding-left: 5px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+ 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+ 	background-color: #FBFCFA;
+}
+
+.plats {
+/*	background-color: blue;*/
+
+	/*align-self: self-end;*/
+	text-align: end;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width:  100%;
+	border-radius: 5px;
+ 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+ 	/*padding-right: 45px;*/
+}
+
+.desserts {
+/*	background-color: yellow;*/
+/*	align-self: self-end;*/
+	width:  100%;
+	padding: 5px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+ 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.boissons{
+/*	background-color: greenyellow;*/
+/*	align-self: self-start;*/
+	text-align: end;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width:  100%;
+	padding: 5px;
+	border-radius: 5px;
+ 	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+h1{
+  font-size:32px;
+  font-family: 'Oswald', sans-serif; 
+}
