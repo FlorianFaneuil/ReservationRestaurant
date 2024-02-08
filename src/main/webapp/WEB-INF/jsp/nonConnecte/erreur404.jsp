@@ -12,7 +12,7 @@
     <div class="error-container">
         <img src="/ReservationRestaurant/img/404Chat.png" alt="chat">
         <p>Désolé, la page que vous recherchez est introuvable.</p>
-        <a href="accueil">Retour à la page d'accueil</a>
+        <a href="/ReservationRestaurant/accueil">Retour à la page d'accueil</a>
     </div>
 </body>
 </html>
