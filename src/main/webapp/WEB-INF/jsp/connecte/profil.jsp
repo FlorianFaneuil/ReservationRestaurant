@@ -13,7 +13,9 @@
 	<%@ include file="../fragments/navbar.jspf"%>
 	<h1 class="titre">Profil</h1>
 	<div class="container1">
-
+<div>
+			<h3>Bienvenue dans votre Profil</h3>
+		</div>
 
 
 		<div class="formulaireProfil">
