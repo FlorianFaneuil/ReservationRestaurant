@@ -26,6 +26,7 @@
 		
 			<div class="containerMessage">
 			
+			if ()
 				<c:forEach  var="message" items="${messages}">
 				<div class="affichage1message">
 					<h2 class="styleTitre">${message.titre}</h2>

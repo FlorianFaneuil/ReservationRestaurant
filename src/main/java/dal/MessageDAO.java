@@ -47,7 +47,7 @@ public class MessageDAO {
                 // Employe
                 employe.setId(rs.getInt("id_employe"));
              
-                employe.setPrenom(rs.getString("employe.prenom"));
+                employe.setPrenom(rs.getString("employe_prenom"));
                 
                 message.setClient(client);
                 message.setEmploye(employe);

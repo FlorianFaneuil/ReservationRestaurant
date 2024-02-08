@@ -34,7 +34,10 @@ public class ServletAfficherMessages extends HttpServlet {
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("messages" + messages);
+		
+		
+		System.out.println("messages : " + messages);
+		
 		request.setAttribute("messages", messages);
 
 		request.getRequestDispatcher("/WEB-INF/jsp/connecte/afficherMessages.jsp").forward(request, response);
