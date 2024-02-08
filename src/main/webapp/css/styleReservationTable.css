@@ -57,3 +57,14 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+input[type="date"],
+input[type="time"],
+input[type="number"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #638889;
+	border-radius: 5px;
+	box-sizing: border-box;
+}

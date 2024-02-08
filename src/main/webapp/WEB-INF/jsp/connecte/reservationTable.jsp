@@ -37,6 +37,12 @@
 					<div class="erreur">
 						<span>${erreur.erreurHeurePosterieure}</span>
 					</div>
+					<div class="erreur">
+						<span>${erreur.erreurNombrePlaces}</span>
+					</div>
+					<div class="erreur">
+						<span>${dateTimeErreur}</span>
+					</div>
 					<div>
 						<input type="submit" value="Faire une demande de réservation" />
 					</div>

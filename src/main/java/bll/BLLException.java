@@ -8,6 +8,7 @@ public class BLLException extends Exception {
 	private String erreurDate;
 	private String erreurHeureAnterieure;
 	private String erreurHeurePosterieure;
+	private String erreurNombrePlaces;
 	private int nbErreurs = 0;
 	
 
@@ -56,6 +57,17 @@ public class BLLException extends Exception {
 		nbErreurs++;
 		this.erreurHeurePosterieure = erreurHeurePosterieure;
 	}
+	
+	
+	public String getErreurNombrePlaces() {
+		return erreurNombrePlaces;
+	}
+
+	public void setErreurNombrePlaces(String erreurNombrePlaces) {
+		nbErreurs++;
+		this.erreurNombrePlaces = erreurNombrePlaces;
+	}
+	
 	
 	public int getNbErreurs() {
 		return nbErreurs;

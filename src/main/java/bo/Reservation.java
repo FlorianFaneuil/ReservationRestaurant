@@ -11,20 +11,23 @@ public class Reservation {
 	private LocalDate dateResa;
 	private LocalTime heureResa;
 	private String etat;
+	private int nombrePlaces;
 
 	public Reservation() {
 	}
 	
 	public Reservation(int idRestaurant, int idClient, LocalDate dateResa, LocalTime heureResa,
-			String etat) {
+			String etat, int nombrePlaces) {
 		this.idRestaurant = idRestaurant;
 		this.idClient = idClient;
 		this.dateResa = dateResa;
 		this.heureResa = heureResa;
 		this.etat = etat;
+		this.nombrePlaces = nombrePlaces;
 	}
 
 	
+
 	public Reservation(int idRestaurant, int idClient, int idTable, LocalDate dateResa, LocalTime heureResa,
 			String etat) {
 		this.idRestaurant = idRestaurant;
@@ -102,4 +105,11 @@ public class Reservation {
 		this.etat = etat;
 	}
 
+	public int getNombrePlaces() {
+		return nombrePlaces;
+	}
+	
+	public void setNombrePlaces(int nombrePlaces) {
+		this.nombrePlaces = nombrePlaces;
+	}
 }

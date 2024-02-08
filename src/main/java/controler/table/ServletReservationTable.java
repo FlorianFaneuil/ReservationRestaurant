@@ -3,6 +3,7 @@ package controler.table;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
 
 import bll.BLLException;
 import bll.ReservationBLL;
@@ -13,6 +14,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 
 public class ServletReservationTable extends HttpServlet {
@@ -20,6 +22,7 @@ public class ServletReservationTable extends HttpServlet {
 	private ReservationBLL reservationBll;
 	private RestaurantBLL restaurantBll;
 	private int idClient = 0;
+	
        
 	@Override
 	public void init() throws ServletException {
@@ -50,33 +53,42 @@ public class ServletReservationTable extends HttpServlet {
 		String etatStr = request.getParameter("etat");
 		String dateStr = request.getParameter("date");
 		String heureStr = request.getParameter("heure");
-		String nombrePlacesStr = request.getParameter("nombrePlaces");
-		
+		String nombrePlacesStr;
+		if (request.getParameter("nombrePlaces").isBlank()) {
+			nombrePlacesStr = "0";
+		} else {
+			nombrePlacesStr = request.getParameter("nombrePlaces");
+		}
 		// Etape 2 : passage dans le bon type
 		int restaurantId = Integer.parseInt(restaurantIdStr);
 		int nombrePlaces = Integer.parseInt(nombrePlacesStr);
-		
-		LocalDate dateResa = LocalDate.parse(dateStr);
-		LocalTime heureResa = LocalTime.parse(heureStr);
+		LocalDate dateResa = null;
+		LocalTime heureResa = null;
 		
 		try {
-			//HttpSession session = request.getSession();
-			//idClient = (int) session.getAttribute("userId");
-			idClient = 1;
+			dateResa = LocalDate.parse(dateStr);
+			heureResa = LocalTime.parse(heureStr);
+			
+			HttpSession session = request.getSession();
+			idClient = (int) session.getAttribute("idClient");
+
 			Restaurant restaurant = restaurantBll.selectById(restaurantId);
 			request.setAttribute("restaurant", restaurant);
 			
-			Reservation reservation = reservationBll.insert(restaurant, idClient, dateResa, heureResa, etatStr);
+			Reservation reservation = reservationBll.insert(restaurant, idClient, dateResa, heureResa, etatStr, nombrePlaces);
 			// Etape 4 : ajout des attributs a la requete
 			request.setAttribute("restaurant", restaurant);
 			request.setAttribute("reservation", reservation);
 			request.setAttribute("nombrePlaces", nombrePlaces);
 			request.getRequestDispatcher("/WEB-INF/jsp/connecte/confirmationDemandeReservation.jsp").forward(request, response);
+		} catch (DateTimeParseException e) {
+			request.setAttribute("dateTimeErreur", "La date et/ou l'heure doivent être renseignées");
+			request.getRequestDispatcher("/WEB-INF/jsp/connecte/reservationTable.jsp").forward(request, response);
 		} catch (BLLException e) {
 			request.setAttribute("erreur", e);
 //		e.printStackTrace();
 		
-		request.getRequestDispatcher("/WEB-INF/jsp/connecte/reservationTable.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/connecte/reservationTable.jsp").forward(request, response);
 		}	
 	}
 }
