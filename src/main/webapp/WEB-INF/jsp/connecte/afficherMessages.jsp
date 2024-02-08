@@ -9,30 +9,38 @@
 <title>Affichage des messages</title>
 <link href="../css/styleAfficherMessage.css" rel="stylesheet">
 <link href="../css/styleGeneral.scss" rel="stylesheet">
-</head>
+
+
 <body>
-	<%@ include file="../fragments/navbar.jspf"%>
+
+<%@ include file="../fragments/navbar.jspf"%>
+<h1 class="titre">Messages</h1>
+<div class="container1">
+
 	<div class="titreProfil">
 		<h2>Messages envoyés</h2>
 	</div>
-	<main>
-		<fieldset>
-			<legend>
-				<h3>Vos messages envoyés</h3>
-			</legend>
+	<div class="container">
+	
+	
+		
 			<div class="containerMessage">
 			
-				<c:forEach  var="messages" items="${messages}">
+				<c:forEach  var="message" items="${messages}">
 				<div class="affichage1message">
-					<h2 class="styleTitre">${messages.titre}</h2>
-					<h3 class="styleMessage">${messages.contenu}</h3>
+					<h2 class="styleTitre">${message.titre}</h2>
+					<h3 class="styleMessage">${message.contenu}</h3>
+					<h3 class="styleMessage">${message.employe.prenom}</h3>
+					 
 					</div>
 				</c:forEach>
+				</div>
+				</div>
 				
-				</div>
-				</fieldset>
 				<div class="containerBouton">
-			    <a  class=inputBoutton href="../accueil">Retour à l'accueil</a>
+			    <a  class=inputBoutton1 href="../profil">Retour au Profil</a>
 				</div>
+								</div>
+				
 </body>
 </html>

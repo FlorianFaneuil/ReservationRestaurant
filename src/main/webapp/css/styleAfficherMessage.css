@@ -1,84 +1,103 @@
-@charset "UTF-8";
-@import url(https://fonts.googleapis.com/css?family=Oswald|Roboto|Slabo+27px);
-@import 'bourbon';
-
-* {
-	padding: 0;
+.container1 {
+	font-family: Arial, sans-serif;
+	background-color: #9DBC98;
 	margin: 0;
-	box-sizing: border-box;
-
-}
-
-
-html {
-	height: 100%;
-	width: 100%;
-}
-
-main {
-	height: 70vh;
-	width: 100vw;
+	padding: 0;
 	display: flex;
-	align-items: center;
-	justify-content: center;
 	flex-direction: column;
-
+align-items: center;
+	justify-content: center;
+	gap: 10%;
+	height: 80vh;
 }
-
-.titreProfil {
-	background-color: #638889;
-	color: #EBD9B4;
-
-	height: 10vh;
+.container{
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	align-items: center;
-}
-
-legend {
-	color: #638889;
+		flex-wrap: wrap;
+	
 
 }
-
-fieldset {
-	    padding:30px;
-
-}
-
-
-
 .containerMessage {
 	display: flex;
-	align-items: start;
+	align-items: center;
 	justify-content: center;
-	flex-direction: column;
-	margin-bottom: 10px;
-	gap:25px
+	width: 100%;
+	height: 40%;
+	gap:5%;
 }
 
-.affichage1message{
-	display: flex;
-	align-items: start;
-	justify-content: start;
-	flex-direction: column;
-	gap:5px;
-}
-.styleTitre{
-	color : #638889;
-}
+.affichage1message {
+	background-color: #EBD9B4;
 
-.styleMessage{
-	color:rgb(192, 192, 192);
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	width: 300px;
+
+	gap: 10%;
 }
 
-
-
-.containerBouton{
+h1 {
+	font-size: 32px;
+	margin-top: 30px;
+	font-family: 'Oswald', sans-serif;
 	text-align: center;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	padding-top:30px;
 }
 
+h1,
+h3,
+h2 {
+	text-align: center;
+	color: #638889;
+}
+
+form {
+	margin-top: 20px;
+}
+
+
+input[type="password"],
+input[type="submit"], .inputBoutton {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #638889;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+.inputBoutton1 {
+    background-color: #547572;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none; /* Supprimer le soulignement du lien */
+    transition: background-color 0.3s; /* Animation de transition */
+}
+
+.inputBoutton1:hover {
+    background-color: #445f60; /* Couleur de survol */
+}
+input[type="submit"] {
+	background-color: #638889;
+	color: white;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #547572;
+}
+
+.error-message {
+	color: red;
+	font-size: 14px;
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+
+
+}
+
+a:hover {
+	text-decoration: underline;
+}

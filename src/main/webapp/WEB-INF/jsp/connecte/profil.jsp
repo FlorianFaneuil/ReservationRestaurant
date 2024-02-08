@@ -54,7 +54,7 @@
 	</div>
 	
 	<div>
-					<h3>Vous desiez consulter vos messages envoyés ? </h3>
+					<h3>Vous desirez consulter vos messages envoyés ? </h3>
 				</div>
 				<form action="afficherMessages" method="POST">
 					<input class="inputBoutton" type="submit" value="Mes messages" />
