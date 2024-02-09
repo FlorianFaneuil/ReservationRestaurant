@@ -30,7 +30,7 @@
 			</c:choose>
 			<div class="card-details"><p>Ouvert 7j/7 de :</p></div>
 		    <div class="card-details">
-			    <p>${restaurant.heureOuverture}&ensp; à &ensp;${restaurant.heureFermeture}</p>
+			    <p>${restaurantOuverture[restaurant.id]}&ensp; à &ensp;${restaurantFermeture[restaurant.id]}</p>
 		    </div>
 		    <div class="card-text"><p>Venez savourer un excellent repas au ${restaurant.adresse}</p></div>
 		    <div>
