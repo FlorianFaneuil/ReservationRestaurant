@@ -47,6 +47,15 @@
 					<input type="hidden" name="id" value="${idClient }" /> <input
 						class="inputBoutton" type="submit" value="Supprimer" />
 				</form>
+				<form class="bouttonmessage" action="afficherMessages" method="POST">
+				
+				<input class="inputBoutton" type="submit" value="Mes messages" />
+			</form>
+			<form class="bouttonmessage" action="afficherReservations"
+				method="POST">
+				
+				<input class="inputBoutton" type="submit" value="Vos reservations" />
+			</form>
 
 				<div></div>
 
@@ -55,24 +64,13 @@
 
 
 
-			<form class="bouttonmessage" action="afficherMessages" method="POST">
-				<div>
-					<h3>Vous desirez consulter vos messages envoyés ?</h3>
-				</div>
-				<input class="inputBoutton" type="submit" value="Mes messages" />
-			</form>
+			
 		</div>
 
 		<div class="containerResa">
 
 
-			<form class="bouttonmessage" action="afficherReservations"
-				method="POST">
-				<div>
-					<h3>Vous desirez consulter vos reservations ?</h3>
-				</div>
-				<input class="inputBoutton" type="submit" value="Vos reservations" />
-			</form>
+			
 
 
 
