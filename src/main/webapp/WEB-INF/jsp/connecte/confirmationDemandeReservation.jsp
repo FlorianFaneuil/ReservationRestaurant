@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Reserver une table</title>
-<link href="/ReservationRestaurant/css/styleConfirmationReservation.css" rel="stylesheet">
+<link href="/ReservationRestaurant/css/styleConfirmationReservation.scss" rel="stylesheet">
 </head>
 <body>
 <%@ include file="../fragments/navbar.jspf" %>
@@ -21,9 +21,11 @@
 				<p>Pour ${nombrePlaces} personnes</p>
 				<p>Votre réservation est <strong>${reservation.etat}</strong></p>
 			</div>
-			<form action="../accueil" method="GET">
-				<input type="submit" value="Retour à la liste des restaurants" />
-			</form>
+			<div class="center">
+				<form action="../accueil" method="GET">
+					<input class="boutons" type="submit" value="Retour à la liste des restaurants" />
+				</form>
+			</div>
 		</div>
 	</div>
 </body>
