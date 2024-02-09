@@ -81,3 +81,17 @@ a:hover {
 	width: 20px;
 
 }
+.password-group {
+    position: relative;
+}
+.password-eye{
+    position: absolute;
+    top: 33%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background-image: url('/ReservationRestaurant/img/oeil(1).png'); 
+    background-size: cover;
+    cursor: pointer;
+}
