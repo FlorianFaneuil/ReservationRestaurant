@@ -168,11 +168,10 @@
     <servlet-name>ServletDeconnexion</servlet-name>
     <url-pattern>/deconnexion</url-pattern>
   </servlet-mapping>
-  
-    <error-page>
+  <error-page>
     <error-code>404</error-code>
     <location>/ServletErreur404</location>
-</error-page>
+  </error-page>
   <servlet>
     <description></description>
     <display-name>ServletErreur404</display-name>
@@ -183,6 +182,14 @@
     <servlet-name>ServletErreur404</servlet-name>
     <url-pattern>/ServletErreur404</url-pattern>
   </servlet-mapping>
-
-  
+  <servlet>
+    <description></description>
+    <display-name>AfficherResaDansProfil</display-name>
+    <servlet-name>AfficherResaDansProfil</servlet-name>
+    <servlet-class>controler.profil.AfficherResaDansProfil</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AfficherResaDansProfil</servlet-name>
+    <url-pattern>/AfficherResaDansProfil</url-pattern>
+  </servlet-mapping>
 </web-app>
