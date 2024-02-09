@@ -50,6 +50,7 @@ public class ServletReservationTable extends HttpServlet {
 		request.setAttribute("heureFermeture", heureFermetureStr);
 		request.setAttribute("restaurantId", restaurantId);
 		request.getRequestDispatcher("/WEB-INF/jsp/connecte/reservationTable.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/jsp/connecte/profil.jsp").forward(request, response);
 	}
 
 	

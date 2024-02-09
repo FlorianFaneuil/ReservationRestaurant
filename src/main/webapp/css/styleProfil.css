@@ -6,40 +6,49 @@
 
 
 
-h1{
-  font-size:32px;
-  margin-top:30px;
-  font-family: 'Oswald', sans-serif;  
-  text-align:center;
+h1 {
+	font-size: 32px;
+	margin-top: 30px;
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
 }
+
 .container1 {
-    font-family: Arial, sans-serif;
-    background-color: #9DBC98;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 80vh;
-    gap:5%;
+	font-family: Arial, sans-serif;
+	background-color: #9DBC98;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+
+	height: 80vh;
+	gap: 5%;
 }
 
-h1,h3 {
-    text-align: center;
-    color: #638889;
+h1,h2
+h3 {
+	text-align: center;
+	color: #638889;
 }
 
-.formulaireProfil{
-		display: flex;
-		justify-content: space-around;
+.bouttonmessage {
+	display: flex;
+	align-items: center;
+}
+
+.formulaireProfil {
+	display: flex;
+	justify-content: space-around;
 	flex-direction: row;
-	  background-color: #EBD9B4;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-	
+	background-color: #EBD9B4;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	width: 300px;
+
 }
 
 
@@ -47,43 +56,59 @@ h1,h3 {
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
-color: #638889;
+	color: #638889;
 }
 
 .droiteForm {
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
-		
-		color: white;
+
+	color: white;
 
 }
-.containerBouton{
-    padding-top: 40px;
-    justify-content: center;
-    	display: flex;
-flex-direction: row;
-	gap:10px;
+
+.containerBouton {
+	padding-top: 40px;
+	justify-content: center;
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
 }
 
-.fomEtbouton{
+.profiletMessages{
+	width: 100%;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
 }
+.bouttonmessage {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+		justify-content: space-evenly;
+
+	height: 100%;
+
+}
+
 input[type="text"],
 input[type="submit"] {
-  
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #638889;
-    border-radius: 5px;
-    box-sizing: border-box;
+
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #638889;
+	border-radius: 5px;
+	box-sizing: border-box;
 }
+
 input[type="submit"] {
-    background-color: #638889;
-    color: white;
-    cursor: pointer;
+	background-color: #638889;
+	color: white;
+	cursor: pointer;
 }
+
 input[type="submit"]:hover {
-    background-color: #547572;
+	background-color: #547572;
 }

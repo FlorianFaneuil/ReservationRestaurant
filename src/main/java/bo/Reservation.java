@@ -112,4 +112,12 @@ public class Reservation {
 	public void setNombrePlaces(int nombrePlaces) {
 		this.nombrePlaces = nombrePlaces;
 	}
+
+	@Override
+	public String toString() {
+		return "Reservation [id=" + id + ", idRestaurant=" + idRestaurant + ", idClient=" + idClient + ", idTable="
+				+ idTable + ", dateResa=" + dateResa + ", heureResa=" + heureResa + ", etat=" + etat + ", nombrePlaces="
+				+ nombrePlaces + "]";
+	}
+	
 }

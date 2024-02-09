@@ -13,29 +13,31 @@
 	<%@ include file="../fragments/navbar.jspf"%>
 	<h1 class="titre">Profil</h1>
 	<div class="container1">
-		<div>
-			<h3>Bienvenue dans votre Profil</h3>
+	<div>
+			<h1>Bienvenue dans votre Profil</h1>
 		</div>
+	<div class="profiletMessages">
+		
 
-<div class="fomEtbouton">
-		<div class="formulaireProfil">
+		
+			<div class="formulaireProfil">
 
-			<div class="gaucheForm">
-				<p>Nom</p>
-				<p>Prenom</p>
-				<p>Email</p>
+				<div class="gaucheForm">
+					<p>Nom</p>
+					<p>Prenom</p>
+					<p>Email</p>
+				</div>
+
+				<div class="droiteForm">
+					<p>${nomClient}</p>
+					<p>${prenomClient}</p>
+					<p>${emailClient}</p>
+				</div>
 			</div>
 
-			<div class="droiteForm">
-				<p>${nomClient}</p>
-				<p>${prenomClient}</p>
-				<p>${emailClient}</p>
-			</div>
-		</div>
 
+			<div class="containerBouton">
 
-		<div class="containerBouton">
-			
 				<form action="modifierProfil" method="GET">
 					<input type="hidden" name="id" value="${idClient }" /> <input
 						class="inputBoutton" type="submit" value="Modifier">
@@ -45,26 +47,50 @@
 					<input type="hidden" name="id" value="${idClient }" /> <input
 						class="inputBoutton" type="submit" value="Supprimer" />
 				</form>
-			
-			<div>
-				
-		</div>
 
-	</div>
-	</div>
-	
-	<div>
-					<h3>Vous desirez consulter vos messages envoyés ? </h3>
-				</div>
-				<form action="afficherMessages" method="POST">
-					<input class="inputBoutton" type="submit" value="Mes messages" />
-				</form>
+				<div></div>
+
 			</div>
-			
-				<div class="containerResa">
-		
-		</div>
 
+		
+			
+			
+			<form class="bouttonmessage" action="afficherMessages" method="POST">
+			<div>
+				<h3>Vous desirez consulter vos messages envoyés ?</h3>
+				</div>
+				<input class="inputBoutton" type="submit" value="Mes messages" />
+			</form>
+			</div>
+
+			<div class="containerResa">
+				<h1>Vos Réservations</h1>
+				<div class="texte">
+				
+				
+				
+				
+					<c:forEach items="${reservations}" var="reservation">
+					<c:if test="${reservation.idClient eq idClient }">
+
+						<p>
+							Pour une table au restaurant : <strong>${reservation.idRestaurant}</strong>
+						</p>
+						<p>Le ${reservation.dateResa}</p>
+						<p>A ${reservation.heureResa}</p>
+						<p>Pour ${reservation.nombrePlaces} personnes</p>
+						<p>
+							Votre réservation est <strong>${reservation.etat}</strong>
+						</p>
+											  </c:if>
+						
+					</c:forEach>
+				</div>
+
+			</div>
+		
+
+	</div>
 
 </body>
 </html>
