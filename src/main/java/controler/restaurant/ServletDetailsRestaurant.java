@@ -1,6 +1,9 @@
 package controler.restaurant;
 
 import java.io.IOException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 import java.util.List;
 
 import bll.BLLException;
@@ -20,6 +23,7 @@ public class ServletDetailsRestaurant extends HttpServlet {
 	private RestaurantBLL restaurantBll;
 	private CarteBLL carteBll;
 	private PlatBLL platBll;
+	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH'h'mm");
 	
 	@Override
 	public void init() throws ServletException {
@@ -44,10 +48,22 @@ public class ServletDetailsRestaurant extends HttpServlet {
 			Restaurant restaurant = restaurantBll.selectById(id);
 			Carte carte = carteBll.selectByIdRestaurant(id);
 			List<Plat> plats = platBll.selectByIdCarte(carte.getId());
+			
+			
+			LocalTime heureOuvertureLocalTime = restaurant.getHeureOuverture();
+			LocalTime heureFermetureLocalTime = restaurant.getHeureFermeture();
+			
+			String heureOuverture = heureOuvertureLocalTime.format(formatter);
+			String heureFermeture = heureFermetureLocalTime.format(formatter);
+			
 			// Etape 4 : ajout des attributs a la requete
+			
+			request.setAttribute("heureOuverture", heureOuverture);
+			request.setAttribute("heureFermeture", heureFermeture);
 			request.setAttribute("restaurant", restaurant);
 			request.setAttribute("carte", carte);
 			request.setAttribute("plats", plats);
+					
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
