@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Reserver une table</title>
-<link href="../css/styleReservationTable.css" rel="stylesheet">
+<link href="/ReservationRestaurant/css/styleReservationTable.css" rel="stylesheet">
 </head>
 <body>
 	<%@ include file="../fragments/navbar.jspf" %>

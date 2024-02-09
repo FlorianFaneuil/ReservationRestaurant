@@ -28,8 +28,10 @@
 				    </div>
 				</c:otherwise>
 			</c:choose>
-			<div class="card-details"><p>Horaires</p></div>
-		    <div class="card-details"><span><i class="fa fa-calendar"></i>${restaurant.heureOuverture}</span><span><i class="fa fa-heart"></i>${restaurant.heureFermeture}</span></div>
+			<div class="card-details"><p>Ouvert 7j/7 de :</p></div>
+		    <div class="card-details">
+			    <p>${restaurant.heureOuverture}&ensp; à &ensp;${restaurant.heureFermeture}</p>
+		    </div>
 		    <div class="card-text"><p>Venez savourer un excellent repas au ${restaurant.adresse}</p></div>
 		    <div>
 		    	<form action="detailsRestaurant" method="GET">
