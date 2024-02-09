@@ -63,7 +63,12 @@
 				<h3>Voici vos reservations</h3>
 				<h1>Votre demande de réservation a été prise en compte</h1>
 				<div class="texte">
+				
+				
+				
+				
 					<c:forEach items="${reservations}" var="reservation">
+					<c:if test="${reservation.idClient eq idClient }">
 
 						<p>
 							Pour une table au restaurant : <strong>${reservation.idRestaurant}</strong>
@@ -74,6 +79,8 @@
 						<p>
 							Votre réservation est <strong>${reservation.etat}</strong>
 						</p>
+											  </c:if>
+						
 					</c:forEach>
 				</div>
 
