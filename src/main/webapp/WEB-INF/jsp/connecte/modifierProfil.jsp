@@ -29,29 +29,25 @@
 						<p>Mot de passe</p>
 					</div>
 					<div class="droiteForm">
-					<input type="hidden" name="id" value="${idClient}" />
-
-						<input class="inputInfo" type="text" name="nom"
-							value="${nomClient}"> <input class="inputInfo"
-							type="text" name="prenom" value="${prenomClient}"> <input
-							class="inputInfo" type="text" name="email" value="${emailClient}">
-
-						<input class="inputInfo" type="password" name="password"
-							value="${passwordClient}">
-
-
-
-					</div>
-					<div class="dernierDivForm">
-
-						<div>
+						<input type="hidden" name="id" value="${idClient}" /> <input
+							class="inputInfo" type="text" name="nom" value="${nomClient}">
+						<input class="inputInfo" type="text" name="prenom"
+							value="${prenomClient}"> <input class="inputInfo"
+							type="text" name="email" value="${emailClient}">
+						<div class="champimagepassword">
+							<input class="inputInfo oeil" type="password" name="password"
+								value="${passwordClient}">
 							<button class="buttonOeil" type="button"
 								onclick="afficherMotDePasse()">
 								<img src="${pageContext.request.contextPath}/img/oeilFerme.png"
 									alt="Icône de l'œil" id="eyeIcon" height=20px>
 							</button>
+
 						</div>
+
 					</div>
+
+					<div></div>
 				</div>
 				<div class="containerBoutonValider">
 
@@ -60,9 +56,9 @@
 				</div>
 			</form>
 		</div>
-		
-	
-		
+
+
+
 
 
 

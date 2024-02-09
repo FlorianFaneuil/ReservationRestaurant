@@ -8,6 +8,11 @@
 
 /*POT*/
 
+*{
+	  box-sizing: border-box;
+
+}
+
 h1{
   font-size:32px;
   margin-top:30px;
@@ -58,7 +63,7 @@ form {
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
-	gap: 25px;
+	height: 100%;
 }
 
 
@@ -66,11 +71,14 @@ form {
 .gaucheForm {
 	display: flex;
 	flex-direction: column;
-		justify-content: space-evenly;
+		justify-content: space-around;
 height: 100%;
-	gap: 25px;
+	gap: 60px;
 	color: #638889;
 }
+
+
+
 
 .droiteForm {
 	display: flex;
@@ -105,10 +113,14 @@ input[type="text"],
 input[type="password"],
 input[type="submit"] {
     width: 100%;
+      padding: 10px;
+  margin-bottom: 15px;
     border: 1px solid #638889;
     border-radius: 5px;
     box-sizing: border-box;
 }
+
+
 input[type="submit"] {
     background-color: #638889;
     color: white;
@@ -119,14 +131,28 @@ input[type="submit"]:hover {
 }
 
 .buttonOeil {
-        background: none;
-        border: none;
-        padding: 0;
-        margin: 0;
-        cursor: pointer;
-        width: 20px;
-    }
+    position: absolute;
+    top: 40%;
+    right: 5px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    width: 20px;
+}
 .champFormulaire{
 	display: flex;
  flex-direction: row;
+}
+
+.champimagepassword{
+	    position: relative;
+
+}
+
+.oeil{
+	 width: calc(100% - 30px); /* Réduire la largeur pour laisser de la place à l'icône */
+    padding-right: 30px; /* Espace pour l'icône */
 }
