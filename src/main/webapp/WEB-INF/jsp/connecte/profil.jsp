@@ -13,9 +13,11 @@
 	<%@ include file="../fragments/navbar.jspf"%>
 	<h1 class="titre">Profil</h1>
 	<div class="container1">
-		<div>
-			<h3>Bienvenue dans votre Profil</h3>
+	<div>
+			<h1>Bienvenue dans votre Profil</h1>
 		</div>
+	<div class="profiletMessages">
+		
 
 		<div class="fomEtbouton">
 			<div class="formulaireProfil">
@@ -51,13 +53,16 @@
 			</div>
 		</div>
 
-		<div class="messageEtResa">
-			<div>
-				<h3>Vous desirez consulter vos messages envoyés ?</h3>
-			</div>
+		
+			
+			
 			<form class="bouttonmessage" action="afficherMessages" method="POST">
+			<div>
+				<h1>Vous desirez consulter vos messages envoyés ?</h1>
+				</div>
 				<input class="inputBoutton" type="submit" value="Mes messages" />
 			</form>
+			</div>
 
 			<div class="containerResa">
 				<h3>Voici vos reservations</h3>
@@ -85,7 +90,7 @@
 				</div>
 
 			</div>
-		</div>
+		
 
 	</div>
 
