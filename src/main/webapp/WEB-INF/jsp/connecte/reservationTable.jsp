@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Reserver une table</title>
-<link href="/ReservationRestaurant/css/styleReservationTable.css" rel="stylesheet">
+<link href="/ReservationRestaurant/css/styleReservationTable.scss" rel="stylesheet">
 </head>
 <body>
 	<%@ include file="../fragments/navbar.jspf" %>
@@ -15,10 +15,10 @@
 			
 			
 			<form action="reservationTable" method="POST">
-			<input type="hidden" value="${restaurantId}" name="restaurant.id"/>
-			<input type="hidden" value="EN ATTENTE" name="etat"/>
-			<input type="hidden" value="${heureOuverture}" name="heureOuverture"/>
-			<input type="hidden" value="${heureFermeture}" name="heureFermeture"/>
+				<input type="hidden" value="${restaurantId}" name="restaurant.id"/>
+				<input type="hidden" value="EN ATTENTE" name="etat"/>
+				<input type="hidden" value="${heureOuverture}" name="heureOuverture"/>
+				<input type="hidden" value="${heureFermeture}" name="heureFermeture"/>
 					<div>
 						<input type="date" name="date" />
 					</div>
@@ -28,7 +28,7 @@
 						<p>Heure de fermeture :  ${heureFermeture}</p>
 					</div>
 					<div>
-						<input type="number" placeholder="Nombre de places" name="nombrePlaces" />
+						<input type="number" placeholder="Nombre de places" name="nombrePlaces" min="1" max="20" />
 					</div>
 					<div class="erreur">
 						<span>${erreur.erreurDate}</span>
@@ -45,14 +45,15 @@
 					<div class="erreur">
 						<span>${dateTimeErreur}</span>
 					</div>
-					<div>
-						<input type="submit" value="Faire une demande de réservation" />
+					<div class="center">
+						<input class="boutons" type="submit" value="Faire une demande de réservation" />
 					</div>
 				</form>
-			
-				<form action="../accueil" method="GET">
-					<input type="submit" value="Retour à la liste des restaurants" />
-				</form>
+				<div class="center">
+					<form action="../accueil" method="GET">
+						<input class="boutons" type="submit" value="Retour à la liste des restaurants" />
+					</form>
+				</div>
 			</div>
 		</div>
 
