@@ -31,8 +31,9 @@
 			    <c:if test="${message.client.id eq idClient}">
 			  
 				<div class="affichage1message">
-				<p>à : </p>
-					<h3 class="styleMessage">${message.employe.prenom}</h3>
+			
+						<h3 class="styleMessage"> à : ${message.employe.prenom}</h3>
+						<br>
 					<h2 class="styleTitre">${message.titre}</h2>
 					<h3 class="styleMessage">${message.contenu}</h3>
 					
@@ -44,7 +45,7 @@
 				</div>
 				
 				<div class="containerBouton">
-			    <a  class=inputBoutton1 href="../profil">Retour au Profil</a>
+			    <a  class=inputBoutton1 href="/ReservationRestaurant/private/profil">Retour au Profil</a>
 				</div>
 								</div>
 				
