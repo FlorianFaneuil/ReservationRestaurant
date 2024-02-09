@@ -6,11 +6,23 @@
 <meta charset="ISO-8859-1">
 <title>Pop up message envoye</title>
 </head>
+<link href="../css/popValidationMessage.css" rel="stylesheet">
+
 <body>
 
-	<h1>Votre message a bien été envoyé !</h1>
-	<a href="../accueil">Retour à l'accueil</a>
+	<%@ include file="../fragments/navbar.jspf"%>
+	<div class="container1">
 
+<div class="container">
+
+	<h1>Votre message a bien été envoyé !</h1>
+	
+
+</div>
+<a class="button" href="../accueil">Retour à l'accueil</a>
+</div>
 
 </body>
+
+
 </html>
