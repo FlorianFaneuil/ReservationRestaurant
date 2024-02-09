@@ -17,6 +17,8 @@
 			<form action="reservationTable" method="POST">
 			<input type="hidden" value="${restaurantId}" name="restaurant.id"/>
 			<input type="hidden" value="EN ATTENTE" name="etat"/>
+			<input type="hidden" value="${heureOuverture}" name="heureOuverture"/>
+			<input type="hidden" value="${heureFermeture}" name="heureFermeture"/>
 					<div>
 						<input type="date" name="date" />
 					</div>
