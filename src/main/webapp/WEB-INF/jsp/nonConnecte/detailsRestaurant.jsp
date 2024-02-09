@@ -33,7 +33,7 @@
 			</div>
 			<div class="top-right-text">
 				<div class="presentation">
-				<p id="texte-presentation"> ${restaurant.nom} sera heureux de vous acueillir tous les jours au <br> ${restaurant.adresse} de ${restaurant.heureOuverture} à ${restaurant.heureFermeture}</p>
+				<p id="texte-presentation"> ${restaurant.nom} sera heureux de vous acueillir tous les jours au <br> ${restaurant.adresse} de ${heureOuverture} à ${heureFermeture}</p>
 				</div>
 				<div class="entrees">
 					<h1>Entrées</h1>
