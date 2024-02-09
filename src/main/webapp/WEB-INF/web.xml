@@ -168,11 +168,10 @@
     <servlet-name>ServletDeconnexion</servlet-name>
     <url-pattern>/deconnexion</url-pattern>
   </servlet-mapping>
-  
-    <error-page>
+  <error-page>
     <error-code>404</error-code>
     <location>/ServletErreur404</location>
-</error-page>
+  </error-page>
   <servlet>
     <description></description>
     <display-name>ServletErreur404</display-name>
@@ -181,8 +180,16 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletErreur404</servlet-name>
-    <url-pattern>/ServletErreur404</url-pattern>
+    <url-pattern>/erreur404</url-pattern>
   </servlet-mapping>
-
-  
+  <servlet>
+    <description></description>
+    <display-name>ServletApropos</display-name>
+    <servlet-name>ServletApropos</servlet-name>
+    <servlet-class>controler.ServletApropos</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletApropos</servlet-name>
+    <url-pattern>/apropos</url-pattern>
+  </servlet-mapping>
 </web-app>
