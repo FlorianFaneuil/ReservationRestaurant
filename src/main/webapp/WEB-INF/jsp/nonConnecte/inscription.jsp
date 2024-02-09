@@ -26,9 +26,10 @@
 					<input type="email" name="email" placeholder="Email" id="email"
 						required>
 				</div>
-				<div>
+				<div class="password-group">
 					<input type="password" name="password" placeholder="Mot de passe"
 						id="password" required>
+						<span class="password-eye" onclick="togglePasswordVisibility()"></span>
 				</div>
 
 				<div class="error-message">
@@ -51,6 +52,8 @@
 			</div>
 		</div>
 	</div>
+	
+	<script src="/ReservationRestaurant/javascript/afficherCacherPS.js"></script>
 
 </body>
 </html>

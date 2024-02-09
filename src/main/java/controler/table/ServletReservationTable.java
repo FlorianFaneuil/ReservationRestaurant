@@ -101,11 +101,30 @@ public class ServletReservationTable extends HttpServlet {
 			request.getRequestDispatcher("/WEB-INF/jsp/connecte/confirmationDemandeReservation.jsp").forward(request, response);
 		} catch (DateTimeParseException e) {
 			request.setAttribute("dateTimeErreur", "La date et/ou l'heure doivent être renseignées");
-			request.getRequestDispatcher("/WEB-INF/jsp/connecte/reservationTable.jsp").forward(request, response);
+			
+			// METTRE LES DONNEES ID RESTAURANT (ou tout le restaurant) ET LES HORRAIRES POUR LES CONSERVER A LA REDIRECTION
+				restaurantIdStr = request.getParameter("restaurant.id");
+				String heureOuvertureStr = request.getParameter("heureOuverture");
+				String heureFermetureStr = request.getParameter("heureFermeture");
+				restaurantId = Integer.parseInt(restaurantIdStr);
+			 	request.setAttribute("heureOuverture", heureOuvertureStr);
+			    request.setAttribute("heureFermeture", heureFermetureStr);
+			    request.setAttribute("restaurantId", restaurantId);
+				
+			    request.getRequestDispatcher("/WEB-INF/jsp/connecte/reservationTable.jsp").forward(request, response);
+			   
 		} catch (BLLException e) {
 			request.setAttribute("erreur", e);
-
-		
+			
+			// METTRE LES DONNEES ID RESTAURANT (ou tout le restaurant) ET LES HORRAIRES POUR LES CONSERVER A LA REDIRECTION
+			restaurantIdStr = request.getParameter("restaurant.id");
+			String heureOuvertureStr = request.getParameter("heureOuverture");
+			String heureFermetureStr = request.getParameter("heureFermeture");
+			restaurantId = Integer.parseInt(restaurantIdStr);
+		 	request.setAttribute("heureOuverture", heureOuvertureStr);
+		    request.setAttribute("heureFermeture", heureFermetureStr);
+		    request.setAttribute("restaurantId", restaurantId);
+				
 			request.getRequestDispatcher("/WEB-INF/jsp/connecte/reservationTable.jsp").forward(request, response);
 		}	
 	}

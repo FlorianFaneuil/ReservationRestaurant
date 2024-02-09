@@ -18,7 +18,6 @@ public class ServletAccueil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RestaurantBLL restaurantBll;
 	private List<Restaurant> restaurants = null;
-	private SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 	private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH'h'mm");
 
 	@Override
@@ -50,8 +49,8 @@ public class ServletAccueil extends HttpServlet {
 		//Passage de l'heure de fermeture formatée dans une HashMap pour pouvoir la récupérer dans la page d'accueil
 		HashMap<Integer, String> restaurantFermeture = new HashMap<>();
 		for (Restaurant restaurant : restaurants) {
-			String heureOuvertureFormat = restaurant.getHeureFermeture().format(formatter);
-			restaurantFermeture.put(restaurant.getId(), heureOuvertureFormat);
+			String heureFermetureFormat = restaurant.getHeureFermeture().format(formatter);
+			restaurantFermeture.put(restaurant.getId(), heureFermetureFormat);
 		}
 		
 		request.setAttribute("restaurants", restaurants);
