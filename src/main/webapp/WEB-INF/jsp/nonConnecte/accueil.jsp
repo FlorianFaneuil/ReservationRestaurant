@@ -33,7 +33,7 @@
 			    <p>${restaurantOuverture[restaurant.id]}&ensp; à &ensp;${restaurantFermeture[restaurant.id]}</p>
 		    </div>
 		    <div class="card-text"><p>Venez savourer un excellent repas au ${restaurant.adresse}</p></div>
-		    <div>
+		    <div class="voir-details">
 		    	<form action="detailsRestaurant" method="GET">
 					<input type="hidden" name="id" value="${restaurant.id}" /> <input type="submit" value="Voir ce restaurant" />
 				</form>

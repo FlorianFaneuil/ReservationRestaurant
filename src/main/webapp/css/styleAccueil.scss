@@ -19,10 +19,12 @@ h1{
   flex-direction:row-reverse;
   justify-content:center;
   flex-wrap:wrap;
+  
   .blog-card{
 	border-radius: 5px;
     @include transition(.3s);
     max-width:300px;
+    min-height: 546.5px;
     margin:15px;
     background:#fff;
     border:1px solid #638889;
@@ -83,6 +85,7 @@ h1{
       padding:30px 15px;
       font-family: 'Roboto', sans-serif;
       line-height:22px;
+      height: 100px;
     }
     .read-more{
       @include transition(.3s);
@@ -127,4 +130,8 @@ h1{
 	p {
 		font-family: 'Roboto', sans-serif;
       	color:#3C3C3C;
+	}
+	
+	.voir-details{
+		
 	}

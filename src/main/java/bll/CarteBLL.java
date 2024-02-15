@@ -86,7 +86,7 @@ public class CarteBLL {
 	
 	public Carte selectByIdRestaurant(int id_restaurant) throws BLLException {
 		try {
-			return dao.selectById(id_restaurant);
+			return dao.selectByIdRestaurant(id_restaurant);
 		} catch (DALException e) {
 			throw new BLLException("Echec de la recuperation du composant d'id " + id_restaurant, e);
 		}

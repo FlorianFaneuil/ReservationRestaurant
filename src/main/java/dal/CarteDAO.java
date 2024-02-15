@@ -17,7 +17,7 @@ public class CarteDAO {
 	private static final String SELECT_BY_ID = "SELECT * FROM " + TABLE_NAME + " WHERE id = ? ";
 	private static final String INSERT = "INSERT INTO " + TABLE_NAME + "(nom ,id_restaurant) VALUES (?,?)";
 	private static final String UPDATE = "UPDATE " + TABLE_NAME + " SET nom = ?,  id_restaurant = ?  WHERE id = ?";
-	private static final String SELECT_BY_ID_RESTAURANT = "SELECT * FROM " + TABLE_NAME + " WHERE id_restaurant = ?";
+	private static final String SELECT_BY_ID_RESTAURANT = "SELECT id FROM " + TABLE_NAME + " WHERE id_restaurant = ?"; // EST-CE QUE EN FAISANT SELECT id FROM
 
 	private Connection cnx;
 
@@ -115,8 +115,9 @@ public class CarteDAO {
 					Restaurant restaurant = new Restaurant();
 
 					carte.setId(rs.getInt("id"));
-					carte.setNom(rs.getString("nom"));
-					restaurant.setId(rs.getInt("id_restaurant"));
+//					carte.setNom(rs.getString("nom"));
+//					restaurant.setId(rs.getInt("id_restaurant")); // EST-CE QUE C'EST BIEN CE QU'IL FAUT FAIRE ET PAS carte.setRestaurant(restaurant); ?
+				
 				}
 				if (carte == null)
 					throw new DALException("Aucun carte ne porte cet ID", null);
