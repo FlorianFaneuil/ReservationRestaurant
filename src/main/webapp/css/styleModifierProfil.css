@@ -2,12 +2,14 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald|Roboto|Slabo+27px);
 @import 'bourbon';
 
-/*POT*/
 
-/*POT*/
-
-/*POT*/
-
+ :root {
+    --couleur-hover:#5f2549;
+    --couleur-leger: #bc4a55;
+    --couleur-bg: #ffbc5b;
+    --couleur-fonce: rgb(192, 192, 192);
+  }
+  
 *{
 	  box-sizing: border-box;
 
@@ -20,17 +22,14 @@ h1{
   text-align:center;
 }
 
-.formulaireProfil{
-	  background-color: #EBD9B4;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-	
+form{
+		background-color:var(--couleur-bg);
+
 }
+
+
 .container1 {
     font-family: Arial, sans-serif;
-    background-color: #9DBC98;
     margin: 0;
     padding: 0;
     display: flex;
@@ -40,6 +39,20 @@ h1{
     height: 80vh;
     gap:20px;
 }
+
+.container2{
+	height: 100%;
+	width: 100%;
+		background-color:var(--couleur-bg);
+		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		    background-color:var(--couleur-bg);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+
+
+	
+}
 p{
 	margin:0;
 	padding:0;
@@ -47,7 +60,8 @@ p{
 
 h1,h3 {
     text-align: center;
-    color: #638889;
+   	color: var(--couleur-leger);
+
 }
 
 form {
@@ -100,6 +114,11 @@ height: 100%;
 	gap:10px;
 }
 
+.containerBoutonValider{
+	height: 20%;
+	width: 100%;
+}
+
 .dernierDivForm{
 	height: 160px;
 	width: 30px;
@@ -115,19 +134,19 @@ input[type="submit"] {
     width: 100%;
       padding: 10px;
   margin-bottom: 15px;
-    border: 1px solid #638889;
+	border: 1px solid var(--couleur-leger);
     border-radius: 5px;
     box-sizing: border-box;
 }
 
 
 input[type="submit"] {
-    background-color: #638889;
+	background-color: var(--couleur-leger);
     color: white;
     cursor: pointer;
 }
 input[type="submit"]:hover {
-    background-color: #547572;
+	background-color:var(--couleur-hover);
 }
 
 .buttonOeil {
@@ -156,3 +175,13 @@ input[type="submit"]:hover {
 	 width: calc(100% - 30px); /* Réduire la largeur pour laisser de la place à l'icône */
     padding-right: 30px; /* Espace pour l'icône */
 }
+
+a {
+	color:var(--couleur-leger);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+

@@ -17,6 +17,8 @@
 			<h3>Modification de vos informations</h3>
 		</div>
 		<div>
+		
+		<div class="container2">
 			<form action="modifierProfil" method="POST">
 
 
@@ -46,15 +48,18 @@
 						</div>
 
 					</div>
+					
 
-					<div></div>
 				</div>
+					</form>
 				<div class="containerBoutonValider">
 
 					<input class="inputBoutton" type="submit" value="Valider">
 
 				</div>
-			</form>
+				</div>
+				
+		
 		</div>
 
 
