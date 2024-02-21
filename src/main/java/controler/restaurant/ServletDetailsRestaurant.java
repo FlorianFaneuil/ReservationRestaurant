@@ -49,8 +49,6 @@ public class ServletDetailsRestaurant extends HttpServlet {
 			Carte carte = carteBll.selectByIdRestaurant(id);
 			List<Plat> plats = platBll.selectByIdCarte(carte.getId());
 			
-			System.out.println(plats);
-			
 			LocalTime heureOuvertureLocalTime = restaurant.getHeureOuverture();
 			LocalTime heureFermetureLocalTime = restaurant.getHeureFermeture();
 			

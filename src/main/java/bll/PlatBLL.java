@@ -113,9 +113,7 @@ public class PlatBLL {
 	// SELECT BY ID_CARTE
 		public List<Plat> selectByIdCarte(int id_carte) throws BLLException {
 			try {
-				System.out.println(id_carte);
 				List<Plat> plats = dao.selectByIdCarte(id_carte); 
-				System.out.println(plats);
 				return plats;
 			} catch (DALException e) {
 				throw new BLLException("Echec de la recuperation du composant d'id " + id_carte, e);
