@@ -33,7 +33,7 @@ public class AfficherReservations extends HttpServlet {
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
-		System.out.println("reservations : " + reservation);
+		
 		request.setAttribute("reservations", reservation);
 	
 

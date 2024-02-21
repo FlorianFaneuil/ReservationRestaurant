@@ -35,7 +35,7 @@ public class ServletAfficherMessages extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		System.out.println("messages : " + messages);
+		
 
 		request.setAttribute("messages", messages);
 

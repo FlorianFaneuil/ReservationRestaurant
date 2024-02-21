@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Reservations</title>
-<link href="../css/styleProfil.css" rel="stylesheet">
+<link href="../css/styleAfficherReservation.css" rel="stylesheet">
 
 </head>
 <body>
@@ -18,6 +18,7 @@
 
 
 			<c:forEach items="${reservations}" var="reservation">
+			<div class="container">
 				<c:if test="${reservation.idClient eq idClient }">
 
 					<p>
@@ -30,6 +31,7 @@
 						Votre réservation est <strong>${reservation.etat}</strong>
 					</p>
 				</c:if>
+				</div>
 
 			</c:forEach>
 		</div>
