@@ -1,0 +1,84 @@
+.container1 {
+	font-family: Arial, sans-serif;
+	background-color: gainsboro;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+align-items: center;
+	justify-content: center;
+	gap: 10%;
+	height: 80vh;
+}
+
+.container {
+    background-color: #EBD9B4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+h1 {
+	font-size: 32px;
+	margin-top: 30px;
+	font-family: 'Oswald', sans-serif;
+	text-align: center;
+}
+
+h1,
+h3,
+h2 {
+	text-align: center;
+	color: #638889;
+}
+
+form {
+	margin-top: 20px;
+}
+
+
+input[type="password"],
+input[type="submit"], .inputBoutton {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #638889;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+.inputBoutton1 {
+    background-color: #547572;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none; /* Supprimer le soulignement du lien */
+    transition: background-color 0.3s; /* Animation de transition */
+}
+
+.inputBoutton1:hover {
+    background-color: #445f60; /* Couleur de survol */
+}
+input[type="submit"] {
+	background-color: #638889;
+	color: white;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #547572;
+}
+
+.error-message {
+	color: red;
+	font-size: 14px;
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+
+
+}
+
+a:hover {
+	text-decoration: underline;
+}

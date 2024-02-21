@@ -1,26 +1,26 @@
-package controler.message;
+package controler.profil;
 
 import java.io.IOException;
 import java.util.List;
 
 import bll.BLLException;
-import bll.MessageBLL;
-import bo.Message;
+import bll.ReservationBLL;
+import bo.Reservation;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class ServletAfficherMessages extends HttpServlet {
+public class AfficherReservations extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private MessageBLL messageBLL;
-	private List<Message> messages = null;
+	private ReservationBLL reservationBll;
+	List<Reservation> reservation = null;
 
 	@Override
 	public void init() throws ServletException {
 		super.init();
 		try {
-			messageBLL = new MessageBLL();
+			reservationBll = new ReservationBLL();
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
@@ -29,23 +29,20 @@ public class ServletAfficherMessages extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		try {
-			messages = messageBLL.selectAll();
-
+			reservation = reservationBll.selectAll();
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
-
 		
+		request.setAttribute("reservations", reservation);
+	
 
-		request.setAttribute("messages", messages);
-
-		request.getRequestDispatcher("/WEB-INF/jsp/connecte/afficherMessages.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/connecte/reservations.jsp").forward(request, response);
 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

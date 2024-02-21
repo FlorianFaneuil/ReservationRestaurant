@@ -192,4 +192,14 @@
     <servlet-name>ServletApropos</servlet-name>
     <url-pattern>/apropos</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AfficherReservations</display-name>
+    <servlet-name>AfficherReservations</servlet-name>
+    <servlet-class>controler.profil.AfficherReservations</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AfficherReservations</servlet-name>
+    <url-pattern>/private/afficherReservations</url-pattern>
+  </servlet-mapping>
 </web-app>
