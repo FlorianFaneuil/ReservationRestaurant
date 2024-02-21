@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+
+ :root {
+    --couleur-hover:#5f2549;
+    --couleur-leger: #bc4a55;
+    --couleur-bg: #ffbc5b;
+  }
+
 body{
   background:#FBFCFA ;
 }
@@ -40,12 +47,12 @@ input{
 		border: 1px black;
 		border-radius: 5px;
 		padding:15px;
-		background-color: #9DBC98;
+		background-color: var(--couleur-leger);
 		color:#fff;
         font-family: 'Slabo 27px', serif;
         font-size:20px;
 		&:hover{
-		background-color: #638889;
+		background-color: var(--couleur-hover);
 		}
 	}
 	

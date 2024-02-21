@@ -1,8 +1,15 @@
 @charset "ISO-8859-1";
 
+
+ :root {
+    --couleur-hover:#5f2549;
+    --couleur-leger: #bc4a55;
+    --couleur-bg: #ffbc5b;
+  }
+
 .container1 {
 	font-family: Arial, sans-serif;
-	background-color: #9DBC98;
+	background-color: gray;
 	margin: 0;
 	padding: 0;
 	display: flex;
@@ -12,7 +19,7 @@
 }
 
 .container {
-	background-color: #EBD9B4;
+	background-color: var(--couleur-bg);
 	padding: 20px;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -21,7 +28,7 @@
 
 h1 {
 	text-align: center;
-	color: #638889;
+	color: white;
 }
 
 form {
@@ -34,23 +41,23 @@ input[type="number"]{
 	width: 100%;
 	padding: 10px;
 	margin-bottom: 15px;
-	border: 1px solid #638889;
+	border: 1px solid var(--couleur-leger);
 	border-radius: 5px;
 	box-sizing: border-box;
 }
 
 input[type="submit"] {
-	background-color: #638889;
+	background-color: var(--couleur-leger);
 	color: white;
 	cursor: pointer;
 }
 
 input[type="submit"]:hover {
-	background-color: #547572;
+	background-color: var(--couleur-hover);
 }
 
 a {
-	color: #638889;
+	color: var(--couleur-leger);
 	text-decoration: none;
 }
 
@@ -73,12 +80,12 @@ span{
 	border-radius: 5px;
 	padding:15px;
     margin-bottom:5px;
-	background-color: #9DBC98;
+	background-color: var(--couleur-leger);
 	color:#fff;
     font-family: 'Slabo 27px', serif;
     font-size:20px;
 	&:hover{
-	background-color: #638889;
+	background-color: var(--couleur-leger);
 }}
 
 .center{
