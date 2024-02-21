@@ -10,7 +10,7 @@
 
 .container1 {
 	font-family: Arial, sans-serif;
-	background-color:var(--couleur-fonce);
+	background-color: #ff5a5f;
 	margin: 0;
 	padding: 0;
 	display: flex;
@@ -68,7 +68,7 @@ a:hover {
 }
 
 .error-message {
-	color: red;
+	color: black;
 	font-size: 12px;
 	margin-top: -10px;
 	margin-bottom: 10px;
