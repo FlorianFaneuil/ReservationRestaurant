@@ -18,9 +18,9 @@
 
 
 			<c:forEach items="${reservations}" var="reservation">
-			<div class="container">
+			
 				<c:if test="${reservation.idClient eq idClient }">
-
+<div class="container">
 					<p>
 						Pour une table au restaurant : <strong>${reservation.idRestaurant}</strong>
 					</p>
@@ -29,9 +29,9 @@
 					<p>Pour ${reservation.nombrePlaces} personnes</p>
 					<p>
 						Votre réservation est <strong>${reservation.etat}</strong>
-					</p>
+					</p></div>
 				</c:if>
-				</div>
+				
 
 			</c:forEach>
 		</div>
