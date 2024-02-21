@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Inscription</title>
+<title>Connexion</title>
 <link rel="stylesheet" href="/ReservationRestaurant/css/connexion.css">
 </head>
 <body>
@@ -32,7 +32,7 @@
 					<c:forEach var="erreur" items="${errors}">
 						<div>
 							<div>
-								<img src="/ReservationRestaurant/img/icons8-erreur.svg" alt="">
+								<img src="/ReservationRestaurant/img/erreur.png" alt="">
 							</div>
 							<div>${erreur}</div>
 						</div>
