@@ -116,7 +116,7 @@
   </filter>
   <filter-mapping>
     <filter-name>FilterConnextion</filter-name>
-    <url-pattern>/FilterConnextion</url-pattern>
+    <url-pattern>/private/*</url-pattern>
   </filter-mapping>
   <servlet>
     <description></description>
