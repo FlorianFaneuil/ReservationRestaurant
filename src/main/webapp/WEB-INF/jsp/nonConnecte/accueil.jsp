@@ -42,5 +42,6 @@
 		</div>
 	</c:forEach>
 </div>	
+<%@ include file="../fragments/footer.jspf"%>
 </body>
 </html>
