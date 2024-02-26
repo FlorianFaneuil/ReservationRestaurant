@@ -9,37 +9,40 @@
 <link href="css/styleDetailsRestaurant.scss" rel="stylesheet">
 </head>
 <body>
-<%@ include file="../fragments/navbar.jspf"%>
+	<%@ include file="../fragments/navbar.jspf"%>
 	<div>
 		<c:choose>
 			<c:when test="${empty restaurant.imageRestaurantUrl}">
 				<div class="card-category"
 					style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url(${pageContext.request.contextPath}/images/defautimagerestaurant.jpg)">
-					${restaurant.nom}
-				</div>
+					${restaurant.nom}</div>
 			</c:when>
 			<c:otherwise>
 				<div class="card-category"
 					style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${restaurant.imageRestaurantUrl})">
-					${restaurant.nom}
-				</div>
+					${restaurant.nom}</div>
 			</c:otherwise>
 		</c:choose>
 	</div>
 	<div class="container">
 		<div class="top">
 			<div class="top-left-image">
-				 <img src="${pageContext.request.contextPath}/images/entree01.jpg" alt="Une photographies de diverses entrées">
+				<img src="${pageContext.request.contextPath}/images/entree01.jpg"
+					alt="Une photographies de diverses entrées">
 			</div>
 			<div class="top-right-text">
 				<div class="presentation">
-				<p id="texte-presentation"> ${restaurant.nom} sera heureux de vous acueillir tous les jours au <br> ${restaurant.adresse} de ${heureOuverture} à ${heureFermeture}</p>
+					<p id="texte-presentation">
+						${restaurant.nom} sera heureux de vous acueillir tous les jours au
+						<br> ${restaurant.adresse} de ${heureOuverture} à
+						${heureFermeture}
+					</p>
 				</div>
 				<div class="entrees">
 					<h1>Entrées</h1>
 					<c:forEach var="plat" items="${plats}">
 						<c:if test="${plat.categorie == 'ENTREE'}">
-							<p>${plat.nom} ${plat.description} ${plat.prix}€</p>
+							<p>${plat.nom}${plat.description} ${plat.prix}€</p>
 						</c:if>
 					</c:forEach>
 				</div>
@@ -47,9 +50,9 @@
 					<h1>Plats</h1>
 					<c:forEach var="plat" items="${plats}">
 						<c:if test="${plat.categorie == 'PLAT'}">
-							<p>${plat.nom} ${plat.description} ${plat.prix}€</p>
+							<p>${plat.nom}${plat.description} ${plat.prix}€</p>
 						</c:if>
-					</c:forEach>		
+					</c:forEach>
 				</div>
 			</div>
 		</div>
@@ -59,7 +62,7 @@
 					<h1>Desserts</h1>
 					<c:forEach var="plat" items="${plats}">
 						<c:if test="${plat.categorie == 'DESSERT'}">
-							<p>${plat.nom} ${plat.description} ${plat.prix}€</p>
+							<p>${plat.nom}${plat.description} ${plat.prix}€</p>
 						</c:if>
 					</c:forEach>
 				</div>
@@ -67,34 +70,36 @@
 					<h1>Boissons</h1>
 					<c:forEach var="plat" items="${plats}">
 						<c:if test="${plat.categorie == 'BOISSON'}">
-							<p>${plat.nom} ${plat.description} ${plat.prix}€</p>
+							<p>${plat.nom}${plat.description} ${plat.prix}€</p>
 						</c:if>
 					</c:forEach>
 				</div>
 			</div>
 			<div class="bottom-right-image">
-				 <img src="${pageContext.request.contextPath}/images/boissons01.jpg" alt="Une photographies de diverses boissons">
+				<img src="${pageContext.request.contextPath}/images/boissons01.jpg"
+					alt="Une photographies de diverses boissons">
 			</div>
 		</div>
 		<div class="flex-item-buttons">
-	    <form action="accueil" method="GET">
-	      <input type="submit" value="Retour à la liste des restaurants" />
-	    </form>
-	
-	
-	    <form id="bouton-reserver" action="private/reservationTable" method="GET">
-	      <input type="hidden" value="${restaurant.id}" name="restaurant.id" />
-	      <input type="hidden" value="${restaurant.heureOuverture}"
-	        name="heureOuverture" /> <input type="hidden"
-	        value="${restaurant.heureFermeture}" name="heureFermeture" /> <input
-	        type="submit" value="Reserver une table" />
-	    </form>
-	
-	    <form action="private/envoyerMessage" method="GET">
-	      <input type="submit" value="Envoyer un message" />
-	    </form>
-	  </div>
-	</div>
+			<form action="accueil" method="GET">
+				<input type="submit" value="Retour à la liste des restaurants" />
+			</form>
 
+
+			<form id="bouton-reserver" action="private/reservationTable"
+				method="GET">
+				<input type="hidden" value="${restaurant.id}" name="restaurant.id" />
+				<input type="hidden" value="${restaurant.heureOuverture}"
+					name="heureOuverture" /> <input type="hidden"
+					value="${restaurant.heureFermeture}" name="heureFermeture" /> <input
+					type="submit" value="Reserver une table" />
+			</form>
+
+			<form action="private/envoyerMessage" method="GET">
+				<input type="submit" value="Envoyer un message" />
+			</form>
+		</div>
+	</div>
+	<%@ include file="../fragments/footer.jspf"%>
 </body>
 </html>

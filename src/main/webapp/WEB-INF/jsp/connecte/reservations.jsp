@@ -15,28 +15,27 @@
 		<div class="container1">
 
 
-
-
 			<c:forEach items="${reservations}" var="reservation">
-			
+
 				<c:if test="${reservation.idClient eq idClient }">
-<div class="container">
-					<p>
-						Pour une table au restaurant : <strong>${reservation.idRestaurant}</strong>
-					</p>
-					<p>Le ${reservation.dateResa}</p>
-					<p>A ${reservation.heureResa}</p>
-					<p>Pour ${reservation.nombrePlaces} personnes</p>
-					<p>
-						Votre réservation est <strong>${reservation.etat}</strong>
-					</p></div>
+					<div class="container">
+						<p>
+							Pour une table au restaurant : <strong>${reservation.idRestaurant}</strong>
+						</p>
+						<p>Le ${reservation.dateResa}</p>
+						<p>A ${reservation.heureResa}</p>
+						<p>Pour ${reservation.nombrePlaces} personnes</p>
+						<p>
+							Votre réservation est <strong>${reservation.etat}</strong>
+						</p>
+					</div>
 				</c:if>
-				
+
 
 			</c:forEach>
 		</div>
 
 	</div>
-
+	<%@ include file="../fragments/footer.jspf"%>
 </body>
 </html>
