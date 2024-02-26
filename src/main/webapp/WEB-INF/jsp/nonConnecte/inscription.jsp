@@ -28,22 +28,24 @@
 				</div>
 				<div class="password-group">
 					<input type="password" name="password" placeholder="Mot de passe"
-						id="password" required>
-						<span class="password-eye" onclick="togglePasswordVisibility()"></span>
+						id="password" required> <span class="password-eye"
+						onclick="togglePasswordVisibility()"></span>
 				</div>
 
 				<div class="error-message">
 
 					<c:forEach var="erreur" items="${errors}">
-				 <div>
-                            <div><img src="/ReservationRestaurant/img/erreur.png" alt=""></div>
-                            <div>${erreur}</div>
-                        </div>
+						<div>
+							<div>
+								<img src="/ReservationRestaurant/img/erreur.png" alt="">
+							</div>
+							<div>${erreur}</div>
+						</div>
 
-				</c:forEach>
+					</c:forEach>
 
 				</div>
-				
+
 				<input type="submit" value="Inscription">
 			</form>
 			<div>
@@ -52,7 +54,8 @@
 			</div>
 		</div>
 	</div>
-	
+	<%@ include file="../fragments/footer.jspf"%>
+
 	<script src="/ReservationRestaurant/javascript/afficherCacherPS.js"></script>
 
 </body>

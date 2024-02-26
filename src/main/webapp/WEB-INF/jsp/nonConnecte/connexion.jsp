@@ -23,8 +23,8 @@
 				</div>
 				<div class="password-group">
 					<input type="password" name="password" placeholder="Mot de passe"
-						id="password" required>
-						<span class="password-eye" onclick="togglePasswordVisibility()"></span>
+						id="password" required> <span class="password-eye"
+						onclick="togglePasswordVisibility()"></span>
 				</div>
 
 
@@ -48,7 +48,9 @@
 			</div>
 		</div>
 	</div>
+	<%@ include file="../fragments/footer.jspf"%>
 	<script src="/ReservationRestaurant/javascript/afficherCacherPS.js"></script>
+
 
 </body>
 </html>

@@ -48,33 +48,22 @@
 						class="inputBoutton" type="submit" value="Supprimer" />
 				</form>
 				<form class="bouttonmessage" action="afficherMessages" method="POST">
-				
-				<input class="inputBoutton" type="submit" value="Mes messages" />
-			</form>
-			<form class="bouttonmessage" action="afficherReservations"
-				method="POST">
-				
-				<input class="inputBoutton" type="submit" value="Vos reservations" />
-			</form>
+
+					<input class="inputBoutton" type="submit" value="Mes messages" />
+				</form>
+				<form class="bouttonmessage" action="afficherReservations"
+					method="POST">
+
+					<input class="inputBoutton" type="submit" value="Vos reservations" />
+				</form>
 
 				<div></div>
 
 			</div>
 
-
-
-
-			
 		</div>
 
-		<div class="containerResa">
-
-
-			
-
-
-
-
-		</div>
+		<div class="containerResa"></div>
+		<%@ include file="../fragments/footer.jspf"%>
 </body>
 </html>

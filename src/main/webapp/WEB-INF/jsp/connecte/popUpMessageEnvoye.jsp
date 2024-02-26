@@ -13,15 +13,16 @@
 	<%@ include file="../fragments/navbar.jspf"%>
 	<div class="container1">
 
-<div class="container">
+		<div class="container">
 
-	<h1>Votre message a bien été envoyé !</h1>
-	
+			<h1>Votre message a bien été envoyé !</h1>
 
-</div>
-<a class="button" href="../accueil">Retour à l'accueil</a>
-</div>
 
+		</div>
+		<a class="button" href="../accueil">Retour à l'accueil</a>
+	</div>
+
+	<%@ include file="../fragments/footer.jspf"%>
 </body>
 
 
