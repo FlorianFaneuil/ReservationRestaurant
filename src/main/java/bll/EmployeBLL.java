@@ -1,5 +1,7 @@
 package bll;
 
+import java.util.List;
+
 import bo.Employe;
 import dal.DALException;
 import dal.EmployeDAO;
@@ -26,4 +28,12 @@ public class EmployeBLL {
 			throw new BLLException("Echec de la recuperation de l'employe de nom  " + nom, e);
 		}
 	}
+	
+	public List<Employe> selectAllEmployes() throws BLLException {
+        try {
+            return employeDAO.selectAll();
+        } catch (DALException e) {
+            throw new BLLException("Echec lors de la récupération de tous les employés", e);
+        }
+    }
 }
