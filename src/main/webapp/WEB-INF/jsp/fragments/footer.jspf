@@ -1,12 +1,12 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 
-<link rel="stylesheet" href="/ReservationRestaurant/css/footer.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/footer.css">
 <footer class="footer-distributed">
     
                 <div class="footer-left">
     
-                    <h3><img style="width:70px; " src="/ReservationRestaurant/img/logoSoleilHaiti.png" alt="Logo"></h3>
+                    <h3><img style="width:70px; " src="${pageContext.request.contextPath }/img/logoSoleilHaiti.png" alt="Logo"></h3>
     
                     <p class="footer-links">
                         <a href="Accueil">Accueil</a>

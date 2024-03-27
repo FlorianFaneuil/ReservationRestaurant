@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Reserver une table</title>
 <link
-	href="/ReservationRestaurant/css/styleConfirmationReservation.scss"
+	href="${pageContext.request.contextPath }/css/styleConfirmationReservation.scss"
 	rel="stylesheet">
 </head>
 <body>

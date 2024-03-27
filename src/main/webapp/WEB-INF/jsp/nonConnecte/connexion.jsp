@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Connexion</title>
-<link rel="stylesheet" href="/ReservationRestaurant/css/connexion.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/connexion.css">
 </head>
 <body>
 
@@ -32,7 +32,7 @@
 					<c:forEach var="erreur" items="${errors}">
 						<div>
 							<div>
-								<img src="/ReservationRestaurant/img/erreur.png" alt="">
+								<img src="${pageContext.request.contextPath }/img/erreur.png" alt="">
 							</div>
 							<div>${erreur}</div>
 						</div>
@@ -49,7 +49,7 @@
 		</div>
 	</div>
 	<%@ include file="../fragments/footer.jspf"%>
-	<script src="/ReservationRestaurant/javascript/afficherCacherPS.js"></script>
+	<script src="${pageContext.request.contextPath }/javascript/afficherCacherPS.js"></script>
 
 
 </body>

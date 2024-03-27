@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Inscription</title>
-<link rel="stylesheet" href="/ReservationRestaurant/css/inscription.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/inscription.css">
 </head>
 <body>
 	<%@ include file="../fragments/navbar.jspf"%>
@@ -37,7 +37,7 @@
 					<c:forEach var="erreur" items="${errors}">
 						<div>
 							<div>
-								<img src="/ReservationRestaurant/img/erreur.png" alt="">
+								<img src="${pageContext.request.contextPath }/img/erreur.png" alt="">
 							</div>
 							<div>${erreur}</div>
 						</div>
@@ -56,7 +56,7 @@
 	</div>
 	<%@ include file="../fragments/footer.jspf"%>
 
-	<script src="/ReservationRestaurant/javascript/afficherCacherPS.js"></script>
+	<script src="${pageContext.request.contextPath }/javascript/afficherCacherPS.js"></script>
 
 </body>
 </html>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" href="/ReservationRestaurant/css/apropos.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath }/css/apropos.css">
 <title>A propos</title>
 </head>
 <body>

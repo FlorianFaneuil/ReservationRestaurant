@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page non trouvée</title>
-    <link href="/ReservationRestaurant/css/404erreur.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath }/css/404erreur.css" rel="stylesheet">
 </head>
 <body>
     <div class="error-container">
-        <img src="/ReservationRestaurant/img/404Chat.png" alt="chat">
+        <img src="${pageContext.request.contextPath }/img/404Chat.png" alt="chat">
         <p>Désolé, la page que vous recherchez est introuvable.</p>
-        <a href="/ReservationRestaurant/accueil">Retour à la page d'accueil</a>
+        <a href="${pageContext.request.contextPath }/accueil">Retour à la page d'accueil</a>
     </div>
 </body>
 </html>

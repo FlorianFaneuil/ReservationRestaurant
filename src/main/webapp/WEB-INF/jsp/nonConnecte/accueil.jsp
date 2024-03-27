@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Accueil / Index</title>
-<link href="/ReservationRestaurant/css/styleAccueil.scss"
+<link href="${pageContext.request.contextPath }/css/styleAccueil.scss"
 	rel="stylesheet">
 </head>
 <body>

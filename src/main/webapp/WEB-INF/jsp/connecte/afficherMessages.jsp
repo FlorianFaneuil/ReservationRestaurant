@@ -42,7 +42,7 @@
 		</div>
 
 		<div class="containerBouton">
-			<a class=inputBoutton1 href="/ReservationRestaurant/private/profil">Retour
+			<a class=inputBoutton1 href="${pageContext.request.contextPath }/private/profil">Retour
 				au Profil</a>
 		</div>
 	</div>
