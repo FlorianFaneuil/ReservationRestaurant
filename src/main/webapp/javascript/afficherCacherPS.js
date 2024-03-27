@@ -4,10 +4,10 @@ function togglePasswordVisibility() {
 
     if (passwordInput.type === "password") {
         passwordInput.type = "text";
-        passwordEye.style.backgroundImage = "url('/ReservationRestaurant/img/oeilFerme.png')"; 
+        passwordEye.style.backgroundImage = "url('${pageContext.request.contextPath }/img/oeilFerme.png')"; 
       
     } else {
         passwordInput.type = "password";
-        passwordEye.style.backgroundImage = "url('/ReservationRestaurant/img/oeil(1).png')";
+        passwordEye.style.backgroundImage = "url('${pageContext.request.contextPath }/img/oeil(1).png')";
     }
 }

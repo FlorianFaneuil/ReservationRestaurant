@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Reserver une table</title>
-<link href="/ReservationRestaurant/css/styleReservationTable.scss"
+<link href="${pageContext.request.contextPath }/css/styleReservationTable.scss"
 	rel="stylesheet">
 </head>
 <body>

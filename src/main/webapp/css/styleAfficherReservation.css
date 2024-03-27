@@ -99,7 +99,7 @@ a:hover {
     transform: translateY(-50%);
     width: 25px;
     height: 25px;
-    background-image: url('/ReservationRestaurant/img/oeil(1).png'); 
+    background-image: url('${pageContext.request.contextPath }/img/oeil(1).png'); 
     background-size: cover;
     cursor: pointer;
 }
