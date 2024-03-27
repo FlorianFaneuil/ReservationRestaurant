@@ -43,6 +43,7 @@ public class ReservationDAO {
 				reservation.setDateResa(rs.getDate("date").toLocalDate());
 				reservation.setHeureResa(rs.getTime("heure").toLocalTime());
 				reservation.setEtat(rs.getString("etat"));
+				reservation.setNombrePlaces(rs.getInt("nombre_place"));
 
 				reservations.add(reservation);
 			}
